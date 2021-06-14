@@ -1,19 +1,18 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
-import {Home} from './components/Home'
-import {Login} from './components/Login'
-import {Admin} from './components/Admin'
-import {Account} from './components/Account'
-import {Categories} from './components/Categories'
-import {Quiz} from './components/Quiz'
-import {Contact} from './components/Contact'
-import {Submit} from './components/Submit'
-import {Leaderboard} from './components/Leaderboard'
-import {About} from './components/About'
+import { Switch, Route, Redirect } from "react-router-dom";
+import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { Admin } from "./components/Admin";
+import { Account } from "./components/Account";
+import { Categories } from "./components/Categories";
+import { Quiz } from "./components/Quiz";
+import { Contact } from "./components/Contact";
+import { Submit } from "./components/Submit";
+import { Leaderboard } from "./components/Leaderboard";
+import { About } from "./components/About";
 
 function Routing() {
   return (
     <div>
-      <h1 className='animate-bounce'>Hello World</h1>
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
