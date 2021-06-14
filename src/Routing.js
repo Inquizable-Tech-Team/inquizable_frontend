@@ -1,4 +1,5 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
+import React from 'react'
 import {Home} from './components/Home'
 import {Login} from './components/Login'
 import {Admin} from './components/Admin'
@@ -12,8 +13,9 @@ import {About} from './components/About'
 
 function Routing() {
   return (
+  
     <div>
-      <h1 className='animate-bounce'>Hello World</h1>
+    {/*  <h1 className='animate-bounce'>Hello World</h1> */}
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
@@ -50,6 +52,7 @@ function Routing() {
         </Route>
       </Switch>
     </div>
+    
   );
 }
 
