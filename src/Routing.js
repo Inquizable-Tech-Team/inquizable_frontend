@@ -33,7 +33,7 @@ function Routing() {
         <Route exact path="/categories">
           <Categories />
         </Route>
-        <Route exact path="/quiz">
+        <Route exact path="/quiz/:id?">
           <Quiz />
         </Route>
         <Route exact path="/contact">

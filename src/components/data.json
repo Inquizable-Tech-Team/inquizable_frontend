@@ -1,159 +1,124 @@
 [
     {
-    "id": 1,
-    "category": "Random"
-    
-},
-{
-    "id": 2,
-    "category": "Communicty"
-    
-},
-{
-    "id" : 3,  
-    "category": "Entertainment" ,
-    "subcategory":
-     [
-         {
-             "id":10,
-             "name":"Books"
-            
-         },
-         {
-            "id":11,
-            "name":"Film"
-           
-        },
-        {
-            "id":12,
-            "name":"Music"
-           
-        },
-        {
-            "id":13,
-            "name":"Muscilas & Theatre"
-           
-        },
-        {
-            "id":14,
-            "name":"Television"
-           
-        },
-        {
-            "id":15,
-            "name":"Video Games"
-           
-        },
-        {
-            "id":16,
-            "name":"Board Games"
-           
-        },
-        {
-            "id":29,
-            "name":"Comics"
-           
-        },
-        {
-            "id":31,
-            "name":"Anime and Manga"
-           
-        },
-        {
-            "id":32,
-            "name":"Cartoon and Animations"
-           
-        },
-        {
-            "id":26,
-            "name":"Celebrities"
-           
-        },
-        {
-            "id":21,
-            "name":"Sports"
-           
-        }
-     ]
-     
-},
-{
-    "id": 4,
-    "category": "Science",
-    "subcategory":
-    [{
-        "subid":17,
-        "name":"Nature"
-       
-    },
-       
-    {
-        "subid":18,
-        "name":"Computer"
+        "id": 0,
+        "category": "Random"
     },
     {
-        "subid":19,
-        "name":"Mathematics"
-       
+        "id": 1,
+        "category": "Community"
     },
     {
-        "subid":30,
-        "name":"Gadgets"
-       
+        "id": 2,
+        "category": "Entertainment",
+        "subcategory": [
+            {
+                "id": 10,
+                "name": "Books"
+            },
+            {
+                "id": 11,
+                "name": "Film"
+            },
+            {
+                "id": 12,
+                "name": "Music"
+            },
+            {
+                "id": 13,
+                "name": "Muscilas & Theatre"
+            },
+            {
+                "id": 14,
+                "name": "Television"
+            },
+            {
+                "id": 15,
+                "name": "Video Games"
+            },
+            {
+                "id": 16,
+                "name": "Board Games"
+            },
+            {
+                "id": 29,
+                "name": "Comics"
+            },
+            {
+                "id": 31,
+                "name": "Anime and Manga"
+            },
+            {
+                "id": 32,
+                "name": "Cartoon and Animations"
+            },
+            {
+                "id": 26,
+                "name": "Celebrities"
+            },
+            {
+                "id": 21,
+                "name": "Sports"
+            }
+        ]
     },
     {
-        "subid":27,
-        "name":"Animals"
-       
+        "id": 3,
+        "category": "Science",
+        "subcategory": [
+            {
+                "id": 17,
+                "name": "Nature"
+            },
+            {
+                "id": 18,
+                "name": "Computer"
+            },
+            {
+                "id": 19,
+                "name": "Mathematics"
+            },
+            {
+                "id": 30,
+                "name": "Gadgets"
+            },
+            {
+                "id": 27,
+                "name": "Animals"
+            },
+            {
+                "id": 28,
+                "name": "Vehicles"
+            }
+        ]
     },
     {
-        "subid":28,
-        "name":"Vehicles"
-       
+        "id": 4,
+        "category": "Other",
+        "subcategory": [
+            {
+                "id": 9,
+                "name": "General Knowledge"
+            },
+            {
+                "id": 20,
+                "name": "Mythology"
+            },
+            {
+                "id": 22,
+                "name": "Geography"
+            },
+            {
+                "id": 23,
+                "name": "History"
+            },
+            {
+                "id": 24,
+                "name": "Politics"
+            },
+            {
+                "id": 25,
+                "name": "Art"
+            }
+        ]
     }
-
 ]
-    
-},
-{
-    "id": 5,
-    "category": "Other",
-    "subcategory":
-    [
-    {
-        "subid":9,
-        "name":"General Knowledge"
-       
-    },
-    {
-        "subid":20,
-        "name":"Mythology"
-       
-    },
-    {
-        "subid":22,
-        "name":"Geography"
-       
-    },
-    {
-        "subid":23,
-        "name":"History"
-       
-    },
-    {
-        "subid":24,
-        "name":"Politics"
-       
-    },
-    {
-        "subid":25,
-        "name":"Art"
-       
-    }
-       
-    ]
-
-    
-}
-]
-
