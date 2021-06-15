@@ -9,7 +9,7 @@ console.log(Data[categoryIndex])
     return (
        
         <div>
-            <section className=" text-gray-200 bg-gray-900 text-center">
+            <section className="text-gray-200 darkblueBackground text-center">
                 <div className="max-w-6xl mx-auto px-5 py-12 ">
                 <p className="lg:w-1/2 w-full font-bold text-lg leading-relaxed text-base m-auto mb-8">{Data[categoryIndex].category}</p>
                   <div className="posts">

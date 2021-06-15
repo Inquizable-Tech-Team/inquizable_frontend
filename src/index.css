@@ -10,6 +10,11 @@
     @apply rounded-lg;
 }
 
+.darkblueBackground {
+    background-color: #10172f;
+}
+
+
 .categorySelectionButton:hover {
     box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.8);
     cursor: pointer;
