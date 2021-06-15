@@ -9,7 +9,7 @@ import { Contact } from "./components/Contact";
 import { Submit } from "./components/Submit";
 import { Leaderboard } from "./components/Leaderboard";
 import { About } from "./components/About";
-
+import Footer from "./components/Footer";
 function Routing() {
   return (
     <div>
@@ -46,6 +46,9 @@ function Routing() {
         </Route>
         <Route exact path="/about">
           <About />
+        </Route>
+        <Route exact path="/footer">
+          <Footer />
         </Route>
       </Switch>
     </div>
