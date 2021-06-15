@@ -9,8 +9,10 @@ import {Contact} from './components/Contact'
 import {Submit} from './components/Submit'
 import {Leaderboard} from './components/Leaderboard'
 import {About} from './components/About'
+import {useState} from 'react'
 
 function Routing() {
+  const [jwt, setJwt] = useState(false)
   return (
     <div>
       <h1 className='animate-bounce'>Hello World</h1>
@@ -22,7 +24,7 @@ function Routing() {
           <Home />
         </Route>
         <Route exact path="/login">
-          <Login />
+          <Login jwt={jwt} setJwt={setJwt}/>
         </Route>
         <Route exact path="/admin">
           <Admin />

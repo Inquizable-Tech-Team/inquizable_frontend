@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import Logo from './img/logo.png'
 import BrainIMG from './img/brain.jpg'
 import jwt_decode from 'jwt-decode'
-import {loginFunction, registerFunction} from './Controller'
+import {loginFunction, registrationFunction} from './Controller'
 
 const queryString = require('query-string');
 const customStyles = {
@@ -18,11 +19,12 @@ const customStyles = {
 
 
 
-export const Login = () => {
+export const Login = ({jwt, setJwt}) => {
 const [email, setEmail] = useState('')
 const [name, setName] = useState('')
 const [password, setPassword] = useState('')
 
+let history = useHistory();
 
 const signIn = (e) => {
   e.preventDefault()
@@ -30,7 +32,32 @@ const signIn = (e) => {
     email: email,
     pw: password
   })
-  loginFunction(user)
+  loginFunction(user).then(res => {
+    if (res === 'Email does not exists') alert('Email does not exist')
+    else if (res) {
+      setJwt(res)
+      history.push('./categories')
+    }
+    else alert('Oops, something went wrong...')
+  })
+}
+
+const register = (e) => {
+  e.preventDefault()
+  const newUser = queryString.stringify({
+    nickname: name,
+    email: email,
+    pw: password,
+    points: 10
+  })
+  registrationFunction(newUser).then(res => {
+    if (res === 'Email already exists') alert('Email already exists')
+    else if (res) {
+      alert('User created, please login now')
+      document.getElementById("registerForm").reset()
+    }
+    else alert('Oops, something went wrong...')
+  })
 }
   
     return (
@@ -45,7 +72,7 @@ const signIn = (e) => {
         </div>
         <div className="mt-8">
           <div className="mt-6">
-            <form className="space-y-6" autocomplete="off">
+            <form className="space-y-6" autocomplete="off" onSubmit={register} id='registerForm'>
             <div>
             <label for="name" className="block text-sm font-medium text-gray-700">
               Name
@@ -77,7 +104,7 @@ const signIn = (e) => {
               </form>
               <form className="space-y-6" autocomplete="off" onSubmit={signIn}>
               <div>
-                <label for="email" className="block text-sm font-medium text-gray-700">
+                <label for="email" className="block text-sm font-medium text-gray-700 mt-4">
                   Email address
                 </label>
                 <div className="mt-1">
