@@ -11,7 +11,7 @@ export const Categories = () => {
                 <div className="max-w-6xl mx-auto px-5 py-12 ">
                     <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
                         <h3 className="title-font mb-2 text-4xl leading-10 tracking-tight text-left sm:text-5xl sm:leading-none md:text-6xl"> Hello "Nickname"</h3>
-                        <p className="lg:w-1/2 w-full leading-relaxed text-base"> Choose Category </p>
+                        <p className="lg:w-1/2 w-full leading-relaxed text-base">Choose Category</p>
                     </div>
                     <div className="posts">
                         <div className="flex flex-wrap -m-5 text-center">
