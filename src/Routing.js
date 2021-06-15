@@ -10,6 +10,7 @@ import {Contact} from './components/Contact'
 import {Submit} from './components/Submit'
 import {Leaderboard} from './components/Leaderboard'
 import {About} from './components/About'
+import {Questions} from './components/QuizPart/Questions'
 
 function Routing() {
   return (
@@ -49,6 +50,9 @@ function Routing() {
         </Route>
         <Route exact path="/about">
           <About />
+        </Route>
+        <Route exact path="/questions">
+          <Questions />
         </Route>
       </Switch>
     </div>

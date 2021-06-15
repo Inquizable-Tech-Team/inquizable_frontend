@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const QuizFinished = () => {
+export const QuestionsFinished = () => {
     return (
         <div>
             Quiz

@@ -26,3 +26,12 @@
 .red:hover {
     border-color: #fff;
 }
+.startSelect {
+    background-color: #10172f;
+    border: 2px solid #fff;
+}
+.InpName {
+    background-color: #10172f;
+    border: 2px solid #fff;
+
+}
