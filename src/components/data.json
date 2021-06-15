@@ -1,0 +1,159 @@
+[
+    {
+    "id": 1,
+    "category": "Random"
+    
+},
+{
+    "id": 2,
+    "category": "Communicty"
+    
+},
+{
+    "id" : 3,  
+    "category": "Entertainment" ,
+    "subcategory":
+     [
+         {
+             "id":10,
+             "name":"Books"
+            
+         },
+         {
+            "id":11,
+            "name":"Film"
+           
+        },
+        {
+            "id":12,
+            "name":"Music"
+           
+        },
+        {
+            "id":13,
+            "name":"Muscilas & Theatre"
+           
+        },
+        {
+            "id":14,
+            "name":"Television"
+           
+        },
+        {
+            "id":15,
+            "name":"Video Games"
+           
+        },
+        {
+            "id":16,
+            "name":"Board Games"
+           
+        },
+        {
+            "id":29,
+            "name":"Comics"
+           
+        },
+        {
+            "id":31,
+            "name":"Anime and Manga"
+           
+        },
+        {
+            "id":32,
+            "name":"Cartoon and Animations"
+           
+        },
+        {
+            "id":26,
+            "name":"Celebrities"
+           
+        },
+        {
+            "id":21,
+            "name":"Sports"
+           
+        }
+     ]
+     
+},
+{
+    "id": 4,
+    "category": "Science",
+    "subcategory":
+    [{
+        "subid":17,
+        "name":"Nature"
+       
+    },
+       
+    {
+        "subid":18,
+        "name":"Computer"
+    },
+    {
+        "subid":19,
+        "name":"Mathematics"
+       
+    },
+    {
+        "subid":30,
+        "name":"Gadgets"
+       
+    },
+    {
+        "subid":27,
+        "name":"Animals"
+       
+    },
+    {
+        "subid":28,
+        "name":"Vehicles"
+       
+    }
+
+]
+    
+},
+{
+    "id": 5,
+    "category": "Other",
+    "subcategory":
+    [
+    {
+        "subid":9,
+        "name":"General Knowledge"
+       
+    },
+    {
+        "subid":20,
+        "name":"Mythology"
+       
+    },
+    {
+        "subid":22,
+        "name":"Geography"
+       
+    },
+    {
+        "subid":23,
+        "name":"History"
+       
+    },
+    {
+        "subid":24,
+        "name":"Politics"
+       
+    },
+    {
+        "subid":25,
+        "name":"Art"
+       
+    }
+       
+    ]
+
+    
+}
+]
+
