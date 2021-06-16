@@ -11,6 +11,7 @@ import {Submit} from './components/Submit'
 import {Leaderboard} from './components/Leaderboard'
 import {About} from './components/About'
 import {Questions} from './components/QuizPart/Questions'
+import {Overview } from './components/QuizPart/Overview'
 
 function Routing() {
   return (
@@ -54,6 +55,9 @@ function Routing() {
         <Route exact path="/questions">
           <Questions />
         </Route>
+        <Route exact path="/overview">
+          <Overview />
+        </Route>        
       </Switch>
     </div>
     

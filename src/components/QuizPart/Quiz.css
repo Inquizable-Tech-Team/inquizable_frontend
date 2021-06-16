@@ -7,6 +7,7 @@
 }
 .btnBack{
     width: 20vw;
+    border-radius: 25px;
 }
 .btnBack:hover {
     background-color: #fff;
@@ -16,11 +17,13 @@
     background-color: #8dc561;
     border-color: #8dc561;
     width: 20vw;
+    border-radius: 25px;
 }
 .red {
     background-color: #e94949;
     border-color: #e94949;
     width: 20vw;
+    border-radius: 25px;
 }
 .green:hover,
 .red:hover {

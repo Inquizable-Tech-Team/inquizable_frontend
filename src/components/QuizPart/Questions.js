@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import './Questions.css';
 
 export const Questions = () => {
   const [questions, setQuestions] = useState();
@@ -19,9 +20,6 @@ export const Questions = () => {
       .catch((error) => console.log(error));
   };
 
-  console.log(typeof questions);
-  console.log(questions);
-  console.log(Array.isArray(questions));
 
   return (
     <div>
@@ -29,24 +27,24 @@ export const Questions = () => {
         <h1 className="xs:text-center sm:text-center md:text-center mt-12">
           Hello User
         </h1>
-        <p className="xs:text-center sm:text-center md:text-center">
+        <p className="xs:text-center sm:text-center md:text-center ">
           The Quiz started
         </p>
       </div>
       {/*{questions.map(question => console.log(question))}*/}
       {questions
-        ? questions.map((question) => ( 
+        ? questions.map((question, index) => ( 
             <div>
-        <div className="quest xs:text-center sm:text-center md:text-center mt-12 w-100">
-        <p>
+        <div className="quest xs:text-center sm:text-center md:text-center mt-12 w-100 border-bottom">
+        <h2 key={index}>
          {question.question}
-        </p>
+        </h2>
       </div>
-      <div className="ans xs:text-center sm:text-center md:text-center">
-        <button>{question.correct_answer}</button>
-        <button>{question.incorrect_answers[0]}</button>
-        <button>{question.incorrect_answers[1]}</button>
-        <button>{question.incorrect_answers[2]}</button>
+      <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 sm:block md:flex ">
+        <button className="Questions-Box md:mr-4" key={index}>{question.correct_answer}</button>
+        <button className="Questions-Box md:mr-4" key={index}>{question.incorrect_answers[0]}</button>
+        <button className="Questions-Box md:mr-4" key={index}>{question.incorrect_answers[1]}</button>
+        <button className="Questions-Box" key={index}>{question.incorrect_answers[2]}</button>
       </div>
      </div>
           ))

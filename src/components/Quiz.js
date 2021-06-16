@@ -6,24 +6,22 @@ import Axios from "axios";
 
 
 export const Quiz = () => {
- /* const [questions, setQuestions] = useState();
+  const [questions, setQuestions] = useState();
   const [score, setScore] = useState(0);
 
-
-  useEffect(()=> {
+  useEffect(() => {
     fetchQuestions();
-  }, []) 
+  }, []);
 
   const fetchQuestions = async (category = "", difficulty = "") => {
     await Axios.get(
-      `https://opentdb.com/api.php?amount=10${
+      `https://opentdb.com/api.php?amount=1${
         category && `&category=${category}`
       }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
     )
-      .then((response) => setQuestions(response.data))
+      .then((response) => setQuestions(response.data.results))
       .catch((error) => console.log(error));
-  };
-
+    };
   /*const [timer, setTimer] = useState(5);
 
   const id =useRef(null);
