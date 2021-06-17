@@ -89,3 +89,59 @@ h1 {
   line-height: 30px;
   font-weight: lighter;
 }
+
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .Main {
+    height: 100%;
+    display: block;
+  }
+  .LeftInsideBigTitle h1 {
+    font-size: 15px !important;
+    line-height: 20px;
+  }
+  .LeftInsideParagraph p {
+    font-size: 14px;
+  }
+  .Left,
+  .Right {
+    height: 100%;
+    width: 100%;
+  }
+  .Right {
+    display: none;
+  }
+  .SplitLeft p,
+  .SplitRight p {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .Main {
+    height: 100%;
+    display: block;
+  }
+  .LeftInsideBigTitle h1 {
+    font-size: 40px !important;
+    line-height: 40px;
+  }
+  .LeftInsideParagraph p {
+    font-size: 25px;
+  }
+  .Left,
+  .Right {
+    height: 100%;
+    width: 100%;
+  }
+  .Right {
+    display: none;
+  }
+  .SplitLeft p,
+  .SplitRight p {
+    font-size: 20px;
+  }
+}
