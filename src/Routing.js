@@ -5,10 +5,10 @@ import { Admin } from "./components/Admin";
 import { Account } from "./components/Account";
 import { Categories } from "./components/Categories";
 import { Quiz } from "./components/Quiz";
-import { Contact } from "./components/Contact";
+import Contact from "./components/Contact";
 import { Submit } from "./components/Submit";
 import { Leaderboard } from "./components/Leaderboard";
-import { About } from "./components/About";
+import About from "./components/About";
 import Footer from "./components/Footer";
 function Routing() {
   return (

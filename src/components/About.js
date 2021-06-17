@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./About.module.css";
-export const About = () => {
+const About = () => {
   return (
     <>
       <div className={classes.Main}>
@@ -67,3 +67,4 @@ export const About = () => {
     </>
   );
 };
+export default About;
