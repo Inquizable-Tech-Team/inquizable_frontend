@@ -6,12 +6,16 @@ import arrayShuffle from "array-shuffle";
 export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   const [answerShowing, setAnswerShowing] = useState(false)
 
-  const answers = question.incorrect_answers
-  if (answers.length < 4) answers.unshift(question.correct_answer)
-  const shuffledAnswers = arrayShuffle(answers)
+
+
+    const answers = question.incorrect_answers
+    if (answers.length < 4) answers.unshift(question.correct_answer)
+    const shuffledAnswers = arrayShuffle(answers)
+
+
   console.log(shuffledAnswers)
   const handleAnswer = (e) => {
-    if (e.target.innerHTML == question.correct_answer) alert('Correct!')
+    if (e.target.innerHTML === question.correct_answer) alert('Correct!')
     else alert('Wrong!')
     setAnswerShowing(true)
   }
@@ -23,7 +27,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
 
   return (
     <div>
-      {question
+      {question 
         ?
         <div>
           <div>
