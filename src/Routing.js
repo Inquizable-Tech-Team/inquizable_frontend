@@ -1,5 +1,4 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
-import React from 'react'
 import {Home} from './components/Home'
 import {Login} from './components/Login'
 import {Admin} from './components/Admin'
@@ -11,7 +10,7 @@ import {Submit} from './components/Submit'
 import {Leaderboard} from './components/Leaderboard'
 import {About} from './components/About'
 import {Questions} from './components/QuizPart/Questions'
-import {Overview } from './components/QuizPart/Overview'
+import {Overview} from './components/QuizPart/Overview'
 
 function Routing() {
   return (
@@ -37,7 +36,7 @@ function Routing() {
         <Route exact path="/categories">
           <Categories />
         </Route>
-        <Route exact path="/quiz/:id?">
+        <Route exact path="/quiz/:qId">
           <Quiz />
         </Route>
         <Route exact path="/contact">

@@ -1,27 +1,67 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./QuizPart/Quiz.css";
-import Questions from "./QuizPart/Questions";
+import Data from './data.json'
+import { QuizStart } from './QuizPart/QuizStart';
+import { Questions } from "./QuizPart/Questions";
+import { Overview } from "./QuizPart/Overview";
 import Axios from "axios";
 
 
-export const Quiz = () => {
-  const [questions, setQuestions] = useState();
-  const [score, setScore] = useState(0);
+/* function findById(o, id) {
+  let result, p; 
+  for (p in o) {
+      if( o.hasOwnProperty(p) && typeof o[p] === 'object' ) {
+          result = findById(o[p], id);
+          if(result){
+              return result;
+          }
+      }
+  }
+  return result;
+} */
 
+
+
+export const Quiz = () => {
+  const { qId } = useParams();
+  const [questions, setQuestions] = useState();
+  const [questionIndex, setQuestionIndex] = useState(false)
+  const [score, setScore] = useState(0);
+  const [categoryName, setCategoryName] = useState(false)
+
+  const filterId = (qId) => {
+    let result
+    Data.forEach(element => {
+      if (element.subcategory) {
+        result = (element.subcategory.find(({ id }) => id === Number(qId)))
+        if (result && (result.name != categoryName)) setCategoryName(result.name)
+      }
+    });
+  }
+  if (qId === 'community' && categoryName!=='Community') setCategoryName('Community')
+  else if (qId === '0' && categoryName!=='Random') setCategoryName('Random')
+  else filterId(qId)
+  
   useEffect(() => {
     fetchQuestions();
   }, []);
 
-  const fetchQuestions = async (category = "", difficulty = "") => {
-    await Axios.get(
-      `https://opentdb.com/api.php?amount=1${
-        category && `&category=${category}`
-      }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
-    )
+  const fetchQuestions = async () => {
+    await Axios.get(`https://opentdb.com/api.php?amount=10&category=${qId}&type=multiple`)
       .then((response) => setQuestions(response.data.results))
       .catch((error) => console.log(error));
-    };
+  };
+
+
+  return (
+    <div>
+      {questionIndex===10 ? <Overview />
+      : questionIndex || questionIndex===0 ? <Questions question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
+      <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
+    </div>
+  );
+};
   /*const [timer, setTimer] = useState(5);
 
   const id =useRef(null);
@@ -48,51 +88,3 @@ useEffect(()=>{
 },[timer])
 
 */
-
-  return (
-    <div>
-      <div className="sm:text-center md:text-center mt-4 text-sx text-sm text-base text-lg text-xl text-center sm:text-center">
-        Selected Category:
-      </div>
-      <div className="selCat xs:text-center sm:text-center md:text-center mx-auto mt-3 pt-6 border-rounded md:w-1/2 sm:w-full xs:w-full">
-      <h1>Selected Cat</h1>
-      </div>
-      <div className="xs:text-center sm:text-center md:text-center mx-auto mt-4">
-        <input className="InpName pl-2" type="text" placeholder="Enter your Name"></input>
-      </div>
-
-
-      {/* Selection of difficulties starts here*
-      <div className="selectDiff xs:text-center sm:textcenter md:text-center mt-10">
-        <p>Select Difficulty:</p>
-        <select className="startSelect mt-2" onChange={(e) => setDiff(e.target.value)} value={diff}>
-        <option>Choose difficulty</option>
-          <option key="easy" value="easy">Easy</option>
-          <option key="medium" value="medium">Medium</option>
-          <option key="hard" value="hard">Hard</option>
-        </select>
-      </div>
-      */}
-
-      <div className="sm:block md:flex justify-center mt-4">
-        <div className="flex-row  mr-6">
-          <button className="border-2 xs:ml-6 xs:mt-4 xs:text-center btnBack w-40">
-            Go Back
-          </button>
-        </div>
-        <div className="flex-row ">
-          <Link
-          to='./questions'
-            className="block ml-6 border-2 xs:mt-4 xs:text-center red w-80"
-          >
-            Start Game
-          </Link>
-          <button className="ml-6 mt-4 border-2 xs:text-center green w-80">
-            Invite Friends
-          </button>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  );
-};
