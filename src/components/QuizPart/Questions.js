@@ -1,26 +1,27 @@
 import React/* , { useState, useEffect } */ from "react";
 import './Questions.css';
-/* import {decode} from 'html-entities'; */
+import {decode} from 'html-entities';
+import arrayShuffle from "array-shuffle";
 
 export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   
   let answers = question.incorrect_answers
   answers.unshift(question.correct_answer)
-  /* console.log(answers) */
-
+  let shuffledAnswers = arrayShuffle(answers)
+  console.log(answers)
+  console.log(shuffledAnswers)
+  
   const handleAnswer = () => {
     setQuestionIndex(() => questionIndex + 1)
   }
 
-  const randomNoRepeats = (array) => {
+/*   const randomNoRepeats = (array) => {
     let copy = array.slice(0)
     return () => {
-      if (copy.length < 1) { copy = array.slice(0); }
-      
       let index = Math.floor(Math.random() * copy.length);
       let item = copy[index];
       copy.splice(index, 1);
-      return item;
+      return item;  
     };
   }
 
@@ -29,7 +30,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   answerArray.push(chooser())
   answerArray.push(chooser())
   answerArray.push(chooser())
-  answerArray.push(chooser())
+  answerArray.push(chooser()) */
 /*   let answer1 = chooser()
   console.log(answer1)
   let answer2 = chooser()
@@ -38,16 +39,18 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   console.log(answer3)
   let answer4 = chooser()
   console.log(answer4) */
-  console.log(answerArray)
-  return(
-    <div>
+  /* console.log(answerArray) */
+
+
+/*   return(
+    <div>{console.log(answerArray)}
     {answerArray.length===4 && <h1>{answerArray[0]} | {answerArray[1]} | {answerArray[2]} | {answerArray[3]}</h1>}
 
     </div>
   )
-
+ */
   return (
-    <div>
+    <div>{/* {console.log(answerArray)} */}
       {question
         ?
         <div>
@@ -66,10 +69,10 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
               </h2>
             </div>
             <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 sm:block md:flex ">
-{/*               <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer1}</button>
-              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer2}</button>
-              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer3}</button>
-              <button onClick={handleAnswer} className="Questions-Box">{answer4}</button> */}
+              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{shuffledAnswers[0]}</button>
+              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{shuffledAnswers[1]}</button>
+              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{shuffledAnswers[2]}</button>
+              <button onClick={handleAnswer} className="Questions-Box">{shuffledAnswers[3]}</button>
             </div>
           </div>
         </div>
