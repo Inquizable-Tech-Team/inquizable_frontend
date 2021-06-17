@@ -3,9 +3,10 @@ import './Questions.css';
 /* import {decode} from 'html-entities'; */
 
 export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
+  
   let answers = question.incorrect_answers
   answers.unshift(question.correct_answer)
-  console.log(answers)
+  /* console.log(answers) */
 
   const handleAnswer = () => {
     setQuestionIndex(() => questionIndex + 1)
@@ -15,7 +16,8 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
     let copy = array.slice(0)
     return () => {
       if (copy.length < 1) { copy = array.slice(0); }
-      let index =  Math.floor(Math.random() * copy.length);
+      
+      let index = Math.floor(Math.random() * copy.length);
       let item = copy[index];
       copy.splice(index, 1);
       return item;
@@ -23,10 +25,27 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   }
 
   const chooser = randomNoRepeats(answers)
-  let answer1 = chooser()
+  let answerArray = []
+  answerArray.push(chooser())
+  answerArray.push(chooser())
+  answerArray.push(chooser())
+  answerArray.push(chooser())
+/*   let answer1 = chooser()
+  console.log(answer1)
   let answer2 = chooser()
+  console.log(answer2)
   let answer3 = chooser()
+  console.log(answer3)
   let answer4 = chooser()
+  console.log(answer4) */
+  console.log(answerArray)
+  return(
+    <div>
+    {answerArray.length===4 && <h1>{answerArray[0]} | {answerArray[1]} | {answerArray[2]} | {answerArray[3]}</h1>}
+
+    </div>
+  )
+
   return (
     <div>
       {question
@@ -47,14 +66,12 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
               </h2>
             </div>
             <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 sm:block md:flex ">
-              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer1}</button>
+{/*               <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer1}</button>
               <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer2}</button>
               <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer3}</button>
-              <button onClick={handleAnswer} className="Questions-Box">{answer4}</button>
+              <button onClick={handleAnswer} className="Questions-Box">{answer4}</button> */}
             </div>
           </div>
-
-
         </div>
         : "Loading..."}
     </div>
