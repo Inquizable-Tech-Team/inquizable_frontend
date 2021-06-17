@@ -1,0 +1,11 @@
+.select-answer{
+    width: 80%;
+}
+
+.Questions-Box {
+    position:relative;
+    border: 2px solid #fff !important;
+    width:20%;
+    height: 25vh;
+    border-radius: 25px;
+}
