@@ -7,9 +7,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
 
   let answers = question.incorrect_answers
   if (answers.length < 4) answers.unshift(question.correct_answer)
-
   let shuffledAnswers = arrayShuffle(answers)
-  console.log(shuffledAnswers)
 
   const handleAnswer = () => {
     setQuestionIndex(() => questionIndex + 1)
