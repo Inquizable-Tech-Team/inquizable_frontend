@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import React/* , { useState, useEffect } */ from "react";
 import './Questions.css';
-import {encode} from 'html-entities';
+/* import {decode} from 'html-entities'; */
 
 export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   let answers = question.incorrect_answers
   answers.unshift(question.correct_answer)
-  /* console.log(answers) */
+  console.log(answers)
 
   const handleAnswer = () => {
     setQuestionIndex(() => questionIndex + 1)
@@ -16,7 +15,6 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
     let copy = array.slice(0)
     return () => {
       if (copy.length < 1) { copy = array.slice(0); }
-      console.log(copy.length)
       let index =  Math.floor(Math.random() * copy.length);
       let item = copy[index];
       copy.splice(index, 1);
@@ -25,9 +23,12 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
   }
 
   const chooser = randomNoRepeats(answers)
-
+  let answer1 = chooser()
+  let answer2 = chooser()
+  let answer3 = chooser()
+  let answer4 = chooser()
   return (
-    <>
+    <div>
       {question
         ?
         <div>
@@ -46,16 +47,16 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
               </h2>
             </div>
             <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 sm:block md:flex ">
-              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{chooser()}</button>
-              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{chooser()}</button>
-              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{chooser()}</button>
-              <button onClick={handleAnswer} className="Questions-Box">{chooser()}</button>
+              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer1}</button>
+              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer2}</button>
+              <button onClick={handleAnswer} className="Questions-Box md:mr-4">{answer3}</button>
+              <button onClick={handleAnswer} className="Questions-Box">{answer4}</button>
             </div>
           </div>
 
 
         </div>
         : "Loading..."}
-    </>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./QuizPart/Quiz.css";
 import Data from './data.json'
 import { QuizStart } from './QuizPart/QuizStart';
@@ -27,7 +27,7 @@ export const Quiz = () => {
   const { qId } = useParams();
   const [questions, setQuestions] = useState();
   const [questionIndex, setQuestionIndex] = useState(false)
-  const [score, setScore] = useState(0);
+  /* const [score, setScore] = useState(0); */
   const [categoryName, setCategoryName] = useState(false)
 
   const filterId = (qId) => {
@@ -35,7 +35,7 @@ export const Quiz = () => {
     Data.forEach(element => {
       if (element.subcategory) {
         result = (element.subcategory.find(({ id }) => id === Number(qId)))
-        if (result && (result.name != categoryName)) setCategoryName(result.name)
+        if (result && (result.name !== categoryName)) setCategoryName(result.name)
       }
     });
   }

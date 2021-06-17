@@ -16,7 +16,7 @@ console.log(Data[categoryIndex])
                     <div className="flex flex-wrap -m-5">
                     {Data[categoryIndex].subcategory.map((sub) =>{
                         return( 
-                        <>        
+                               
                         <div className="xl:w-1/5 md:w-1/5 p-5" key={sub.id}>
                             <Link to={`/quiz/${sub.id}`}>
                             <div className="categorySelectionButton">                      
@@ -24,7 +24,7 @@ console.log(Data[categoryIndex])
                             </div> 
                             </Link>
                         </div>                                               
-                       </>
+                    
                ) })} </div></div>
                 </div>
             </section>          

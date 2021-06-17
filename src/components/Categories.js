@@ -17,7 +17,7 @@ export const Categories = () => {
                         <div className="flex flex-wrap -m-5 text-center">
                             {Data.map(post => {
                                 return (
-                                    <>
+                                    <div>
                                         {post.category === 'Random' ?
                                             <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
                                                 <Link to='/quiz/0'>
@@ -42,7 +42,7 @@ export const Categories = () => {
                                                     <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
                                                 </div>
                                             </div>}
-                                    </>
+                                    </div>
                                 )
                             })} </div></div></div>
             </section>

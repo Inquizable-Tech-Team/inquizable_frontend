@@ -1,3 +1,4 @@
+import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import {Home} from './components/Home'
 import {Login} from './components/Login'
@@ -11,6 +12,7 @@ import {Leaderboard} from './components/Leaderboard'
 import {About} from './components/About'
 import {Questions} from './components/QuizPart/Questions'
 import {Overview} from './components/QuizPart/Overview'
+
 
 function Routing() {
   return (
