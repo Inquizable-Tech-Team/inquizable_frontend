@@ -9,3 +9,9 @@
     height: 25vh;
     border-radius: 25px;
 }
+
+.nextQ {
+    margin-top: 2rem;
+    margin-left: 50%;
+    transform: translate(-50%, 0px)
+}

@@ -48,7 +48,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
               <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: shuffledAnswers[2] }}></button>
               <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: shuffledAnswers[3] }}></button>
             </div>
-            {answerShowing && <button onClick={nextQuestion} className="Questions-Box">Next Question</button>}
+            {answerShowing && <button onClick={nextQuestion} className="Questions-Box nextQ">Next Question</button>}
           </div>
         </div>
         : "Loading..."}
