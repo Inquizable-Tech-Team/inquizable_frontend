@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './Questions.css';
-/* import {decode} from 'html-entities'; */
 import arrayShuffle from "array-shuffle";
 
 export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
@@ -15,7 +14,9 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
 
   console.log(shuffledAnswers)
   const handleAnswer = (e) => {
-    if (e.target.innerHTML === question.correct_answer) alert('Correct!')
+    if (e.target.innerHTML === question.correct_answer) {
+      alert('Correct!')
+    }
     else alert('Wrong!')
     setAnswerShowing(true)
   }

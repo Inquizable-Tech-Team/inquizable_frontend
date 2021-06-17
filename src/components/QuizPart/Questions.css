@@ -15,3 +15,17 @@
     margin-left: 50%;
     transform: translate(-50%, 0px)
 }
+
+.Questions-Box:hover {
+    box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+.nextQ:hover {
+    box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+.Questions-Box:disabled {
+    box-shadow: none;
+    cursor: auto;
+    background-color: #e94949;
+}
