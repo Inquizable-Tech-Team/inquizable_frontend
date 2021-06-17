@@ -30,21 +30,19 @@ export const Questions = ({ question, questionIndex, setQuestionIndex }) => {
             <h1 className="xs:text-center sm:text-center md:text-center mt-12">
               Hello User
             </h1>
-            <p className="xs:text-center sm:text-center md:text-center ">
+            <p className="xs:text-center sm:text-center md:text-center">
               {question.category}
             </p>
           </div>
           <div>
             <div className="quest xs:text-center sm:text-center md:text-center mt-12 w-100 border-bottom">
-              <h2>
-                {question.question}
-              </h2>
+              <h2 dangerouslySetInnerHTML={{ __html: question.question }}></h2>
             </div>
             <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 sm:block md:flex ">
-              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4">{shuffledAnswers[0]}</button>
-              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4">{shuffledAnswers[1]}</button>
-              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4">{shuffledAnswers[2]}</button>
-              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4">{shuffledAnswers[3]}</button>
+              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: shuffledAnswers[0] }}></button>
+              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: shuffledAnswers[1] }}></button>
+              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: shuffledAnswers[2] }}></button>
+              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: shuffledAnswers[3] }}></button>
             </div>
             {answerShowing && <button onClick={nextQuestion} className="Questions-Box">Next Question</button>}
           </div>
