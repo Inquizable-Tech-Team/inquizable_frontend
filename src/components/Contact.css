@@ -1,0 +1,152 @@
+.contactMain {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+.contactContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contactLeft,
+.contactRight {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactLeft {
+  background-color: #f9fafb;
+}
+.contactRight {
+  text-align: center;
+}
+.contactTitle h1 {
+  color: #242424;
+  font-size: 30px;
+  font-weight: bold;
+}
+.contactParagraph p {
+  color: #a9acb5;
+  font-weight: 400;
+  padding: 10px 0px;
+}
+.contactAddress address {
+  color: #a9acb5;
+  font-weight: 400;
+}
+.contactIcons {
+  margin: 20px 0px;
+}
+.contactIcons div {
+  display: flex;
+  height: 4vh;
+  align-items: center;
+}
+.contactIcons i {
+  margin-right: 10px;
+}
+.contactIcons i {
+  color: #242424;
+}
+
+.contactIcons p {
+  color: #a9acb5;
+}
+
+.contactRight input,
+textarea {
+  border: 1px solid #ebecef;
+  display: block;
+  width: 550px;
+  padding: 15px 20px;
+  margin: 17px 0px;
+  border-radius: 5px;
+}
+.contactTextarea {
+  padding: 15px 0px;
+  padding-left: 20px;
+}
+.contactBtn {
+  display: block;
+  border: 1px solid black;
+  text-align: left;
+  margin-top: 15px !important;
+  padding: 10px 20px !important;
+  background-color: #5850eb !important;
+  border: 1px solid #5850eb;
+  color: white;
+  border-radius: 5px;
+}
+
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+  .contactMain {
+    display: block;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+  .contactLeft,
+  .contactRight {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 50px 0px;
+  }
+  .contactRight {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .contactIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+    width: 100% !important;
+  }
+  .contactIcons div {
+    display: flex;
+    height: 4vh;
+    align-items: center;
+  }
+  .contactIcons i {
+    margin-right: 10px;
+  }
+  .contactIcons i {
+    color: #242424;
+  }
+
+  .contactIcons p {
+    color: #a9acb5;
+  }
+
+  .contactRight input,
+  textarea {
+    width: 100%;
+  }
+
+  .contactBtn {
+    padding: 5px 15px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .contactTitle h1 {
+    font-size: 39px;
+  }
+  .contactParagraph p {
+    font-size: 20px;
+  }
+  .contactAddress address {
+    font-size: 20px;
+  }
+}

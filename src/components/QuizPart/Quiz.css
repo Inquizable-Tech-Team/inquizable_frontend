@@ -1,0 +1,40 @@
+.selCat {
+    position: relative;
+    display:block;
+    width: 20%;
+    height: 15vh;
+    border: 2px solid #fff;
+}
+.btnBack{
+    width: 20vw;
+    border-radius: 25px;
+}
+.btnBack:hover {
+    background-color: #fff;
+    color: #000;
+}
+.green {
+    background-color: #8dc561;
+    border-color: #8dc561;
+    width: 20vw;
+    border-radius: 25px;
+}
+.red {
+    background-color: #e94949;
+    border-color: #e94949;
+    width: 20vw;
+    border-radius: 25px;
+}
+.green:hover,
+.red:hover {
+    border-color: #fff;
+}
+.startSelect {
+    background-color: #10172f;
+    border: 2px solid #fff;
+}
+.InpName {
+    background-color: #10172f;
+    border: 2px solid #fff;
+
+}

@@ -1,9 +1,53 @@
-import React from 'react'
+import React, {Fragment, useState} from 'react'
+import Data from './data.json'
+import SubCategories from './subcategory'
+import { Link } from 'react-router-dom'
 
 export const Categories = () => {
+    const [categoryIndex, setCategoryIndex] = useState(false)
     return (
-        <div>
-            Categories
-        </div>
+        <Fragment>
+            <section className="text-gray-200 darkblueBackground">
+                <div className="max-w-6xl mx-auto px-5 py-12 ">
+                    <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+                        <h3 className="title-font mb-2 text-4xl leading-10 tracking-tight text-left sm:text-5xl sm:leading-none md:text-6xl"> Hello "Nickname"</h3>
+                        <p className="lg:w-1/2 w-full leading-relaxed text-base">Choose Category</p>
+                    </div>
+                    <div className="posts">
+                        <div className="flex flex-wrap -m-5 text-center">
+                            {Data.map(post => {
+                                return (
+                                    <Fragment>
+                                        {post.category === 'Random' ?
+                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
+                                                <Link to='/quiz/0'>
+                                                    <div className="categorySelectionButton">
+                                                        <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            : post.category === 'Community' ?
+                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
+                                                <Link to='/quiz/community'>
+                                                    <div className="categorySelectionButton">
+                                                        <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            :
+                                            <div key={post.id} className="xl:w-1/5 md:w-1/5 p-5" onClick={(() => {
+                                                setCategoryIndex(post.id)
+                                            })}>
+                                                <div className="categorySelectionButton">
+                                                    <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
+                                                </div>
+                                            </div>}
+                                    </Fragment>
+                                )
+                            })} </div></div></div>
+            </section>
+            <hr></hr>
+            {categoryIndex && <SubCategories categoryIndex={categoryIndex}/>}
+        </Fragment >
     )
 }

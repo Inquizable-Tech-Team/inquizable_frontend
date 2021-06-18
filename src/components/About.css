@@ -1,0 +1,147 @@
+.aboutMain {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.aboutLeft,
+.aboutRight {
+  height: 100vh;
+  width: 50%;
+}
+.aboutLeft {
+  background-color: #131927;
+}
+.aboutRight {
+  background-image: url("../images/bg.png");
+  background-position: center;
+  background-size: cover;
+}
+h1 {
+  color: white;
+}
+.aboutContainer {
+  width: 90%;
+  margin: 0 auto;
+}
+.aboutLeftInside {
+  height: 100vh;
+}
+.aboutLeftInsideTitle {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.aboutLeftInsideBigTitle {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 40px;
+}
+.aboutLeftInsideParagraph {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aboutLeftInsideSplit {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aboutSplit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.aboutSplitLeft,
+.aboutSplitRight {
+  width: 50%;
+}
+.aboutSplitLeft h1,
+.aboutSplitRight h1 {
+  font-weight: bold;
+  font-size: 25px;
+}
+.aboutSplitLeft p,
+.aboutSplitRight p {
+  width: 80%;
+  color: white;
+  font-weight: 100;
+}
+.aboutSplitLeft span,
+.aboutSplitRight span {
+  font-weight: bold;
+}
+
+.aboutLeftInsideTitle p {
+  color: #aeb4e5;
+}
+.aboutLeftInsideBigTitle h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.aboutLeftInsideParagraph p {
+  color: white;
+  line-height: 30px;
+  font-weight: lighter;
+}
+
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .aboutMain {
+    height: 100%;
+    display: block;
+  }
+  .aboutLeftInsideBigTitle h1 {
+    font-size: 15px !important;
+    line-height: 20px;
+  }
+  .aboutLeftInsideParagraph p {
+    font-size: 14px;
+  }
+  .aboutLeft,
+  .aboutRight {
+    height: 100%;
+    width: 100%;
+  }
+  .aboutRight {
+    display: none;
+  }
+  .aboutSplitLeft p,
+  .aboutSplitRight p {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .aboutMain {
+    height: 100%;
+    display: block;
+  }
+  .aboutLeftInsideBigTitle h1 {
+    font-size: 40px !important;
+    line-height: 40px;
+  }
+  .aboutLeftInsideParagraph p {
+    font-size: 25px;
+  }
+  .aboutLeft,
+  .aboutRight {
+    height: 100%;
+    width: 100%;
+  }
+  .aboutRight {
+    display: none;
+  }
+  .aboutSplitLeft p,
+  .aboutSplitRight p {
+    font-size: 20px;
+  }
+}

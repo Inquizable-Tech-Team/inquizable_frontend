@@ -1,0 +1,36 @@
+.Scoreboard {
+    position:relative;
+    width: 80%;
+    height: 60vh;
+    border: 2px solid #fff;
+    border-radius: 25px;
+}
+.points {
+    position: relative;
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+.awarded {
+    position: relative;
+    width: 20%;
+    border: 2px solid #fff;
+    border-radius: 25px;
+}
+.total {
+    position: relative;
+    width: 20%;
+    border: 2px solid #fff;
+    border-radius: 25px;
+}
+
+.total:hover {
+    background-color: #fff;
+    color: #000;
+}
+.red {
+    background-color: #e94949;
+    border-color: #e94949;
+    width: 20vw;
+    border-radius: 25px;
+}
