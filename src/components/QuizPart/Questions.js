@@ -10,7 +10,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex, points, s
   /* Takes care of states when an answer is clicked */
   const handleAnswer = (e) => {
     checkCorrect()
-    if (he.decode(e.target.innerHTML) === question.correct_answer) {
+    if (he.decode(e.target.innerHTML) === he.decode(question.correct_answer)) {
       if (question.difficulty === 'hard') setPoints((prev) => prev + 20)
       else if (question.difficulty === 'medium') setPoints((prev) => prev + 15)
       else setPoints((prev) => prev + 10)
@@ -27,7 +27,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex, points, s
     setAnswerShowing(false)
     const buttons = document.getElementsByClassName("Questions-Box md:mr-4")
     for (let i = 0; i < buttons.length; i++) {
-      if (he.decode(buttons[i].innerHTML) === question.correct_answer) buttons[i].style.background = ''
+      if (he.decode(buttons[i].innerHTML) === he.decode(question.correct_answer)) buttons[i].style.background = ''
     }
     setAnswerArray([])
     setQuestionIndex(() => questionIndex + 1)
@@ -43,7 +43,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex, points, s
   /* Function to color the correct answer green */
   const checkCorrect = () => {
     const buttons = document.getElementsByClassName("Questions-Box md:mr-4")
-    for (let i = 0; i < buttons.length; i++) if (he.decode(buttons[i].innerHTML) === question.correct_answer) buttons[i].style.background = '#8dc561'
+    for (let i = 0; i < buttons.length; i++) if (he.decode(buttons[i].innerHTML) === he.decode(question.correct_answer)) buttons[i].style.background = '#8dc561'
   }
 
   return (
