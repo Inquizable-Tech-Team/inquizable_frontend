@@ -7,3 +7,22 @@
     position: relative;
     width: 20%;
 }
+.signUp {
+    background-color: #e94949;
+    border: 2px solid #e94949 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+}
+.Start-Btn {
+    background: #10172f !important;
+}
+.Start-Btn:hover {
+    border: 2px solid #fff !important;
+}
+.LogIn-Btn {
+    background:  #10172f !important;
+    opacity: 0.8;
+}
+.LogIn-Btn:hover {
+    border: 2px solid #fff;
+}
