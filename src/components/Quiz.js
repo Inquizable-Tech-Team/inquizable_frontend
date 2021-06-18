@@ -8,21 +8,6 @@ import { Overview } from "./QuizPart/Overview";
 import Axios from "axios";
 
 
-/* function findById(o, id) {
-  let result, p; 
-  for (p in o) {
-      if( o.hasOwnProperty(p) && typeof o[p] === 'object' ) {
-          result = findById(o[p], id);
-          if(result){
-              return result;
-          }
-      }
-  }
-  return result;
-} */
-
-
-
 export const Quiz = () => {
   const { qId } = useParams();
   const [questions, setQuestions] = useState(false);
