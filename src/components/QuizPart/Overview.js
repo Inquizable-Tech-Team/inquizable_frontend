@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from "react-router-dom";
 import './Overview.css';
 
-export const Overview = () => {
+export const Overview = ({points, correct}) => {
     let history = useHistory();
     return (
         <div>
@@ -10,7 +10,7 @@ export const Overview = () => {
            <h1 className="mt-3">Hello, User!</h1>
            <div className="points">
                <div className="awarded text-left pl-2">
-                   <h3>Awarded Points: 300</h3>
+                   <h3>Awarded Points: {points}</h3>
                </div>
                <div className="total text-left pl-2">
                    <h3>Total Points: 4456</h3>
@@ -19,7 +19,7 @@ export const Overview = () => {
 
             <div className="points">
                <div className="awarded text-left pl-2">
-                   <h3>Correct Answers: 6</h3>
+                   <h3>Correct Answers: {correct}</h3>
                </div>
                <div className="total text-left pl-2">
                    <h3>Overall: 60%</h3>

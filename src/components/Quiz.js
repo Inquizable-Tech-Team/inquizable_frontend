@@ -25,9 +25,10 @@ import Axios from "axios";
 
 export const Quiz = () => {
   const { qId } = useParams();
-  const [questions, setQuestions] = useState();
+  const [questions, setQuestions] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(false)
   const [points, setPoints] = useState(0);
+  const [correct, setCorrect] = useState(0);
   const [categoryName, setCategoryName] = useState(false)
 
   const filterId = (qId) => {
@@ -63,8 +64,8 @@ export const Quiz = () => {
 
   return (
     <div>
-      {questionIndex===10 ? <Overview />
-      : questionIndex || questionIndex===0 ? <Questions points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
+      {questions && questionIndex===10 ? <Overview points={points} correct={correct}/>
+      : questions && (questionIndex || questionIndex===0) ? <Questions correct={correct} setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
     </div>
   );
