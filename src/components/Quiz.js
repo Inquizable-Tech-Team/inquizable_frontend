@@ -27,7 +27,7 @@ export const Quiz = () => {
   const { qId } = useParams();
   const [questions, setQuestions] = useState();
   const [questionIndex, setQuestionIndex] = useState(false)
-  /* const [score, setScore] = useState(0); */
+  const [points, setPoints] = useState(0);
   const [categoryName, setCategoryName] = useState(false)
 
   const filterId = (qId) => {
@@ -44,12 +44,19 @@ export const Quiz = () => {
   else filterId(qId)
   
   useEffect(() => {
-    fetchQuestions();
+    if (categoryName==='Community') fetchCommunityQuestions()
+    else fetchQuestions();
   }, []);
 
   const fetchQuestions = async () => {
-    await Axios.get(`https://opentdb.com/api.php?amount=10&category=${qId}&type=multiple`)
+    await Axios.get(`https://opentdb.com/api.php?amount=10&category=${qId}`)
       .then((response) => setQuestions(response.data.results))
+      .catch((error) => console.log(error));
+  };
+
+  const fetchCommunityQuestions = async () => {
+    await Axios.get('https://inquizable.herokuapp.com/questions')
+      .then((response) => setQuestions(response.data))
       .catch((error) => console.log(error));
   };
 
@@ -57,7 +64,7 @@ export const Quiz = () => {
   return (
     <div>
       {questionIndex===10 ? <Overview />
-      : questionIndex || questionIndex===0 ? <Questions question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
+      : questionIndex || questionIndex===0 ? <Questions points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
     </div>
   );
