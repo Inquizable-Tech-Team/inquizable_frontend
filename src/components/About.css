@@ -1,17 +1,17 @@
-.Main {
+.aboutMain {
   height: 100vh;
   width: 100%;
   display: flex;
 }
-.Left,
-.Right {
+.aboutLeft,
+.aboutRight {
   height: 100vh;
   width: 50%;
 }
-.Left {
+.aboutLeft {
   background-color: #131927;
 }
-.Right {
+.aboutRight {
   background-image: url("../images/bg.png");
   background-position: center;
   background-size: cover;
@@ -19,72 +19,72 @@
 h1 {
   color: white;
 }
-.Container {
+.aboutContainer {
   width: 90%;
   margin: 0 auto;
 }
-.LeftInside {
+.aboutLeftInside {
   height: 100vh;
 }
-.LeftInsideTitle {
+.aboutLeftInsideTitle {
   height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.LeftInsideBigTitle {
+.aboutLeftInsideBigTitle {
   height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 40px;
 }
-.LeftInsideParagraph {
+.aboutLeftInsideParagraph {
   height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.LeftInsideSplit {
+.aboutLeftInsideSplit {
   height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.Split {
+.aboutSplit {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.SplitLeft,
-.SplitRight {
+.aboutSplitLeft,
+.aboutSplitRight {
   width: 50%;
 }
-.SplitLeft h1,
-.SplitRight h1 {
+.aboutSplitLeft h1,
+.aboutSplitRight h1 {
   font-weight: bold;
   font-size: 25px;
 }
-.SplitLeft p,
-.SplitRight p {
+.aboutSplitLeft p,
+.aboutSplitRight p {
   width: 80%;
   color: white;
   font-weight: 100;
 }
-.SplitLeft span,
-.SplitRight span {
+.aboutSplitLeft span,
+.aboutSplitRight span {
   font-weight: bold;
 }
 
-.LeftInsideTitle p {
+.aboutLeftInsideTitle p {
   color: #aeb4e5;
 }
-.LeftInsideBigTitle h1 {
+.aboutLeftInsideBigTitle h1 {
   font-size: 32px;
   font-weight: bold;
 }
-.LeftInsideParagraph p {
+.aboutLeftInsideParagraph p {
   color: white;
   line-height: 30px;
   font-weight: lighter;
@@ -94,54 +94,54 @@ h1 {
   (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
   (min-width: 768px) and (max-width: 1024px),
   (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
-  .Main {
+  .aboutMain {
     height: 100%;
     display: block;
   }
-  .LeftInsideBigTitle h1 {
+  .aboutLeftInsideBigTitle h1 {
     font-size: 15px !important;
     line-height: 20px;
   }
-  .LeftInsideParagraph p {
+  .aboutLeftInsideParagraph p {
     font-size: 14px;
   }
-  .Left,
-  .Right {
+  .aboutLeft,
+  .aboutRight {
     height: 100%;
     width: 100%;
   }
-  .Right {
+  .aboutRight {
     display: none;
   }
-  .SplitLeft p,
-  .SplitRight p {
+  .aboutSplitLeft p,
+  .aboutSplitRight p {
     font-size: 10px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px),
   (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
-  .Main {
+  .aboutMain {
     height: 100%;
     display: block;
   }
-  .LeftInsideBigTitle h1 {
+  .aboutLeftInsideBigTitle h1 {
     font-size: 40px !important;
     line-height: 40px;
   }
-  .LeftInsideParagraph p {
+  .aboutLeftInsideParagraph p {
     font-size: 25px;
   }
-  .Left,
-  .Right {
+  .aboutLeft,
+  .aboutRight {
     height: 100%;
     width: 100%;
   }
-  .Right {
+  .aboutRight {
     display: none;
   }
-  .SplitLeft p,
-  .SplitRight p {
+  .aboutSplitLeft p,
+  .aboutSplitRight p {
     font-size: 20px;
   }
 }

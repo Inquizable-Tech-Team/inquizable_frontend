@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import classes from "./Contact.module.css";
+import "./Contact.css";
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
@@ -9,14 +9,14 @@ const Contact = () => {
   }
   return (
     <Fragment>
-      <div className={classes.Main}>
-        <div className={classes.Left}>
-          <div className={classes.Container}>
-            <div className={classes.LeftInside}>
-              <div className={classes.Title}>
+      <div className={"contactMain"}>
+        <div className={"contactLeft"}>
+          <div className={"contactContainer"}>
+            <div className={"contactLeftInside"}>
+              <div className={"contactTitle"}>
                 <h1>Get in touch</h1>
               </div>
-              <div className={classes.Paragraph}>
+              <div className={"contactParagraph"}>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -25,11 +25,11 @@ const Contact = () => {
                   specimen book.
                 </p>
               </div>
-              <div className={classes.Address}>
+              <div className={"contactAddress"}>
                 <address>742 Evergreen Terrace</address>
                 <address>springfield, OR 12345</address>
               </div>
-              <div className={classes.Icons}>
+              <div className={"contactIcons"}>
                 <div>
                   <i class="fas fa-phone-alt"></i>
                   <p>010 23667 37497</p>
@@ -42,7 +42,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className={classes.Right}>
+        <div className={"contactRight"}>
           <form
             onSubmit={handleSubmit}
             action="https://formspree.io/f/mqkwbyve"
@@ -77,7 +77,7 @@ const Contact = () => {
             ></input>
             <ValidationError prefix="tel" field="tel" errors={state.errors} />
             <textarea
-              className={classes.Textarea}
+              className={"contactTextarea"}
               id="message"
               name="message"
               placeholder="Message"
@@ -89,7 +89,7 @@ const Contact = () => {
               errors={state.errors}
             />
             <button
-              className={classes.Btn}
+              className={"contactBtn"}
               type="submit"
               disabled={state.submitting}
             >

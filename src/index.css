@@ -10,7 +10,6 @@ body {
     color: #fff;
     font-family: 'Quicksand', sans-serif;
 }
-
 .categorySelectionButton {
     @apply border;
     @apply border-gray-300;

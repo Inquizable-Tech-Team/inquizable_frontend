@@ -48,10 +48,8 @@ function Routing() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="/footer">
-          <Footer />
-        </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

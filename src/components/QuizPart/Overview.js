@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import { useHistory } from "react-router-dom";
 import './Overview.css';
 
 export const Overview = ({points, correct}) => {
     let history = useHistory();
     return (
-        <div>
+        <Fragment>
         <div className="Scoreboard mx-auto xs:text-center sm:text-center md:text-center mt-6">
            <h1 className="mt-3">Hello, User!</h1>
            <div className="points">
@@ -26,7 +26,7 @@ export const Overview = ({points, correct}) => {
                 </div>
            </div>
         </div>
-        <div className="points">
+        <div className="points mb-12">
                <div className="awarded text-center red pl-2 pt-2 pb-2 pr-2 cursor-pointer" onClick={() => history.push('/categories')}>
                    <button>Start New Game</button>
                </div>
@@ -35,6 +35,6 @@ export const Overview = ({points, correct}) => {
                 </div>
            </div>
 
-        </div>
+        </Fragment>
     )
 }

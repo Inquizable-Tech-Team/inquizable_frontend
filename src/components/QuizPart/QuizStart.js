@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import { useHistory } from "react-router-dom";
 
 export const QuizStart = ({categoryName, setQuestionIndex}) => {
     let history = useHistory();
 
     return (
-        <div>
+        <Fragment>
             <div className="sm:text-center md:text-center mt-4 text-sx text-sm text-base text-lg text-xl text-center sm:text-center">
         Selected Category:
       </div>
@@ -29,7 +29,7 @@ export const QuizStart = ({categoryName, setQuestionIndex}) => {
       </div>
       */}
 
-      <div className="sm:block md:flex justify-center mt-4">
+      <div className="sm:block md:flex justify-center mt-4 mb-16">
         <div className="flex-row  mr-6">
           <button className="border-2 xs:ml-6 xs:mt-4 xs:text-center btnBack w-40" onClick={() => history.push('/categories')}>
             Go Back
@@ -44,7 +44,6 @@ export const QuizStart = ({categoryName, setQuestionIndex}) => {
           </button>
         </div>
       </div>
-      <div></div>
-        </div>
+        </Fragment>
     )
 }

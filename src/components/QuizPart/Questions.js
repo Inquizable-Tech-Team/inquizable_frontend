@@ -47,7 +47,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex, points, s
   }
 
   return (
-    <div>
+    <div className='mb-20'>
       {question
         ?
         <div>
