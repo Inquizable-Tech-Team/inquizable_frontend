@@ -27,10 +27,10 @@ export const Overview = () => {
            </div>
         </div>
         <div className="points">
-               <div className="awarded text-center red pl-2 pt-2 pb-2 pr-2" onClick={() => history.push('/categories')}>
+               <div className="awarded text-center red pl-2 pt-2 pb-2 pr-2 cursor-pointer" onClick={() => history.push('/categories')}>
                    <button>Start New Game</button>
                </div>
-               <div className="total text-center pl-2 pt-2 pb-2 pr-2">
+               <div className="total text-center pl-2 pt-2 pb-2 pr-2 cursor-pointer" onClick={() => history.push('/leaderboard')}>
                    <button>Leaderboard</button>
                 </div>
            </div>

@@ -39,7 +39,7 @@ export const QuizStart = ({categoryName, setQuestionIndex}) => {
           <button className="block ml-6 border-2 xs:mt-4 xs:text-center red w-80" onClick={() => setQuestionIndex(0)}>
             Start Game
           </button>
-          <button className="ml-6 mt-4 border-2 xs:text-center green w-80">
+          <button className="ml-6 mt-4 border-2 xs:text-center green w-80" onClick={() => alert('Coming Soon...')}>
             Invite Friends
           </button>
         </div>
