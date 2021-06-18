@@ -1,24 +1,19 @@
-import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
-import {Home} from './components/Home'
-import {Login} from './components/Login'
-import {Admin} from './components/Admin'
-import {Account} from './components/Account'
-import {Categories} from './components/Categories'
-import {Quiz} from './components/Quiz'
-import {Contact} from './components/Contact'
-import {Submit} from './components/Submit'
-import {Leaderboard} from './components/Leaderboard'
-import {About} from './components/About'
-import {Questions} from './components/QuizPart/Questions'
-import {Overview} from './components/QuizPart/Overview'
-
-
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { Admin } from "./components/Admin";
+import { Account } from "./components/Account";
+import { Categories } from "./components/Categories";
+import { Quiz } from "./components/Quiz";
+import Contact from "./components/Contact";
+import { Submit } from "./components/Submit";
+import { Leaderboard } from "./components/Leaderboard";
+import About from "./components/About";
+import Footer from "./components/Footer";
 function Routing() {
   return (
-  
     <div>
-    {/*  <h1 className='animate-bounce'>Hello World</h1> */}
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
@@ -38,7 +33,7 @@ function Routing() {
         <Route exact path="/categories">
           <Categories />
         </Route>
-        <Route exact path="/quiz/:qId">
+        <Route exact path="/quiz">
           <Quiz />
         </Route>
         <Route exact path="/contact">
@@ -53,15 +48,11 @@ function Routing() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="/questions">
-          <Questions />
+        <Route exact path="/footer">
+          <Footer />
         </Route>
-        <Route exact path="/overview">
-          <Overview />
-        </Route>        
       </Switch>
     </div>
-    
   );
 }
 

@@ -1,0 +1,147 @@
+.Main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.Left,
+.Right {
+  height: 100vh;
+  width: 50%;
+}
+.Left {
+  background-color: #131927;
+}
+.Right {
+  background-image: url("../images/bg.png");
+  background-position: center;
+  background-size: cover;
+}
+h1 {
+  color: white;
+}
+.Container {
+  width: 90%;
+  margin: 0 auto;
+}
+.LeftInside {
+  height: 100vh;
+}
+.LeftInsideTitle {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.LeftInsideBigTitle {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 40px;
+}
+.LeftInsideParagraph {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.LeftInsideSplit {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Split {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.SplitLeft,
+.SplitRight {
+  width: 50%;
+}
+.SplitLeft h1,
+.SplitRight h1 {
+  font-weight: bold;
+  font-size: 25px;
+}
+.SplitLeft p,
+.SplitRight p {
+  width: 80%;
+  color: white;
+  font-weight: 100;
+}
+.SplitLeft span,
+.SplitRight span {
+  font-weight: bold;
+}
+
+.LeftInsideTitle p {
+  color: #aeb4e5;
+}
+.LeftInsideBigTitle h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.LeftInsideParagraph p {
+  color: white;
+  line-height: 30px;
+  font-weight: lighter;
+}
+
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .Main {
+    height: 100%;
+    display: block;
+  }
+  .LeftInsideBigTitle h1 {
+    font-size: 15px !important;
+    line-height: 20px;
+  }
+  .LeftInsideParagraph p {
+    font-size: 14px;
+  }
+  .Left,
+  .Right {
+    height: 100%;
+    width: 100%;
+  }
+  .Right {
+    display: none;
+  }
+  .SplitLeft p,
+  .SplitRight p {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .Main {
+    height: 100%;
+    display: block;
+  }
+  .LeftInsideBigTitle h1 {
+    font-size: 40px !important;
+    line-height: 40px;
+  }
+  .LeftInsideParagraph p {
+    font-size: 25px;
+  }
+  .Left,
+  .Right {
+    height: 100%;
+    width: 100%;
+  }
+  .Right {
+    display: none;
+  }
+  .SplitLeft p,
+  .SplitRight p {
+    font-size: 20px;
+  }
+}
