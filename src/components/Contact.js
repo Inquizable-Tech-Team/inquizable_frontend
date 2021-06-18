@@ -1,3 +1,4 @@
+import React, {Fragment} from "react";
 import classes from "./Contact.module.css";
 import { useForm, ValidationError } from "@formspree/react";
 
@@ -7,7 +8,7 @@ const Contact = () => {
     return <p>Thanks for joining!</p>;
   }
   return (
-    <>
+    <Fragment>
       <div className={classes.Main}>
         <div className={classes.Left}>
           <div className={classes.Container}>
@@ -97,7 +98,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 };
 

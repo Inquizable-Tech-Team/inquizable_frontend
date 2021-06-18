@@ -1,8 +1,8 @@
-import React from "react";
+import React, {Fragment} from "react";
 import classes from "./About.module.css";
 const About = () => {
   return (
-    <>
+    <Fragment>
       <div className={classes.Main}>
         <div className={classes.Left}>
           <div className={classes.Container}>
@@ -64,7 +64,7 @@ const About = () => {
         </div>
         <div className={classes.Right}></div>
       </div>
-    </>
+    </Fragment>
   );
 };
 export default About;

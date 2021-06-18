@@ -1,6 +1,8 @@
+import React, {Fragment} from "react";
+
 const Footer = () => {
   return (
-    <>
+    <Fragment>
       <section class="bg-white">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
           <nav class="flex flex-wrap justify-center -mx-5 -my-2">
@@ -131,7 +133,7 @@ const Footer = () => {
           </p>
         </div>
       </section>
-    </>
+    </Fragment>
   );
 };
 export default Footer;
