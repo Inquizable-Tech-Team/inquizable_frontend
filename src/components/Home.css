@@ -1,0 +1,9 @@
+.bg-color {
+    background: #fff;
+    color: #10172f;
+    height: 50vh;
+}
+.home-title {
+    position: relative;
+    width: 20%;
+}
