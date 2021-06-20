@@ -24,7 +24,7 @@ const features = [
   {
     name: 'Compare yourself with other Inquizers',
     description:
-      'All Inquizers are able to see the global leaderboard and invite one of the best to start a competition.',
+      'All Inquizers are able to see the global leaderboard and you - as an Inquizer - feel free to invite one of the best to start a competition.',
     icon: TableIcon,
   },
 ]
