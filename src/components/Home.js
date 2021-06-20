@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import Workflow from './HomePart/Workflow';
 import Axios from "axios";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -27,6 +28,7 @@ export const Home = () => {
   };
 
   return (
+    <div>
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -150,7 +152,8 @@ export const Home = () => {
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Create your own gamified quiz and contribute to our platform.
-                Challenge your relatives, friends and yourself.
+                Challenge your relatives, friends and yourself. <br/>
+                And become an Inquizer!
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
@@ -196,5 +199,7 @@ export const Home = () => {
         />
       </div>
     </div>
+      <Workflow />
+      </div>
   );
 };
