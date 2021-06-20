@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnnotationIcon, GlobeAltIcon, LightBulbIcon, LightningBoltIcon, LoginIcon, ScaleIcon } from '@heroicons/react/outline';
+import { AnnotationIcon, GlobeAltIcon, LightBulbIcon, LightningBoltIcon, LoginIcon, ScaleIcon, TableIcon } from '@heroicons/react/outline';
 import '../HomePart/Workflow.css';
 
 const features = [
@@ -25,7 +25,7 @@ const features = [
     name: 'Compare yourself with other Inquizers',
     description:
       'All Inquizers are able to see the global leaderboard and invite one of the best to start a competition.',
-    icon: AnnotationIcon,
+    icon: TableIcon,
   },
 ]
 

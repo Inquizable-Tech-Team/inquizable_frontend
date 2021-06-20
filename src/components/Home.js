@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Workflow from './HomePart/Workflow';
+import CTA from './HomePart/Cta';
 import Axios from "axios";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -39,7 +40,7 @@ export const Home = () => {
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            <polygon points="50,0 100,0 50,100 0,100" />
+            <polygon points="50,0 100,50 50,100 0,100" />
           </svg>
 
           <Popover>
@@ -157,8 +158,8 @@ export const Home = () => {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <a
-                    href="#"
+                  <Link
+                    to="../login"
                     className=" Start-Btn w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                   >
                     Get started{" "}
@@ -176,7 +177,7 @@ export const Home = () => {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Link
@@ -200,6 +201,7 @@ export const Home = () => {
       </div>
     </div>
       <Workflow />
+      <CTA />
       </div>
   );
 };
