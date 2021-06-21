@@ -1,0 +1,9 @@
+.Leaderboard-Text {
+    color: #10172f;
+}
+.Leaderboard-Text:hover{
+    color: red;
+}
+.Leaderboard-Text:focus{
+    color: red;
+}
