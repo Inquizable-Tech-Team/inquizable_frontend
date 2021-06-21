@@ -18,7 +18,7 @@ const customStyles = {
 
 
 
-export const Login = ({setJwt}) => {
+export const Login = ({ setJwt }) => {
 const [email, setEmail] = useState('')
 const [name, setName] = useState('')
 const [password, setPassword] = useState('')
@@ -26,19 +26,19 @@ const [password, setPassword] = useState('')
 let history = useHistory();
 
 const signIn = (e) => {
-  e.preventDefault()
+  e.preventDefault();
   const user = queryString.stringify({
     email: email,
     pw: password
-  })
+  });
   loginFunction(user).then(res => {
-    if (res === 'Email does not exists') alert('Email does not exist')
+    if (res === 'Email does not exists') alert('Email does not exist');
     else if (res) {
-      setJwt(res)
-      localStorage.setItem("jwt", res)
-      history.push('./categories')
+      localStorage.setItem("jwt", res);
+      setJwt(res);
+      history.push('./categories');
     }
-    else alert('Oops, something went wrong...')
+    else alert('Oops, something went wrong...');
   })
 }
 

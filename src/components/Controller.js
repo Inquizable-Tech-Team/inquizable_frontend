@@ -80,3 +80,36 @@ export const fetchUser = async (id) => {
     })
     .catch((error) => console.log(error));
 };
+
+export const fetchAllUsers = async () => {
+  return Axios
+    .get("https://inquizable.herokuapp.com/users/count")
+    .then((response) => {
+      return (response.data[0])
+    })
+    .catch((error) => console.log(error));
+};
+export const fetchQuestionAmount = async () => {
+  return Axios
+    .get("https://inquizable.herokuapp.com/questions/count")
+    .then((response) => {
+      return (response.data[0])
+    })
+    .catch((error) => console.log(error));
+};
+export const fetchAnswered = async () => {
+  return Axios
+    .get("https://inquizable.herokuapp.com/users/answered ")
+    .then((response) => {
+      return (response.data[0])
+    })
+    .catch((error) => console.log(error));
+};
+export const fetchCorrect = async () => {
+  return Axios
+    .get("https://inquizable.herokuapp.com/users/correct")
+    .then((response) => {
+      return (response.data[0])
+    })
+    .catch((error) => console.log(error));
+};

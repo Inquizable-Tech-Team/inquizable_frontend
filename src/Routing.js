@@ -54,25 +54,25 @@ useEffect(() => {
           <Login setJwt={setJwt}/>
         </Route>
         <Route exact path="/admin">
-        {profileHooks.nickname && profileHooks.admin===1 ? <Admin user={profileHooks}/> : <Home />}
+        {profileHooks.nickname && profileHooks.admin===1 ? <Admin user={profileHooks}/> :  <Redirect to="/home" />}
         </Route>
         <Route exact path="/account">
-        {profileHooks.nickname ? <Account user={profileHooks}/> : <Login />}
+        {profileHooks.nickname ? <Account user={profileHooks}/> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/categories">
-         {profileHooks.nickname ? <Categories user={profileHooks}/> : <Login />}
+         {profileHooks.nickname ? <Categories user={profileHooks}/> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/quiz/:qId">
-        {profileHooks.nickname ? <Quiz user={profileHooks}/> : <Login />}
+        {profileHooks.nickname ? <Quiz user={profileHooks}/> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
         <Route exact path="/submit">
-        {profileHooks.nickname ? <Submit user={profileHooks}/> : <Login />}
+        {profileHooks.nickname ? <Submit user={profileHooks}/> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/leaderboard">
-        {profileHooks.nickname ? <Leaderboard user={profileHooks}/> : <Login />}
+        {profileHooks.nickname ? <Leaderboard user={profileHooks}/> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/about">
           <About />

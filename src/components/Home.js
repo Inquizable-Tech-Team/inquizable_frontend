@@ -7,6 +7,7 @@ import Axios from "axios";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import About from './About'
 
 const navigation = [
   { name: "Home", href: "./home" },
@@ -201,6 +202,7 @@ export const Home = () => {
       </div>
     </div>
       <Workflow />
+      <About />
       <CTA />
       </div>
   );
