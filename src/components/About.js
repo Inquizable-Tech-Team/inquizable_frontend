@@ -1,7 +1,38 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import "./About.css";
+import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "./Controller";
 
 const About = () => {
+  const [users, setUsers] = useState()
+  const [questions, setQuestions] = useState()
+  const [answered, setAnswered] = useState()
+  const [correct, setCorrect] = useState()
+
+
+
+  useEffect(() => {
+    if (!users) {
+      fetchAllUsers().then(res => {
+      setUsers(res.count)
+    });
+    }
+    if (!questions) {
+      fetchQuestionAmount().then(res => {
+      setQuestions(res.count)
+    });
+    }
+    if (!answered) {
+      fetchAnswered().then(res => {
+      setAnswered(res.sum)
+    });
+    }
+    if (!correct) {
+      fetchCorrect().then(res => {
+      setCorrect(res.sum)
+    });
+    }
+  }, [])
+
   return (
     <Fragment>
       <div className={"aboutMain"}>
@@ -26,36 +57,32 @@ const About = () => {
               <div className={"aboutLeftInsideSplit"}>
                 <div className={"aboutSplit"}>
                   <div className={"aboutSplitLeft"}>
-                    <h1>8K+</h1>
+                    <h1>{users}</h1>
                     <p>
-                      <span>Companies</span> making it look like readable
+                      <span>Users</span> making it look like readable
                       English.
                     </p>
                   </div>
                   <div className={"aboutSplitRight"}>
-                    <h1>25K+</h1>
+                    <h1>{Number(questions) + 4050}</h1>
                     <p>
-                      <span>Companies</span> making it look like readable
-                      English.
+                      <span>Questions</span> in the Database.
                     </p>
                   </div>
                 </div>
               </div>
-
               <div className={"aboutLeftInsideSplit"}>
                 <div className={"aboutSplit"}>
                   <div className={"aboutSplitLeft"}>
-                    <h1>8K+</h1>
+                    <h1>{answered}</h1>
                     <p>
-                      <span>Companies</span> making it look like readable
-                      English.
+                      <span>Answered</span> Questions.
                     </p>
                   </div>
                   <div className={"aboutSplitRight"}>
-                    <h1>25K+</h1>
+                    <h1>{Math.round((correct)*1000/(answered))/10}%</h1>
                     <p>
-                      <span>Companies</span> making it look like readable
-                      English.
+                      <span>Correctly</span> answered Questions by all Users.
                     </p>
                   </div>
                 </div>

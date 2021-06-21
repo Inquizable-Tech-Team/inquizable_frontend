@@ -8,7 +8,7 @@ import { Overview } from "./QuizPart/Overview";
 import Axios from "axios";
 
 
-export const Quiz = () => {
+export const Quiz = ({user}) => {
   const { qId } = useParams();
   const [questions, setQuestions] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(false)
@@ -49,8 +49,8 @@ export const Quiz = () => {
 
   return (
     <div>
-      {questions && questionIndex===10 ? <Overview points={points} correct={correct}/>
-      : questions && (questionIndex || questionIndex===0) ? <Questions correct={correct} setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
+      {questions && questionIndex===10 ? <Overview user={user} points={points} correct={correct}/>
+      : questions && (questionIndex || questionIndex===0) ? <Questions user={user} correct={correct} setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
     </div>
   );

@@ -1,19 +1,53 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import { useHistory } from "react-router-dom";
 import './Overview.css';
+import Axios from 'axios'
+import {updatePointsFunction} from '../Controller'
 
-export const Overview = ({points, correct}) => {
+export const Overview = ({points, correct, user}) => {
+    const [userData, setUserData] = useState(false)
     let history = useHistory();
+    const queryString = require('query-string');
+
+    useEffect(() => {
+        fetchUserData()
+    }, [])
+
+    useEffect(() => {
+        updatePoints()
+    }, [userData])
+
+    const updatePoints = () => {
+        const info = queryString.stringify({
+            points: userData.points+points,
+            answered: userData.answered+10,
+            correct: userData.correct+correct
+            
+          })
+          updatePointsFunction(userData.id, info).then(res => {
+            if (res) {
+              console.log(res)
+            }
+            else console.log('Oops, something went wrong...')
+          })
+    }
+
+    const fetchUserData = async () => {
+        await Axios.get(`https://inquizable.herokuapp.com/users/${user.id}`)
+          .then((response) => setUserData(response.data[0]))
+          .catch((error) => console.log(error));
+      };
+
     return (
         <Fragment>
         <div className="Scoreboard mx-auto xs:text-center sm:text-center md:text-center mt-6">
-           <h1 className="mt-3">Hello, User!</h1>
+           <h1 className="mt-3">Great job, {user.nickname}!</h1>
            <div className="points">
                <div className="awarded text-left pl-2">
                    <h3>Awarded Points: {points}</h3>
                </div>
                <div className="total text-left pl-2">
-                   <h3>Total Points: 4456</h3>
+                   <h3>Total Points: {userData.points ? userData.points+points : user.points+points}</h3>
                </div>
                </div>
 
@@ -22,7 +56,7 @@ export const Overview = ({points, correct}) => {
                    <h3>Correct Answers: {correct}</h3>
                </div>
                <div className="total text-left pl-2">
-                   <h3>Overall: 60%</h3>
+                   <h3>Overall: {userData.correct ? Math.round((userData.correct+correct)*1000/(userData.answered+10))/10 : Math.round(user.correct*1000/user.answered)/10}%</h3>
                 </div>
            </div>
         </div>

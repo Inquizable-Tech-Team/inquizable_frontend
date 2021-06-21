@@ -3,7 +3,7 @@ import './Questions.css';
 import arrayShuffle from "array-shuffle";
 import he from 'he'
 
-export const Questions = ({ question, questionIndex, setQuestionIndex, points, setPoints, correct, setCorrect }) => {
+export const Questions = ({ question, questionIndex, setQuestionIndex, points, setPoints, correct, setCorrect, user }) => {
   const [answerShowing, setAnswerShowing] = useState(false)
   const [answerArray, setAnswerArray] = useState([])
 
@@ -53,7 +53,7 @@ export const Questions = ({ question, questionIndex, setQuestionIndex, points, s
         <div>
           <div>
             <h1 className="xs:text-center sm:text-center md:text-center mt-12">
-              Hello User
+              Hello {user.nickname}
             </h1>
             <p className="xs:text-center sm:text-center md:text-center">
               Category: {question.category}

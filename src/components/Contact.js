@@ -50,6 +50,7 @@ const Contact = () => {
           >
             <input
               id="text"
+              className='text-black'
               type="text"
               name="text"
               placeholder="Full Name"
@@ -58,6 +59,7 @@ const Contact = () => {
             <ValidationError prefix="text" field="text" errors={state.errors} />
             <input
               id="email"
+              className='text-black'
               type="email"
               name="email"
               placeholder="Email"
@@ -70,6 +72,7 @@ const Contact = () => {
             />
             <input
               id="tel"
+              className='text-black'
               type="tel"
               name="tel"
               placeholder="Phone"
@@ -78,6 +81,7 @@ const Contact = () => {
             <ValidationError prefix="tel" field="tel" errors={state.errors} />
             <textarea
               className={"contactTextarea"}
+              className='text-black'
               id="message"
               name="message"
               placeholder="Message"
