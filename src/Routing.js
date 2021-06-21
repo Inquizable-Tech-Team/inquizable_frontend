@@ -21,13 +21,14 @@ useEffect(() => {
   const token = localStorage.jwt
   if (token) {
       const decoded = jwt_decode(token)
+      
       if (Date.now() >= decoded.exp*1000) {
         alert('Session expired, please login again')
         localStorage.clear()
         history.push('./login')
       }
       else {
-          setProfileHooks({
+         setProfileHooks({
           id: decoded.user.rows[0].id,
           nickname: decoded.user.rows[0].nickname,
           email: decoded.user.rows[0].email,
@@ -54,25 +55,25 @@ useEffect(() => {
           <Login setJwt={setJwt}/>
         </Route>
         <Route exact path="/admin">
-        {profileHooks.nickname && profileHooks.admin===1 ? <Admin user={profileHooks}/> :  <Redirect to="/home" />}
+        {profileHooks.nickname && profileHooks.admin===1 ? <Admin user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/account">
-        {profileHooks.nickname ? <Account user={profileHooks}/> : <Redirect to="/login" />}
+        {profileHooks.nickname ? <Account user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/categories">
-         {profileHooks.nickname ? <Categories user={profileHooks}/> : <Redirect to="/login" />}
+         {profileHooks.nickname ? <Categories user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/quiz/:qId">
-        {profileHooks.nickname ? <Quiz user={profileHooks}/> : <Redirect to="/login" />}
+        {profileHooks.nickname ? <Quiz user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
         <Route exact path="/submit">
-        {profileHooks.nickname ? <Submit user={profileHooks}/> : <Redirect to="/login" />}
+        {profileHooks.nickname ? <Submit user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/leaderboard">
-        {profileHooks.nickname ? <Leaderboard user={profileHooks}/> : <Redirect to="/login" />}
+        {profileHooks.nickname ? <Leaderboard user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/about">
           <About />

@@ -28,7 +28,7 @@ export default function Contribution({user}) {
     <div class="container mx-auto px-4 sm:px-8">
       <div class="py-8">
       <div className="ScoreSum text-center">
-          {ownContributions && <h1 className="p-4">You contributed {ownContributions[0].contributions} Questions</h1>}
+          {ownContributions && <h1 className="p-4">You contributed {setOwnContributions[0] ? ownContributions[0].contributions : '0'} Questions</h1>}
       </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
