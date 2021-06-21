@@ -15,9 +15,9 @@ export const Submit = ({user}) => {
     const queryString = require('query-string');
     let history = useHistory();
 
- /*    useEffect(() => {
-        if (!user.nickname) history.push('./login')
-    },[user]) */
+    useEffect(() => {
+        if (!user) history.push('./login')
+    },[user])
 
     const submitQuestion = () => {
         if (qType!=='multiple') {
@@ -31,7 +31,7 @@ export const Submit = ({user}) => {
                     correct_answer: correctA,
                     incorrect_answers: [`"${wrongA1}"`],
                     approved: 0,
-                    Users_id: 4 // user.id 
+                    Users_id: user.id
                 })
                 submitFunction(question).then(res => {
                     if (res) {
@@ -52,9 +52,8 @@ export const Submit = ({user}) => {
                     correct_answer: correctA,
                     incorrect_answers: `["${wrongA1}","${wrongA2}","${wrongA3}"]`,
                     approved: 0,
-                    Users_id: 4 // user.id 
+                    Users_id: user.id
                 })
-                /* console.log(question) */
                 submitFunction(question).then(res => {
                     if (res) {
                       alert('Your Question has been submitted!')

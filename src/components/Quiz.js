@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./QuizPart/Quiz.css";
 import Data from './data.json'
 import { QuizStart } from './QuizPart/QuizStart';
@@ -15,12 +15,6 @@ export const Quiz = ({user}) => {
   const [points, setPoints] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [categoryName, setCategoryName] = useState(false)
-
-  let history = useHistory();
-
-  useEffect(() => {
-      if (!user.nickname) history.push('./login')
-  },[user])
 
   const filterId = (qId) => {
     let result
