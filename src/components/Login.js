@@ -78,7 +78,7 @@ const register = (e) => {
               Name
             </label>
             <div className="mt-1">
-              <input onChange={((e) => setName(e.target.value))} id="name" name="name" type="name" autocomplete="name" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+              <input onChange={((e) => setName(e.target.value))} id="name" name="name" type="name" autocomplete="name" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
             </div>
           </div>
               <div>
@@ -86,7 +86,7 @@ const register = (e) => {
                   Email address
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setEmail(e.target.value))} id="email" name="email" type="email" autocomplete="email" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setEmail(e.target.value))} id="email" name="email" type="email" autocomplete="email" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               
@@ -95,7 +95,7 @@ const register = (e) => {
                   Password
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autocomplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autocomplete="current-password" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               <div>
@@ -108,7 +108,7 @@ const register = (e) => {
                   Email address
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setEmail(e.target.value))}id="email" name="email" type="email" autocomplete="email" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setEmail(e.target.value))}id="email" name="email" type="email" autocomplete="email" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               
@@ -117,7 +117,7 @@ const register = (e) => {
                   Password
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autocomplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autocomplete="current-password" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               <div className="flex items-center justify-between">

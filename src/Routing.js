@@ -5,11 +5,12 @@ import {Admin} from './components/Admin'
 import {Account} from './components/Account'
 import {Categories} from './components/Categories'
 import {Quiz} from './components/Quiz'
-import {Contact} from './components/Contact'
+import Contact from './components/Contact'
 import {Submit} from './components/Submit'
 import {Leaderboard} from './components/Leaderboard'
-import {About} from './components/About'
+import About from './components/About'
 import {useState} from 'react'
+import Footer from "./components/Footer";
 
 function Routing() {
   const [jwt, setJwt] = useState(false)
@@ -35,7 +36,7 @@ function Routing() {
         <Route exact path="/categories">
           <Categories />
         </Route>
-        <Route exact path="/quiz">
+        <Route exact path="/quiz/:qId">
           <Quiz />
         </Route>
         <Route exact path="/contact">
@@ -51,6 +52,7 @@ function Routing() {
           <About />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
