@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnnotationIcon, GlobeAltIcon, LightBulbIcon, LightningBoltIcon, LoginIcon, ScaleIcon, TableIcon } from '@heroicons/react/outline';
+import { LightBulbIcon, LightningBoltIcon, LoginIcon, TableIcon } from '@heroicons/react/outline';
 import '../HomePart/Workflow.css';
 
 const features = [
