@@ -35,4 +35,15 @@ export const loginFunction = (user) => {
       })
   }
 
+  export const updatePointsFunction = (id, user) => {
+    return Axios
+      .put(`https://inquizable.herokuapp.com/users/${id}`, user)
+      .then(response => {
+        return response.data
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
+  }
+
  
