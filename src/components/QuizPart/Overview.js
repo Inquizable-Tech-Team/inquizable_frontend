@@ -14,17 +14,23 @@ export const Overview = ({points, correct, user}) => {
     }, [])
 
     useEffect(() => {
-        /* updatePoints() */
+        updatePoints()
     }, [userData])
 
-/*     const updatePoints = () => {
+    const updatePoints = () => {
         const info = queryString.stringify({
-            nickname: userData.nickname,
-            email: userData.email,
-            pw: password,
-            points: 10
+            points: userData.points+points,
+            answered: userData.answered+10,
+            correct: userData.correct+correct
+            
           })
-    } */
+          updatePointsFunction(userData.id, info).then(res => {
+            if (res) {
+              console.log(res)
+            }
+            else console.log('Oops, something went wrong...')
+          })
+    }
 
     const fetchUserData = async () => {
         await Axios.get(`https://inquizable.herokuapp.com/users/${user.id}`)
@@ -41,7 +47,7 @@ export const Overview = ({points, correct, user}) => {
                    <h3>Awarded Points: {points}</h3>
                </div>
                <div className="total text-left pl-2">
-                   <h3>Total Points: {userData.points ? userData.points : user.points}</h3>
+                   <h3>Total Points: {userData.points ? userData.points+points : user.points+points}</h3>
                </div>
                </div>
 
@@ -50,7 +56,7 @@ export const Overview = ({points, correct, user}) => {
                    <h3>Correct Answers: {correct}</h3>
                </div>
                <div className="total text-left pl-2">
-                   <h3>Overall: {userData.correct ? Math.round(userData.correct*1000/userData.answered)/10 : Math.round(user.correct*1000/user.answered)/10}%</h3>
+                   <h3>Overall: {userData.correct ? Math.round((userData.correct+correct)*1000/(userData.answered+10))/10 : Math.round(user.correct*1000/user.answered)/10}%</h3>
                 </div>
            </div>
         </div>

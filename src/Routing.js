@@ -51,7 +51,7 @@ useEffect(() => {
           <Home />
         </Route>
         <Route exact path="/login">
-          <Login jwt={jwt} setJwt={setJwt}/>
+          <Login setJwt={setJwt}/>
         </Route>
         <Route exact path="/admin">
         {profileHooks.nickname && profileHooks.admin===1 ? <Admin user={profileHooks}/> : <Login />}
