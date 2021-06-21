@@ -1,9 +1,5 @@
-.Leaderboard-Text {
-    color: #10172f;
-}
-.Leaderboard-Text:hover{
-    color: red;
-}
-.Leaderboard-Text:focus{
-    color: red;
+.ScoreSum {
+    border: 2px solid #fff;
+    border-radius: 25px;
+    height: 10vh;
 }
