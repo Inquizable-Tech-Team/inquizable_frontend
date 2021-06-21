@@ -1,4 +1,3 @@
-import React from 'react';
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import {Home} from './components/Home'
 import {Login} from './components/Login'
@@ -16,33 +15,30 @@ import jwt_decode from 'jwt-decode'
 
 function Routing() {
   const [jwt, setJwt] = useState(false)
-  const [user, setUser] = useState(false)
-
-
-let history = useHistory();
-
-
-  useEffect(() => {
-    if (jwt) {
-      const decoded = jwt_decode(jwt)
+  const [profileHooks, setProfileHooks] = useState({})
+  let history = useHistory();
+useEffect(() => {
+  const token = localStorage.jwt
+  if (token) {
+      const decoded = jwt_decode(token)
       if (Date.now() >= decoded.exp*1000) {
         alert('Session expired, please login again')
         localStorage.clear()
-        setUser(false)
-        setJwt(false)
         history.push('./login')
       }
-      else if (decoded.user) {
-        setUser(decoded.user.rows[0])
-        console.log(decoded.user.rows[0])
-      }
       else {
-        localStorage.clear()
-        setUser(false)
-        setJwt(false)
+          setProfileHooks({
+          id: decoded.user.rows[0].id,
+          nickname: decoded.user.rows[0].nickname,
+          email: decoded.user.rows[0].email,
+          points: decoded.user.rows[0].points,
+          answered: decoded.user.rows[0].answered,
+          correct: decoded.user.rows[0].correct,
+          admin: decoded.user.rows[0].admin
+      })
       }
-    }
-  }, [jwt])
+  }
+}, [jwt])
 
 
   return (
@@ -55,31 +51,34 @@ let history = useHistory();
           <Home />
         </Route>
         <Route exact path="/login">
-          <Login jwt={jwt} setJwt={setJwt}/>
+          <Login setJwt={setJwt}/>
         </Route>
         <Route exact path="/admin">
-          <Admin user={user} />
+        {profileHooks.nickname && profileHooks.admin===1 ? <Admin user={profileHooks}/> : <Home />}
         </Route>
         <Route exact path="/account">
-          <Account user={user} />
+        {profileHooks.nickname ? <Account user={profileHooks}/> : <Login />}
         </Route>
         <Route exact path="/categories">
-          <Categories user={user} />
+         {profileHooks.nickname ? <Categories user={profileHooks}/> : <Login />}
         </Route>
         <Route exact path="/quiz/:qId">
-          <Quiz user={user} />
+        {profileHooks.nickname ? <Quiz user={profileHooks}/> : <Login />}
         </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
         <Route exact path="/submit">
-          <Submit user={user} />
+        {profileHooks.nickname ? <Submit user={profileHooks}/> : <Login />}
         </Route>
         <Route exact path="/leaderboard">
-          <Leaderboard user={user} />
+        {profileHooks.nickname ? <Leaderboard user={profileHooks}/> : <Login />}
         </Route>
         <Route exact path="/about">
           <About />
+        </Route>
+        <Route path="/:anything?">
+          <Redirect to="/home" />
         </Route>
       </Switch>
       <Footer />

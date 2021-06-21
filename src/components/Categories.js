@@ -1,16 +1,10 @@
-import React, {Fragment, useState, useEffect} from 'react'
+import React, {Fragment, useState} from 'react'
 import Data from './data.json'
 import SubCategories from './subcategory'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const Categories = ({user}) => {
     const [categoryIndex, setCategoryIndex] = useState(false)
-
-    let history = useHistory();
-
-    useEffect(() => {
-        if (!user.nickname) history.push('./login')
-    },[user])
 
     return (
         <Fragment>

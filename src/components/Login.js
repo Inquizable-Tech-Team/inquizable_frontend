@@ -18,7 +18,7 @@ const customStyles = {
 
 
 
-export const Login = ({jwt, setJwt}) => {
+export const Login = ({setJwt}) => {
 const [email, setEmail] = useState('')
 const [name, setName] = useState('')
 const [password, setPassword] = useState('')
@@ -35,6 +35,7 @@ const signIn = (e) => {
     if (res === 'Email does not exists') alert('Email does not exist')
     else if (res) {
       setJwt(res)
+      localStorage.setItem("jwt", res)
       history.push('./categories')
     }
     else alert('Oops, something went wrong...')
