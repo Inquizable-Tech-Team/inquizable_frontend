@@ -21,9 +21,9 @@ function Routing() {
 let history = useHistory();
 
 
-  useEffect(() => {
+  useEffect(async() => {
     if (jwt) {
-      const decoded = jwt_decode(jwt)
+      const decoded = await jwt_decode(jwt)
       if (Date.now() >= decoded.exp*1000) {
         alert('Session expired, please login again')
         localStorage.clear()
@@ -33,7 +33,7 @@ let history = useHistory();
       }
       else if (decoded.user) {
         setUser(decoded.user.rows[0])
-        console.log(decoded.user.rows[0])
+        console.log(user)
       }
       else {
         localStorage.clear()
