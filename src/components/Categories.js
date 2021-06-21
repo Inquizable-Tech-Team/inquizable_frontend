@@ -1,17 +1,24 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import Data from './data.json'
 import SubCategories from './subcategory'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-export const Categories = () => {
+export const Categories = ({user}) => {
     const [categoryIndex, setCategoryIndex] = useState(false)
+
+    let history = useHistory();
+
+    useEffect(() => {
+        if (!user.nickname) history.push('./login')
+    },[user])
+
     return (
         <Fragment>
             <section className="text-gray-200 darkblueBackground">
                 <div className="max-w-6xl mx-auto px-5 py-12 ">
                     <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                        <h3 className="title-font mb-2 text-4xl leading-10 tracking-tight text-left sm:text-5xl sm:leading-none md:text-6xl"> Hello "Nickname"</h3>
-                        <p className="lg:w-1/2 w-full leading-relaxed text-base">Choose Category</p>
+                        <h3 className="title-font mb-2 text-4xl leading-10 tracking-tight text-left sm:text-5xl sm:leading-none md:text-6xl"> Hello {user.nickname}</h3>
+                        <p className="lg:w-1/2 w-full leading-relaxed text-base">Choose a Category</p>
                     </div>
                     <div className="posts">
                         <div className="flex flex-wrap -m-5 text-center">

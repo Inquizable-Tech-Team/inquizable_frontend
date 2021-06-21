@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import Logo from './img/logo.png'
 import BrainIMG from './img/brain.jpg'
-import jwt_decode from 'jwt-decode'
 import {loginFunction, registrationFunction} from './Controller'
 
 const queryString = require('query-string');
