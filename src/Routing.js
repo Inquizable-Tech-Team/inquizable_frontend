@@ -1,19 +1,21 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { Home } from "./components/Home";
-import { Login } from "./components/Login";
-import { Admin } from "./components/Admin";
-import { Account } from "./components/Account";
-import { Categories } from "./components/Categories";
-import { Quiz } from "./components/Quiz";
-import Contact from "./components/Contact";
-import { Submit } from "./components/Submit";
-import { Leaderboard } from "./components/Leaderboard";
-import About from "./components/About";
-import Footer from "./components/Footer";
+import { Switch, Route, Redirect } from 'react-router-dom'
+import {Home} from './components/Home'
+import {Login} from './components/Login'
+import {Admin} from './components/Admin'
+import {Account} from './components/Account'
+import {Categories} from './components/Categories'
+import {Quiz} from './components/Quiz'
+import {Contact} from './components/Contact'
+import {Submit} from './components/Submit'
+import {Leaderboard} from './components/Leaderboard'
+import {About} from './components/About'
+import {useState} from 'react'
+
 function Routing() {
+  const [jwt, setJwt] = useState(false)
   return (
     <div>
+      <h1 className='animate-bounce'>Hello World</h1>
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
@@ -22,7 +24,7 @@ function Routing() {
           <Home />
         </Route>
         <Route exact path="/login">
-          <Login />
+          <Login jwt={jwt} setJwt={setJwt}/>
         </Route>
         <Route exact path="/admin">
           <Admin />
@@ -33,7 +35,7 @@ function Routing() {
         <Route exact path="/categories">
           <Categories />
         </Route>
-        <Route exact path="/quiz/:qId">
+        <Route exact path="/quiz">
           <Quiz />
         </Route>
         <Route exact path="/contact">
@@ -49,7 +51,6 @@ function Routing() {
           <About />
         </Route>
       </Switch>
-      <Footer />
     </div>
   );
 }
