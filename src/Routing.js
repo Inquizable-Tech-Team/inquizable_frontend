@@ -11,9 +11,11 @@ import { Submit } from "./components/Submit";
 import { Leaderboard } from "./components/Leaderboard";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 function Routing() {
   return (
     <div>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
