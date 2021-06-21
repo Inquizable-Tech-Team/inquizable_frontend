@@ -9,7 +9,7 @@ import Contact from './components/Contact'
 import {Submit} from './components/Submit'
 import {Leaderboard} from './components/Leaderboard'
 import About from './components/About'
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
 

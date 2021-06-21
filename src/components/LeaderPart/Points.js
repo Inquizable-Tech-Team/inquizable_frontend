@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
 import '../Leaderboard.css';
+import { fetchPoints } from "../Controller";
 
-export default function Points() {
+export default function Points({user}) {
   const [points, setPoints] = useState();
 
-  useEffect(() => {
-    fetchPoints();
-  }, []);
 
-  const fetchPoints = async () => {
-    await Axios.get("https://inquizable.herokuapp.com/users/points")
-      .then((response) => setPoints(response.data))
-      .catch((error) => console.log(error));
-  };
+  useEffect(() => {
+    fetchPoints().then(res => {
+      setPoints(res);
+    })
+  }, []);
 
   return (
     <div class="container mx-auto px-4 sm:px-8">
       <div class="py-8">
       <div className="ScoreSum text-center">
-          <h1 className="p-4">Your Score is 1200 points</h1>
+         <h1 className="p-4">Your Score is {user.points} points</h1>
       </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">

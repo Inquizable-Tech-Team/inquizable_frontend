@@ -1,25 +1,21 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import Axios from "axios";
+import React, { useState, useEffect } from "react";
 import '../Leaderboard.css';
+import { fetchPercentages } from "../Controller";
 
-export default function Percentage() {
+export default function Percentage({user}) {
   const [percentages, setPercentages] = useState();
 
   useEffect(() => {
-    fetchPercentages();
+    fetchPercentages().then(res => {
+      setPercentages(res)
+    });
   }, []);
 
-  const fetchPercentages = async () => {
-    await Axios.get("https://inquizable.herokuapp.com/users/percentage")
-      .then((response) => setPercentages(response.data))
-      .catch((error) => console.log(error));
-  };
   return (
     <div class="container mx-auto px-4 sm:px-8">
       <div class="py-8">
       <div className="ScoreSum text-center">
-          <h1 className="p-4">You answered 80% correct</h1>
+          <h1 className="p-4">You answered {Math.round((user.correct)*1000/(user.answered))/10}% correct</h1>
       </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">

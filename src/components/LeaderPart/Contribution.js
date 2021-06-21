@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
 import '../Leaderboard.css';
+import { fetchContribution } from "../Controller";
 
-export default function Contribution() {
+export default function Contribution({user}) {
   const [contributions, setContributions] = useState();
+  const [ownContributions, setOwnContributions] = useState()
 
   useEffect(() => {
-    fetchContribution();
+    fetchContribution().then(res => {
+      setContributions(res)
+    });
   }, []);
 
-  const fetchContribution = async () => {
-    await Axios.get("https://inquizable.herokuapp.com/users/contributions")
-      .then((response) => setContributions(response.data))
-      .catch((error) => console.log(error));
-  };
+  useEffect(() => {
+    if (contributions) {
+      const own = contributions.filter(filterFunction)
+    setOwnContributions(own)
+    }
+  }, [contributions]);
+
+  const filterFunction = (e) => {
+    if (user.nickname === e.nickname) return true
+    else return false
+}
 
   return (
     <div class="container mx-auto px-4 sm:px-8">
       <div class="py-8">
       <div className="ScoreSum text-center">
-          <h1 className="p-4">Your Contribution is 12 Questions</h1>
+          {ownContributions && <h1 className="p-4">You contributed {ownContributions[0].contributions} Questions</h1>}
       </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
