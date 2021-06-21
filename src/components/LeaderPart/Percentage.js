@@ -19,7 +19,7 @@ export default function Percentage() {
     <div class="container mx-auto px-4 sm:px-8">
       <div class="py-8">
       <div className="ScoreSum text-center">
-          <h1 className="p-4">Your Percentage of answering Questions correctly is 80%</h1>
+          <h1 className="p-4">You answered 80% correct</h1>
       </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
