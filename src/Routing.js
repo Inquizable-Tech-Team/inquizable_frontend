@@ -82,7 +82,7 @@ useEffect(() => {
           <Redirect to="/home" />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
