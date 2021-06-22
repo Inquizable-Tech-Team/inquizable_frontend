@@ -1,145 +1,158 @@
 /*Admin Left*/
 
 .AdminList {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .AdminList a {
-    margin: 20px 0px;
-    font-weight: 700;
-  }
-  
-  /*Admin Right*/
-  .AdminRight {
-    width: 100% !important;
-    background-color: transparent;
-    height: 100%;
-  }
-  .UpperAdmin {
-    height: 10vh;
-    background-color: #e6e3d8;
-  }
-  
-  /*Updated*/
-  
-  /*Admin*/
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.AdminList a {
+  margin: 20px 0px;
+  font-weight: 700;
+}
+
+/*Admin Right*/
+.AdminRight {
+  width: 100% !important;
+  background-color: transparent;
+  height: 100%;
+}
+.UpperAdmin {
+  height: 10vh;
+  background-color: #e6e3d8;
+}
+
+/*Updated*/
+
+/*Admin*/
+.Admin {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+}
+/*Left Right*/
+.AdminLeft,
+.AdminRight {
+  height: 100%;
+}
+/*Left*/
+.AdminLeft {
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  width: 20% !important;
+  background-color: #fff;
+  color: black;
+}
+.InsideLeft {
+  position: fixed;
+  width: 20% !important;
+  background-color: #fff;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.LinksInside {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  border: none !important;
+}
+/*Right*/
+.AdminRight {
+  width: 80% !important;
+  height: 100%;
+}
+
+.InsideRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
+  margin: 50px 0px;
+}
+
+.AdminContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.InsideRight h1 {
+  margin: 10px 0px;
+}
+
+.AdminContainer h1 {
+  color: white;
+}
+
+/*Inside User*/
+.InsideUser,
+.InsideQuestion {
+  height: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+.InsideUser p,
+a,
+.InsideQuestion p,
+a {
+  padding-right: 20px;
+  color: black;
+  padding-top: 5px;
+}
+.InsideUser b,
+.InsideQuestion b {
+  font-weight: bold;
+  font-size: 17px;
+}
+.InsideUser small,
+.InsideQuestion small {
+  font-size: 14px;
+  color: #10172f;
+}
+.BTN {
+  display: inline-block !important;
+  border: 1px solid #10172f;
+  margin: 10px 0px;
+  padding: 5px;
+  background-color: #10172f;
+  color: white;
+}
+
+.FULLSCREEN {
+  height: 100vh;
+  width: 100%;
+  display: none;
+}
+
+/*Mobile */
+
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px) {
   .Admin {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    position: relative;
-  }
-  /*Left Right*/
-  .AdminLeft,
-  .AdminRight {
-    height: 100%;
-  }
-  /*Left*/
-  .AdminLeft {
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    width: 20% !important;
-    background-color: #fff;
-    color: black;
-  }
-  .InsideLeft {
-    position: fixed;
-    width: 20% !important;
-    background-color: #fff;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .LinksInside {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none !important;
-    border: none !important;
-  }
-  /*Right*/
-  .AdminRight {
-    width: 80% !important;
-  }
-  
-  .InsideRight {
-    height: 80vh;
-    display: flex;
-    overflow: scroll;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    width: 100%;
-    margin: 50px 0px;
-  }
-  .InsideRight h1 {
-    margin: 10px 0px;
-  }
-  .AdminContainer {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .AdminContainer h1 {
-    color: white;
-  }
-  .InsideUser {
-    height: 100%;
-    border: 1px solid black;
-    background-color: white;
-    color: black;
-    display: flex;
-    padding: 10px 10px;
-    border-radius: 5px;
-  }
-  .InsideUser p,
-  a {
-    padding-right: 20px;
-    color: black;
-  }
-  .InsideQuestion {
-    height: 100%;
-    border: 1px solid black;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 10px;
-    border-radius: 5px;
-  }
-  .InsideQuestion p {
-    color: black;
-  }
-  .FULLSCREEN {
-    height: 100vh;
-    width: 100%;
     display: none;
   }
-  
-  @media (min-width: 320px) and (max-width: 480px),
-    (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
-    (min-width: 768px) and (max-width: 1024px) and (orientation: landscape),
-    (min-width: 768px) and (max-width: 1024px) {
-    .Admin {
-      display: none;
-    }
-    .FULLSCREEN {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+  .FULLSCREEN {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-
-  button {
-    border: 1px solid black;
-    color: black;
-  }
+}
