@@ -1,14 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const [toggle, setToggle] = useState(false);
   const onToggle = () => {
     setToggle(!toggle);
   };
   return (
-    <React.Fragment>
+    <Fragment>
+      {console.log(user)}
       <div className="Navbar">
         <div
           onClick={onToggle}
@@ -23,21 +24,30 @@ const Navbar = () => {
           <div className="navBar3"></div>
         </div>
         {toggle ? (
-          <React.Fragment>
+          <Fragment>
             <div className="NavShow">
               <div className="Linkss">
-                <Link>Home</Link>
-                <Link>About</Link>
-                <Link>Quiz</Link>
-                <Link>Contact</Link>
+                <Link to='/home'>Home</Link>
+                {!user.nickname && <Link to='/login'>Login & Register</Link>}
+                {user.nickname &&
+                  <Fragment>
+                    <Link to='/categories'>Start a Quiz</Link>
+                    <Link to='/leaderboard'>Leaderboard</Link>
+                    <Link to='/submit'>Submit a Question</Link>
+                    <Link to='/account'>Account</Link>
+                    <Link to='/login' onClick={(() => localStorage.clear())}>Logout</Link>
+                  </Fragment>}
+                {user.admin===1 && <Link to='/admin'>Admin Pannel</Link>}
+                <Link to='/about'>About</Link>
+                <Link to='/contact'>Contact</Link>
               </div>
             </div>
-          </React.Fragment>
+          </Fragment>
         ) : (
           ""
         )}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 export default Navbar;

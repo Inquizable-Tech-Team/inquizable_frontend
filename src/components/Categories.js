@@ -2,12 +2,14 @@ import React, {Fragment, useState} from 'react'
 import Data from './data.json'
 import SubCategories from './subcategory'
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
 
 export const Categories = ({user}) => {
     const [categoryIndex, setCategoryIndex] = useState(false)
 
     return (
         <Fragment>
+            <Navbar user={user}/>
             <section className="text-gray-200 darkblueBackground">
                 <div className="max-w-6xl mx-auto px-5 py-12 ">
                     <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">

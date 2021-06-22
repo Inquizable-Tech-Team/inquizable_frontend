@@ -65,6 +65,7 @@
   font-weight: 700;
   margin: 10px 0px;
   animation: links 2s linear;
+  color: white;
 }
 @keyframes links {
   0% {

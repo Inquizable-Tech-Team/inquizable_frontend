@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Fragment} from "react";
 import "./Leaderboard.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -6,6 +6,7 @@ import Points from "./LeaderPart/Points";
 import Contribution from "./LeaderPart/Contribution";
 import Percentage from "./LeaderPart/Percentage";
 import { fetchUser } from "./Controller";
+import Navbar from "./Navbar";
 
 
 export const Leaderboard = ({user}) => {
@@ -18,13 +19,14 @@ export const Leaderboard = ({user}) => {
   }, []);
 
   return (
+  <Fragment>
     <Tabs>
       <TabList className="flex border-b-2">
         <Tab>Overall Points</Tab>
         <Tab>Overall Percentage</Tab>
         <Tab>Most Contribution</Tab>
       </TabList>
-
+      <Navbar user={user}/>
       <TabPanel>
         <Points user={userData} />
       </TabPanel>
@@ -35,5 +37,6 @@ export const Leaderboard = ({user}) => {
         <Contribution user={userData} />
       </TabPanel>
     </Tabs>
+    </Fragment>
   );
 };
