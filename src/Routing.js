@@ -67,7 +67,7 @@ useEffect(() => {
         {profileHooks.nickname ? <Quiz user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/contact">
-          <Contact />
+          <Contact user={profileHooks}/>
         </Route>
         <Route exact path="/submit">
         {profileHooks.nickname ? <Submit user={profileHooks}/> : <Login setJwt={setJwt}/>}
@@ -76,13 +76,13 @@ useEffect(() => {
         {profileHooks.nickname ? <Leaderboard user={profileHooks}/> : <Login setJwt={setJwt}/>}
         </Route>
         <Route exact path="/about">
-          <About />
+          <About user={profileHooks} />
         </Route>
         <Route path="/:anything?">
           <Redirect to="/home" />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

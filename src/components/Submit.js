@@ -2,6 +2,7 @@ import React, {useEffect, useState, Fragment} from 'react'
 import { useHistory } from 'react-router-dom';
 import './submit.css'
 import {submitFunction} from './Controller'
+import Navbar from './Navbar';
 
 export const Submit = ({user}) => {
     const [questionName, setQuestionName] = useState('')
@@ -67,6 +68,7 @@ export const Submit = ({user}) => {
 
     return (
         <Fragment>
+            <Navbar user={user}/>
         <div class=" shadow-md rounded-2xl m-2 p-20">
             <div class=" title-font mb-2 text-4xl font-bold items-center text-center text-left sm:text-2xl"> Submit Your Questions
             </div><br/><br/>

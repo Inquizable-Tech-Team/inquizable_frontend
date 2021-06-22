@@ -1,14 +1,16 @@
 import React, {Fragment} from "react";
 import "./Contact.css";
 import { useForm, ValidationError } from "@formspree/react";
-
-const Contact = () => {
+import Navbar
+ from "./Navbar";
+const Contact = ({user}) => {
   const [state, handleSubmit] = useForm("mqkwbyve");
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
   }
   return (
-    <Fragment>
+    <Fragment >
+      <Navbar user={user}/>
       <div className={"contactMain"}>
         <div className={"contactLeft"}>
           <div className={"contactContainer"}>

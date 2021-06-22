@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import "./QuizPart/Quiz.css";
 import Data from './data.json'
@@ -6,7 +6,7 @@ import { QuizStart } from './QuizPart/QuizStart';
 import { Questions } from "./QuizPart/Questions";
 import { Overview } from "./QuizPart/Overview";
 import Axios from "axios";
-
+import Navbar from "./Navbar";
 
 export const Quiz = ({user}) => {
   const { qId } = useParams();
@@ -48,11 +48,12 @@ export const Quiz = ({user}) => {
 
 
   return (
-    <div>
+    <Fragment>
+      <Navbar user={user}/>
       {questions && questionIndex===10 ? <Overview user={user} points={points} correct={correct}/>
       : questions && (questionIndex || questionIndex===0) ? <Questions user={user} correct={correct} setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
-    </div>
+    </Fragment>
   );
 };
   /*const [timer, setTimer] = useState(5);

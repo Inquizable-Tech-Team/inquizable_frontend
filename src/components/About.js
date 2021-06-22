@@ -1,8 +1,9 @@
 import React, {Fragment, useEffect, useState} from "react";
 import "./About.css";
 import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "./Controller";
+import Navbar from "./Navbar";
 
-const About = () => {
+const About = ({user}) => {
   const [users, setUsers] = useState()
   const [questions, setQuestions] = useState()
   const [answered, setAnswered] = useState()
@@ -35,6 +36,7 @@ const About = () => {
 
   return (
     <Fragment>
+      {user && <Navbar user={user} />}
       <div className={"aboutMain"}>
         <div className={"aboutLeft"}>
           <div className={"aboutContainer"}>
