@@ -1,0 +1,78 @@
+.Navbar {
+  height: 10vh;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+}
+.NavbarInside {
+  cursor: pointer;
+  margin-right: 60px !important;
+}
+.navBar1,
+.navBar2,
+.navBar3 {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 6px;
+  transition: 0.4s;
+}
+.change {
+  margin-right: 60px !important;
+  display: inline-block;
+  cursor: pointer;
+}
+.change .navBar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-40deg) translate(-8px, 6px);
+}
+
+.change .navBar2 {
+  opacity: 0 !important;
+}
+
+.change .navBar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(36deg) translate(-5px, -5px);
+}
+.NavShow {
+  height: 100vh !important;
+  width: 100vw;
+  background-color: #10172f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+}
+.Linkss {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Linkss a {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 10px 0px;
+  animation: links 2s linear;
+}
+@keyframes links {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
