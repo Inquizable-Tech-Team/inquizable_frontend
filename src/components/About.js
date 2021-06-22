@@ -36,7 +36,7 @@ const About = ({user}) => {
 
   return (
     <Fragment>
-      <Navbar user={user} />
+      {user && <Navbar user={user} />}
       <div className={"aboutMain"}>
         <div className={"aboutLeft"}>
           <div className={"aboutContainer"}>
