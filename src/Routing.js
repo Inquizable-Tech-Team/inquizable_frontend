@@ -51,7 +51,6 @@ function Routing() {
           <About />
         </Route>
       </Switch>
-      <Footer />
     </div>
   );
 }
