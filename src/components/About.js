@@ -1,9 +1,11 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useEffect, useState, useContext} from "react";
 import "./About.css";
 import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "./Controller";
 import Navbar from "./Navbar";
+import { UserContext } from "../context/UserContext";
 
-const About = ({user}) => {
+const About = () => {
+  const [user] = useContext(UserContext)
   const [users, setUsers] = useState()
   const [questions, setQuestions] = useState()
   const [answered, setAnswered] = useState()
@@ -36,7 +38,7 @@ const About = ({user}) => {
 
   return (
     <Fragment>
-      {user && <Navbar user={user} />}
+      {user && <Navbar />}
       <div className={"aboutMain"}>
         <div className={"aboutLeft"}>
           <div className={"aboutContainer"}>
@@ -61,8 +63,7 @@ const About = ({user}) => {
                   <div className={"aboutSplitLeft"}>
                     <h1>{users}</h1>
                     <p>
-                      <span>Users</span> making it look like readable
-                      English.
+                      <span>Users</span> that already registered.
                     </p>
                   </div>
                   <div className={"aboutSplitRight"}>

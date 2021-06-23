@@ -1,10 +1,12 @@
-import React, {Fragment, useState, useEffect} from 'react'
+import React, {Fragment, useState, useEffect, useContext} from 'react'
 import { useHistory } from "react-router-dom";
 import './Overview.css';
 import Axios from 'axios'
 import {updatePointsFunction} from '../Controller'
+import { UserContext } from '../../context/UserContext';
 
-export const Overview = ({points, correct, user}) => {
+export const Overview = ({points, correct }) => {
+    const [user] = useContext(UserContext)
     const [userData, setUserData] = useState(false)
     let history = useHistory();
     const queryString = require('query-string');
