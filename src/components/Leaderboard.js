@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import Points from "./LeaderPart/Points";
 import Contribution from "./LeaderPart/Contribution";
 import Percentage from "./LeaderPart/Percentage";
-import { fetchUser } from "./Controller";
+import { fetchUser } from "../Controller";
 import Navbar from "./Navbar";
 import { UserContext } from "../context/UserContext";
 

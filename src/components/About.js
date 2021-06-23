@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect, useState, useContext} from "react";
 import "./About.css";
-import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "./Controller";
+import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "../Controller";
 import Navbar from "./Navbar";
 import { UserContext } from "../context/UserContext";
 

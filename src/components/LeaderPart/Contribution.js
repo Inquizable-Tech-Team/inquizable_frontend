@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../Leaderboard.css';
-import { fetchContribution } from "../Controller";
+import { fetchContribution } from "../../Controller";
 
 export default function Contribution({user}) {
   const [contributions, setContributions] = useState();

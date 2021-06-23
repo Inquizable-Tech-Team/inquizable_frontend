@@ -1,6 +1,7 @@
 import Axios from 'axios'
 require('dotenv').config()
 const endpoint = process.env.REACT_APP_ENDPOINT
+
 export const loginFunction = (user) => {
   return Axios
     .post(`${endpoint}/users/login`, user)
@@ -111,6 +112,24 @@ export const fetchCorrect = async () => {
     .get(`${endpoint}/users/correct`)
     .then((response) => {
       return (response.data[0])
+    })
+    .catch((error) => console.log(error.message));
+};
+
+export const fetchCommunityQuestions = async () => {
+  return Axios
+    .get(`${endpoint}/questions`)
+    .then((response) => {
+      return (response.data)
+    })
+    .catch((error) => console.log(error.message));
+};
+
+export const fetchDataBaseQuestions = async (qId) => {
+  return Axios
+    .get(`https://opentdb.com/api.php?amount=10&category=${qId}`)
+    .then((response) => {
+      return (response.data.results)
     })
     .catch((error) => console.log(error.message));
 };

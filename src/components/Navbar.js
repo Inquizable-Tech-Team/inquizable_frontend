@@ -12,7 +12,6 @@ const Navbar = () => {
   };
   return (
     <Fragment>
-      {console.log(user)}
       <div className="Navbar">
         <div
           onClick={onToggle}

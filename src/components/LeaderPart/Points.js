@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../Leaderboard.css';
-import { fetchPoints } from "../Controller";
+import { fetchPoints } from "../../Controller";
 
 export default function Points({user}) {
   const [points, setPoints] = useState();

@@ -5,9 +5,9 @@ import Data from './data.json'
 import { QuizStart } from './QuizPart/QuizStart';
 import { Questions } from "./QuizPart/Questions";
 import { Overview } from "./QuizPart/Overview";
-import Axios from "axios";
 import Navbar from "./Navbar";
 import { UserContext } from '../context/UserContext'
+import { fetchCommunityQuestions, fetchDataBaseQuestions } from "../Controller";
 
 export const Quiz = () => {
   const [user] = useContext(UserContext)
@@ -32,22 +32,17 @@ export const Quiz = () => {
   else filterId(qId)
   
   useEffect(() => {
-    if (categoryName==='Community') fetchCommunityQuestions()
-    else fetchQuestions();
+    if (categoryName==='Community') {
+      fetchCommunityQuestions().then(res => {
+        setQuestions(res)
+      })
+    }
+    else {
+      fetchDataBaseQuestions(qId).then(res => {
+        setQuestions(res)
+      })
+    }
   }, []);
-
-  const fetchQuestions = async () => {
-    await Axios.get(`https://opentdb.com/api.php?amount=10&category=${qId}`)
-      .then((response) => setQuestions(response.data.results))
-      .catch((error) => console.log(error));
-  };
-
-  const fetchCommunityQuestions = async () => {
-    await Axios.get('https://inquizable.herokuapp.com/questions')
-      .then((response) => setQuestions(response.data))
-      .catch((error) => console.log(error));
-  };
-
 
   return (
     <Fragment>

@@ -20,11 +20,11 @@ export const Categories = () => {
                     </div>
                     <div className="posts">
                         <div className="flex flex-wrap -m-5 text-center">
-                            {Data.map(post => {
+                            {Data.map((post, index) => {
                                 return (
                                     <Fragment>
                                         {post.category === 'Random' ?
-                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
+                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>
                                                 <Link to='/quiz/0'>
                                                     <div className="categorySelectionButton">
                                                         <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
@@ -32,7 +32,7 @@ export const Categories = () => {
                                                 </Link>
                                             </div>
                                             : post.category === 'Community' ?
-                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
+                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>
                                                 <Link to='/quiz/community'>
                                                     <div className="categorySelectionButton">
                                                         <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
@@ -40,7 +40,7 @@ export const Categories = () => {
                                                 </Link>
                                             </div>
                                             :
-                                            <div key={post.id} className="xl:w-1/5 md:w-1/5 p-5" onClick={(() => {
+                                            <div key={index} className="xl:w-1/5 md:w-1/5 p-5" onClick={(() => {
                                                 setCategoryIndex(post.id)
                                             })}>
                                                 <div className="categorySelectionButton">

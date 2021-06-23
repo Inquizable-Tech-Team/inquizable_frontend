@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../Leaderboard.css';
-import { fetchPercentages } from "../Controller";
+import { fetchPercentages } from "../../Controller";
 
 export default function Percentage({user}) {
   const [percentages, setPercentages] = useState();

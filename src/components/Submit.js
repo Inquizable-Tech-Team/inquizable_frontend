@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import './submit.css'
-import { submitFunction } from './Controller'
+import { submitFunction } from '../Controller'
 import Navbar from './Navbar';
 import { UserContext } from '../context/UserContext';
 

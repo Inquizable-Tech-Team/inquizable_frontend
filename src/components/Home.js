@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Workflow from './HomePart/Workflow';
 import CTA from './HomePart/Cta';
-import Axios from "axios";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -16,18 +15,7 @@ const navigation = [
   { name: "Contact", href: "./contact" },
 ];
 
-const User_DB = process.env.USERS;
-
 export const Home = () => {
-  useEffect(() => {
-    fetchUsersData();
-  }, []);
-
-  const fetchUsersData = async () => {
-    await Axios.get(User_DB)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-  };
 
   return (
     <div>
