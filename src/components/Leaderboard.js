@@ -16,7 +16,7 @@ export const Leaderboard = () => {
   useEffect(() => {
     fetchUser(user.id).then(res => {
       setUserData(res);
-    })
+    })// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -27,7 +27,7 @@ export const Leaderboard = () => {
         <Tab>Overall Percentage</Tab>
         <Tab>Most Contribution</Tab>
       </TabList>
-      <Navbar user={user}/>
+      <Navbar />
       <TabPanel>
         <Points user={userData} />
       </TabPanel>

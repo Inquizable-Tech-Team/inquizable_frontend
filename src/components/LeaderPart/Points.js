@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../Leaderboard.css';
 import { fetchPoints } from "../../Controller";
 
-export default function Points({user}) {
+export default function Points({ user }) {
   const [points, setPoints] = useState();
 
 
@@ -13,58 +13,50 @@ export default function Points({user}) {
   }, []);
 
   return (
-    <div class="container mx-auto px-4 sm:px-8">
-      <div class="py-8">
-      <div className="ScoreSum text-center">
-         <h1 className="p-4">Your Score is {user.points} points</h1>
-      </div>
-        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-          <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-            <table class="min-w-full leading-normal">
+    <div className="container mx-auto px-4 sm:px-8">
+      <div className="py-8">
+        <div className="ScoreSum text-center">
+          <h1 className="p-4">Your Score is {user.points} points</h1>
+        </div>
+        <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+          <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+            <table className="min-w-full leading-normal">
               <thead>
                 <tr>
-                  <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                    #
-                  </th>
-                  <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                    UserName
-                  </th>
-                  <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                    Points
-                  </th>
+                  <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
+                  <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">UserName</th>
+                  <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Points</th>
                 </tr>
               </thead>
-              {points
-                ? points.map((point) => {
+              <tbody>
+                {points
+                  ? points.map((point, index) => {
                     return (
-                      <>
-                        <tbody>
-                          <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
-                              <p class="text-gray-900 whitespace-no-wrap">
-                                {points.indexOf(point) + 1}º
+                      <tr key={index}>
+                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+                          <p className="text-gray-900 whitespace-no-wrap">
+                            {points.indexOf(point) + 1}º
+                          </p>
+                        </td>
+                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                          <div className="flex items-center justify-items-center">
+                            <div className="ml-3">
+                              <p className="text-gray-900 whitespace-no-wrap">
+                                {point.nickname}
                               </p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                              <div class="flex items-center justify-items-center">
-                                <div class="ml-3">
-                                  <p class="text-gray-900 whitespace-no-wrap">
-                                    {point.nickname}
-                                  </p>
-                                </div>
-                              </div>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap text-center">
-                                {point.points}
-                              </p>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                          <p className="text-gray-900 whitespace-no-wrap text-center">
+                            {point.points}
+                          </p>
+                        </td>
+                      </tr>
                     );
                   })
-                : "No Scoring available"}
+                  : <tr><td>Loading</td></tr>}
+              </tbody>
             </table>
           </div>
         </div>

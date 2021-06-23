@@ -42,7 +42,7 @@ function Routing() {
           admin: decoded.user.rows[0].admin
         })
       }
-    }
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jwt])
 
 

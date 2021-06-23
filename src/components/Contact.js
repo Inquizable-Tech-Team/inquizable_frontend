@@ -33,11 +33,11 @@ const Contact = () => {
               </div>
               <div className={"contactIcons"}>
                 <div>
-                  <i class="fas fa-phone-alt"></i>
+                  <i className="fas fa-phone-alt"></i>
                   <p>010 23667 37497</p>
                 </div>
                 <div>
-                  <i class="far fa-envelope"></i>
+                  <i className="far fa-envelope"></i>
                   <p>Inquizable@gmail.com</p>
                 </div>
               </div>
@@ -82,8 +82,7 @@ const Contact = () => {
             ></input>
             <ValidationError prefix="tel" field="tel" errors={state.errors} />
             <textarea
-              className={"contactTextarea"}
-              className='text-black'
+              className="text-black contactTextarea"
               id="message"
               name="message"
               placeholder="Message"
@@ -95,7 +94,7 @@ const Contact = () => {
               errors={state.errors}
             />
             <button
-              className={"contactBtn"}
+              className="contactBtn"
               type="submit"
               disabled={state.submitting}
             >

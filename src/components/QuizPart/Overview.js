@@ -13,13 +13,13 @@ export const Overview = ({points, correct }) => {
     useEffect(() => {
         fetchUser(user.id).then(res => {
             setUserData(res);
-          })
+          })// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
        if(userData) {
            updatePoints()
-        }
+        }// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userData])
 
     const updatePoints = () => {

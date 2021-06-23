@@ -19,7 +19,7 @@ export const Submit = () => {
     let history = useHistory();
 
     useEffect(() => {
-        if (!user) history.push('./login')
+        if (!user) history.push('./login')// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user])
 
     const submitQuestion = () => {
@@ -69,8 +69,8 @@ export const Submit = () => {
     return (
         <Fragment>
             <Navbar user={user} />
-            <div class=" shadow-md rounded-2xl m-2 p-20">
-                <div class=" title-font mb-2 text-4xl font-bold items-center text-center text-left sm:text-2xl"> Submit Your Questions
+            <div className=" shadow-md rounded-2xl m-2 p-20">
+                <div className=" title-font mb-2 text-4xl font-bold items-center text-center text-left sm:text-2xl"> Submit Your Questions
                 </div><br /><br />
                 <input className="appearance-none block w-full bg-grey-lighter 
                              text-black border border-grey-lighter rounded-lg 
@@ -78,39 +78,39 @@ export const Submit = () => {
                 </input>
                 <br></br><br></br>
                 <div className="float-right">
-                    <label class="text-xs font-semibold text-white-600 py-2">Correct Answer:<abbr class="hidden" title="required">*</abbr></label><br></br>
+                    <label className="text-xs font-semibold text-white-600 py-2">Correct Answer:<abbr className="hidden" title="required">*</abbr></label><br></br>
                     <input type="text" className="text-xs rounded-lg h-10 px-4 text-black" placeholder="Type Correct Answer" onChange={(e) => setCorrectA(e.target.value)}></input>
                     <br></br>
-                    <label class="text-xs font-semibold text-white-600 py-2">Wrong Answer:<abbr class="hidden" title="required">*</abbr></label><br></br>
+                    <label className="text-xs font-semibold text-white-600 py-2">Wrong Answer:<abbr className="hidden" title="required">*</abbr></label><br></br>
                     <input type="text" className="text-xs rounded-lg h-10 px-4 text-black " placeholder="Type Wrong Answer" onChange={(e) => setWrongA1(e.target.value)}></input>
                     <br></br>
-                    {qType === 'multiple' && <Fragment><label class="text-xs font-semibold text-white-600 py-2 ">Wrong Answer:<abbr class="hidden" title="required">*</abbr></label><br></br>
+                    {qType === 'multiple' && <Fragment><label className="text-xs font-semibold text-white-600 py-2 ">Wrong Answer:<abbr className="hidden" title="required">*</abbr></label><br></br>
                         <input type="text" className="text-xs rounded-lg h-10 px-4 text-black" placeholder="Type Wrong Answer" onChange={(e) => setWrongA2(e.target.value)}></input>
                         <br></br>
-                        <label class="text-xs font-semibold text-white-600 py-2">Wrong Answer:<abbr class="hidden" title="required">*</abbr></label><br></br>
+                        <label className="text-xs font-semibold text-white-600 py-2">Wrong Answer:<abbr className="hidden" title="required">*</abbr></label><br></br>
                         <input type="text" className="text-xs text-black rounded-lg h-10 px-4 " placeholder="Type Wrong Answer" onChange={(e) => setWrongA3(e.target.value)}></input></Fragment>}
                     <br></br>
                 </div>
                 <br></br>
-                <div class="text-lg ">Choose your type of question</div>
+                <div className="text-lg ">Choose your type of question</div>
                 <br></br>
-                <div class="mt-2">
-                    <label class="inline-flex items-center">
+                <div className="mt-2">
+                    <label className="inline-flex items-center">
                         <input type="radio" onChange={(e) => setQType(e.target.value)} lass="form-radio text-black" name="accountType" value="boolean" />
-                        <span class="ml-2" >True/False</span></label>
-                    <label class="inline-flex items-center ml-6">
-                        <input type="radio" class="form-radio" name="accountType" onChange={(e) => setQType(e.target.value)} value="multiple" />
-                        <span class="ml-2">Multiple</span></label><br /><br />
+                        <span className="ml-2" >True/False</span></label>
+                    <label className="inline-flex items-center ml-6">
+                        <input type="radio" className="form-radio" name="accountType" onChange={(e) => setQType(e.target.value)} value="multiple" />
+                        <span className="ml-2">Multiple</span></label><br /><br />
                 </div>
-                <label class="font-semibold py-2">How difficult is your question?</label><br></br>
-                <select class="block  bg-grey text-black border border-grey-lighter rounded-lg h-10 px-4 " onChange={(e) => setQD(e.target.selectedOptions[0].label)} required="required" name="integration" id="integration_city_id">
+                <label className="font-semibold py-2">How difficult is your question?</label><br></br>
+                <select className="block  bg-grey text-black border border-grey-lighter rounded-lg h-10 px-4 " onChange={(e) => setQD(e.target.selectedOptions[0].label)} required="required" name="integration" id="integration_city_id">
                     <option value="">Select Difficulty</option>
                     <option value="">easy</option>
                     <option value="">medium</option>
                     <option value="">hard</option>
                 </select><br /><br />
-                <div class="flex justify-center">
-                    <button onClick={submitQuestion} class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm 
+                <div className="flex justify-center">
+                    <button onClick={submitQuestion} className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm 
                 shadow-sm font-medium tracking-wider text-black rounded-full 
                 hover:shadow-lg hover:bg-red-400">Submit</button>
                 </div></div>

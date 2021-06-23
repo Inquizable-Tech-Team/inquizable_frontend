@@ -22,7 +22,7 @@ export const Categories = () => {
                         <div className="flex flex-wrap -m-5 text-center">
                             {Data.map((post, index) => {
                                 return (
-                                    <Fragment>
+                                    <Fragment key={index}>
                                         {post.category === 'Random' ?
                                             <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>
                                                 <Link to='/quiz/0'>

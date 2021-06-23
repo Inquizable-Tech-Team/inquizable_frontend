@@ -3,11 +3,8 @@ import Data from './data.json'
 import {Link} from 'react-router-dom'
 
  const SubCategories = ({categoryIndex}) => {
-console.log(Data[categoryIndex])
-
 
     return (
-       
         <div>
             <section className="text-gray-200 darkblueBackground text-center">
                 <div className="max-w-6xl mx-auto px-5 py-12 ">

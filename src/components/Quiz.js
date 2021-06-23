@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment, useContext } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import "./QuizPart/Quiz.css";
 import Data from './data.json'
@@ -6,11 +6,9 @@ import { QuizStart } from './QuizPart/QuizStart';
 import { Questions } from "./QuizPart/Questions";
 import { Overview } from "./QuizPart/Overview";
 import Navbar from "./Navbar";
-import { UserContext } from '../context/UserContext'
 import { fetchCommunityQuestions, fetchDataBaseQuestions } from "../Controller";
 
 export const Quiz = () => {
-  const [user] = useContext(UserContext)
   const { qId } = useParams();
   const [questions, setQuestions] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(false)
@@ -41,7 +39,7 @@ export const Quiz = () => {
       fetchDataBaseQuestions(qId).then(res => {
         setQuestions(res)
       })
-    }
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
