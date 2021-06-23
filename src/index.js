@@ -4,11 +4,14 @@ import Routing from './Routing';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
 import './index.css'
+import { UserController } from './context/UserContext'
 
 ReactDOM.render(
   <React.StrictMode>
      <BrowserRouter>
+     <UserController>
     <Routing />
+    </UserController>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

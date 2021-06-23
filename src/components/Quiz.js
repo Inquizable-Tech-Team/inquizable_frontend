@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./QuizPart/Quiz.css";
 import Data from './data.json'
@@ -7,8 +7,10 @@ import { Questions } from "./QuizPart/Questions";
 import { Overview } from "./QuizPart/Overview";
 import Axios from "axios";
 import Navbar from "./Navbar";
+import { UserContext } from '../context/UserContext'
 
-export const Quiz = ({user}) => {
+export const Quiz = () => {
+  const [user] = useContext(UserContext)
   const { qId } = useParams();
   const [questions, setQuestions] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(false)
@@ -49,9 +51,9 @@ export const Quiz = ({user}) => {
 
   return (
     <Fragment>
-      <Navbar user={user}/>
-      {questions && questionIndex===10 ? <Overview user={user} points={points} correct={correct}/>
-      : questions && (questionIndex || questionIndex===0) ? <Questions user={user} correct={correct} setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
+      <Navbar />
+      {questions && questionIndex===10 ? <Overview points={points} correct={correct}/>
+      : questions && (questionIndex || questionIndex===0) ? <Questions setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
     </Fragment>
   );

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from "react";
+import React, {useState, useEffect, Fragment, useContext} from "react";
 import "./Leaderboard.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -7,9 +7,10 @@ import Contribution from "./LeaderPart/Contribution";
 import Percentage from "./LeaderPart/Percentage";
 import { fetchUser } from "./Controller";
 import Navbar from "./Navbar";
+import { UserContext } from "../context/UserContext";
 
-
-export const Leaderboard = ({user}) => {
+export const Leaderboard = () => {
+  const [user] = useContext(UserContext)
   const [userData, setUserData] = useState({})
 
   useEffect(() => {

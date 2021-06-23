@@ -1,10 +1,12 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useContext} from 'react'
 import Data from './data.json'
 import SubCategories from './subcategory'
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
+import { UserContext } from '../context/UserContext'
 
-export const Categories = ({user}) => {
+export const Categories = () => {
+    const [user] = useContext(UserContext)
     const [categoryIndex, setCategoryIndex] = useState(false)
 
     return (

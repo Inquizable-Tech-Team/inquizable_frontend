@@ -1,9 +1,11 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useContext } from "react";
 import './Questions.css';
 import arrayShuffle from "array-shuffle";
 import he from 'he'
+import { UserContext } from "../../context/UserContext";
 
-export const Questions = ({ question, questionIndex, setQuestionIndex, points, setPoints, correct, setCorrect, user }) => {
+export const Questions = ({ question, questionIndex, setQuestionIndex, points, setPoints, setCorrect }) => {
+  const [user] = useContext(UserContext)
   const [answerShowing, setAnswerShowing] = useState(false)
   const [answerArray, setAnswerArray] = useState([])
 
