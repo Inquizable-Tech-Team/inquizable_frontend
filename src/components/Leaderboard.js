@@ -1,21 +1,22 @@
-import React, {useState, useEffect, Fragment} from "react";
+import React, {useState, useEffect, Fragment, useContext} from "react";
 import "./Leaderboard.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Points from "./LeaderPart/Points";
 import Contribution from "./LeaderPart/Contribution";
 import Percentage from "./LeaderPart/Percentage";
-import { fetchUser } from "./Controller";
+import { fetchUser } from "../Controller";
 import Navbar from "./Navbar";
+import { UserContext } from "../context/UserContext";
 
-
-export const Leaderboard = ({user}) => {
+export const Leaderboard = () => {
+  const [user] = useContext(UserContext)
   const [userData, setUserData] = useState({})
 
   useEffect(() => {
     fetchUser(user.id).then(res => {
       setUserData(res);
-    })
+    })// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -26,7 +27,7 @@ export const Leaderboard = ({user}) => {
         <Tab>Overall Percentage</Tab>
         <Tab>Most Contribution</Tab>
       </TabList>
-      <Navbar user={user}/>
+      <Navbar />
       <TabPanel>
         <Points user={userData} />
       </TabPanel>

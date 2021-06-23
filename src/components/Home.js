@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Workflow from './HomePart/Workflow';
 import CTA from './HomePart/Cta';
-import Axios from "axios";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -16,18 +15,7 @@ const navigation = [
   { name: "Contact", href: "./contact" },
 ];
 
-const User_DB = process.env.USERS;
-
 export const Home = () => {
-  useEffect(() => {
-    fetchUsersData();
-  }, []);
-
-  const fetchUsersData = async () => {
-    await Axios.get(User_DB)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-  };
 
   return (
     <div>
@@ -54,11 +42,12 @@ export const Home = () => {
                   >
                     <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                       <div className="flex items-center justify-between w-full md:w-auto">
-                        <a href="#">
+                        <a href="/home">
                           <span className="sr-only">Inquizable</span>
                           <img
                             className="h-8 w-auto sm:h-10"
                             src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            alt='Inquizable Logo'
                           />
                         </a>
                         <div className="-mr-2 flex items-center md:hidden">
@@ -110,7 +99,7 @@ export const Home = () => {
                           <img
                             className="h-8 w-auto"
                             src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                            alt=""
+                            alt="Inquizable Logo"
                           />
                         </div>
                         <div className="-mr-2">
@@ -197,7 +186,7 @@ export const Home = () => {
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-          alt=""
+          alt="Man with Laptop"
         />
       </div>
     </div>

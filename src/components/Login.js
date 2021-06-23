@@ -2,21 +2,9 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import Logo from './img/logo.png'
 import BrainIMG from './img/brain.jpg'
-import {loginFunction, registrationFunction} from './Controller'
+import {loginFunction, registrationFunction} from '../Controller'
 
 const queryString = require('query-string');
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
-  }
-};
-
-
 
 export const Login = ({ setJwt }) => {
 const [email, setEmail] = useState('')
@@ -72,58 +60,58 @@ const register = (e) => {
         </div>
         <div className="mt-8">
           <div className="mt-6">
-            <form className="space-y-6" autocomplete="off" onSubmit={register} id='registerForm'>
+            <form className="space-y-6" autoComplete="off" onSubmit={register} id='registerForm'>
             <div>
-            <label for="name" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
               Name
             </label>
             <div className="mt-1">
-              <input onChange={((e) => setName(e.target.value))} id="name" name="name" type="name" autocomplete="name" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+              <input onChange={((e) => setName(e.target.value))} id="name" name="name" type="name" autoComplete="name" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
             </div>
           </div>
               <div>
-                <label for="email" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email address
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setEmail(e.target.value))} id="email" name="email" type="email" autocomplete="email" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setEmail(e.target.value))} id="email" name="email" type="email" autoComplete="email" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               
               <div className="space-y-1">
-                <label for="password" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autocomplete="current-password" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autoComplete="current-password" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               <div>
                 <input type="submit" value='Register' className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" />
               </div>
               </form>
-              <form className="space-y-6" autocomplete="off" onSubmit={signIn}>
+              <form className="space-y-6" autoComplete="off" onSubmit={signIn}>
               <div>
-                <label for="email" className="block text-sm font-medium text-gray-700 mt-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mt-4">
                   Email address
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setEmail(e.target.value))}id="email" name="email" type="email" autocomplete="email" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setEmail(e.target.value))}id="email" name="email" type="email" autoComplete="email" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               
               <div className="space-y-1">
-                <label for="password" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <div className="mt-1">
-                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autocomplete="current-password" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                  <input onChange={((e) => setPassword(e.target.value))} id="password" name="password" type="password" autoComplete="current-password" required className="text-black appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                 </div>
               </div>
               <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input id="remember_me" name="remember_me" type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"/>
-                <label for="remember_me" className="ml-2 block text-sm text-gray-900">
+                <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-900">
                   Remember me
                 </label>
               </div>

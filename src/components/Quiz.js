@@ -5,10 +5,10 @@ import Data from './data.json'
 import { QuizStart } from './QuizPart/QuizStart';
 import { Questions } from "./QuizPart/Questions";
 import { Overview } from "./QuizPart/Overview";
-import Axios from "axios";
 import Navbar from "./Navbar";
+import { fetchCommunityQuestions, fetchDataBaseQuestions } from "../Controller";
 
-export const Quiz = ({user}) => {
+export const Quiz = () => {
   const { qId } = useParams();
   const [questions, setQuestions] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(false)
@@ -30,28 +30,23 @@ export const Quiz = ({user}) => {
   else filterId(qId)
   
   useEffect(() => {
-    if (categoryName==='Community') fetchCommunityQuestions()
-    else fetchQuestions();
+    if (categoryName==='Community') {
+      fetchCommunityQuestions().then(res => {
+        setQuestions(res)
+      })
+    }
+    else {
+      fetchDataBaseQuestions(qId).then(res => {
+        setQuestions(res)
+      })
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const fetchQuestions = async () => {
-    await Axios.get(`https://opentdb.com/api.php?amount=10&category=${qId}`)
-      .then((response) => setQuestions(response.data.results))
-      .catch((error) => console.log(error));
-  };
-
-  const fetchCommunityQuestions = async () => {
-    await Axios.get('https://inquizable.herokuapp.com/questions')
-      .then((response) => setQuestions(response.data))
-      .catch((error) => console.log(error));
-  };
-
 
   return (
     <Fragment>
-      <Navbar user={user}/>
-      {questions && questionIndex===10 ? <Overview user={user} points={points} correct={correct}/>
-      : questions && (questionIndex || questionIndex===0) ? <Questions user={user} correct={correct} setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
+      <Navbar />
+      {questions && questionIndex===10 ? <Overview points={points} correct={correct}/>
+      : questions && (questionIndex || questionIndex===0) ? <Questions setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
     </Fragment>
   );

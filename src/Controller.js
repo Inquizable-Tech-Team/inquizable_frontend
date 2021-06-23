@@ -1,8 +1,10 @@
 import Axios from 'axios'
+require('dotenv').config()
+const endpoint = process.env.REACT_APP_ENDPOINT
 
 export const loginFunction = (user) => {
   return Axios
-    .post('https://inquizable.herokuapp.com/users/login', user)
+    .post(`${endpoint}/users/login`, user)
     .then(response => {
       return response.data
     })
@@ -13,7 +15,7 @@ export const loginFunction = (user) => {
 
 export const registrationFunction = (newUser) => {
   return Axios
-    .post('https://inquizable.herokuapp.com/users/register', newUser)
+    .post(`${endpoint}/users/register`, newUser)
     .then(response => {
       return response.data
     })
@@ -24,7 +26,7 @@ export const registrationFunction = (newUser) => {
 
 export const submitFunction = (question) => {
   return Axios
-    .post('https://inquizable.herokuapp.com/questions', question)
+    .post(`${endpoint}/questions`, question)
     .then(response => {
       console.log(response.data)
       return response.data
@@ -36,7 +38,7 @@ export const submitFunction = (question) => {
 
 export const updatePointsFunction = (id, user) => {
   return Axios
-    .put(`https://inquizable.herokuapp.com/users/${id}/points`, user)
+    .put(`${endpoint}/users/${id}/points`, user)
     .then(response => {
       return response.data
     })
@@ -47,69 +49,87 @@ export const updatePointsFunction = (id, user) => {
 
 export const fetchContribution = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/users/contributions")
+    .get(`${endpoint}/users/contributions`)
     .then((response) => {
       return (response.data)
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 
 export const fetchPercentages = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/users/percentage")
+    .get(`${endpoint}/users/percentage`)
     .then((response) => {
       return (response.data)
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 
 export const fetchPoints = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/users/points")
+    .get(`${endpoint}/users/points`)
     .then((response) => {
       return (response.data)
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 
 export const fetchUser = async (id) => {
   return Axios
-    .get(`https://inquizable.herokuapp.com/users/${id}`)
+    .get(`${endpoint}/users/${id}`)
     .then((response) => {
       return (response.data[0])
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 
 export const fetchAllUsers = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/users/count")
+    .get(`${endpoint}/users/count`)
     .then((response) => {
       return (response.data[0])
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 export const fetchQuestionAmount = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/questions/count")
+    .get(`${endpoint}/questions/count`)
     .then((response) => {
       return (response.data[0])
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 export const fetchAnswered = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/users/answered ")
+    .get(`${endpoint}/users/answered`)
     .then((response) => {
       return (response.data[0])
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
 };
 export const fetchCorrect = async () => {
   return Axios
-    .get("https://inquizable.herokuapp.com/users/correct")
+    .get(`${endpoint}/users/correct`)
     .then((response) => {
       return (response.data[0])
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.message));
+};
+
+export const fetchCommunityQuestions = async () => {
+  return Axios
+    .get(`${endpoint}/questions`)
+    .then((response) => {
+      return (response.data)
+    })
+    .catch((error) => console.log(error.message));
+};
+
+export const fetchDataBaseQuestions = async (qId) => {
+  return Axios
+    .get(`https://opentdb.com/api.php?amount=10&category=${qId}`)
+    .then((response) => {
+      return (response.data.results)
+    })
+    .catch((error) => console.log(error.message));
 };

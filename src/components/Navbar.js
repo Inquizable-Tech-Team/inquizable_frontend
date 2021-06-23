@@ -1,15 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-const Navbar = ({ user }) => {
+import { UserContext } from "../context/UserContext";
+
+const Navbar = () => {
+  const [user] = useContext(UserContext)
   const [toggle, setToggle] = useState(false);
   const onToggle = () => {
     setToggle(!toggle);
   };
   return (
     <Fragment>
-      {console.log(user)}
       <div className="Navbar">
         <div
           onClick={onToggle}
@@ -35,11 +37,11 @@ const Navbar = ({ user }) => {
                     <Link to='/leaderboard'>Leaderboard</Link>
                     <Link to='/submit'>Submit a Question</Link>
                     <Link to='/account'>Account</Link>
-                    <Link to='/login' onClick={(() => localStorage.clear())}>Logout</Link>
                   </Fragment>}
                 {user.admin===1 && <Link to='/admin'>Admin Pannel</Link>}
                 <Link to='/about'>About</Link>
                 <Link to='/contact'>Contact</Link>
+                {user.nickname && <Link to='/login' onClick={(() => localStorage.clear())}>Logout</Link>}
               </div>
             </div>
           </Fragment>

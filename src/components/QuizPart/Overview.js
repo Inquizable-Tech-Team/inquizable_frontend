@@ -1,20 +1,25 @@
-import React, {Fragment, useState, useEffect} from 'react'
+import React, {Fragment, useState, useEffect, useContext} from 'react'
 import { useHistory } from "react-router-dom";
 import './Overview.css';
-import Axios from 'axios'
-import {updatePointsFunction} from '../Controller'
+import {updatePointsFunction, fetchUser} from '../../Controller'
+import { UserContext } from '../../context/UserContext';
 
-export const Overview = ({points, correct, user}) => {
+export const Overview = ({points, correct }) => {
+    const [user] = useContext(UserContext)
     const [userData, setUserData] = useState(false)
     let history = useHistory();
     const queryString = require('query-string');
 
     useEffect(() => {
-        fetchUserData()
+        fetchUser(user.id).then(res => {
+            setUserData(res);
+          })// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
-        updatePoints()
+       if(userData) {
+           updatePoints()
+        }// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userData])
 
     const updatePoints = () => {
@@ -24,19 +29,13 @@ export const Overview = ({points, correct, user}) => {
             correct: userData.correct+correct
             
           })
-          updatePointsFunction(userData.id, info).then(res => {
+          updatePointsFunction(user.id, info).then(res => {
             if (res) {
               console.log(res)
             }
             else console.log('Oops, something went wrong...')
           })
     }
-
-    const fetchUserData = async () => {
-        await Axios.get(`https://inquizable.herokuapp.com/users/${user.id}`)
-          .then((response) => setUserData(response.data[0]))
-          .catch((error) => console.log(error));
-      };
 
     return (
         <Fragment>
@@ -47,7 +46,7 @@ export const Overview = ({points, correct, user}) => {
                    <h3>Awarded Points: {points}</h3>
                </div>
                <div className="total text-left pl-2">
-                   <h3>Total Points: {userData.points ? userData.points+points : user.points+points}</h3>
+                   <h3>Total Points: {userData ? userData.points+points : user.points+points}</h3>
                </div>
                </div>
 
@@ -56,7 +55,7 @@ export const Overview = ({points, correct, user}) => {
                    <h3>Correct Answers: {correct}</h3>
                </div>
                <div className="total text-left pl-2">
-                   <h3>Overall: {userData.correct ? Math.round((userData.correct+correct)*1000/(userData.answered+10))/10 : Math.round(user.correct*1000/user.answered)/10}%</h3>
+                   <h3>Overall: {userData ? Math.round((userData.correct+correct)*1000/(userData.answered+10))/10 : Math.round(user.correct*1000/user.answered)/10}%</h3>
                 </div>
            </div>
         </div>

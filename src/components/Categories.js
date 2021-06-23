@@ -1,10 +1,12 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useContext} from 'react'
 import Data from './data.json'
 import SubCategories from './subcategory'
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
+import { UserContext } from '../context/UserContext'
 
-export const Categories = ({user}) => {
+export const Categories = () => {
+    const [user] = useContext(UserContext)
     const [categoryIndex, setCategoryIndex] = useState(false)
 
     return (
@@ -18,11 +20,11 @@ export const Categories = ({user}) => {
                     </div>
                     <div className="posts">
                         <div className="flex flex-wrap -m-5 text-center">
-                            {Data.map(post => {
+                            {Data.map((post, index) => {
                                 return (
-                                    <Fragment>
+                                    <Fragment key={index}>
                                         {post.category === 'Random' ?
-                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
+                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>
                                                 <Link to='/quiz/0'>
                                                     <div className="categorySelectionButton">
                                                         <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
@@ -30,7 +32,7 @@ export const Categories = ({user}) => {
                                                 </Link>
                                             </div>
                                             : post.category === 'Community' ?
-                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={post.id}>
+                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>
                                                 <Link to='/quiz/community'>
                                                     <div className="categorySelectionButton">
                                                         <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
@@ -38,7 +40,7 @@ export const Categories = ({user}) => {
                                                 </Link>
                                             </div>
                                             :
-                                            <div key={post.id} className="xl:w-1/5 md:w-1/5 p-5" onClick={(() => {
+                                            <div key={index} className="xl:w-1/5 md:w-1/5 p-5" onClick={(() => {
                                                 setCategoryIndex(post.id)
                                             })}>
                                                 <div className="categorySelectionButton">
