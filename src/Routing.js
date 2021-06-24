@@ -80,7 +80,7 @@ function Routing() {
           {user.nickname ? <Leaderboard /> : <Login setJwt={setJwt} />}
         </Route>
         <Route exact path="/about">
-          <About user={user} />
+          <About />
         </Route>
         <Route path="/:anything?">
           <Redirect to="/home" />

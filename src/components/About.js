@@ -1,17 +1,16 @@
-import React, {Fragment, useEffect, useState, useContext} from "react";
+import React, {Fragment, useEffect, useState } from "react";
 import "./About.css";
 import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "../Controller";
 import Navbar from "./Navbar";
-import { UserContext } from "../context/UserContext";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
-  const [user] = useContext(UserContext)
   const [users, setUsers] = useState()
   const [questions, setQuestions] = useState()
   const [answered, setAnswered] = useState()
   const [correct, setCorrect] = useState()
 
-
+  let location = useLocation();
 
   useEffect(() => {
     if (!users) {
@@ -38,7 +37,7 @@ const About = () => {
 
   return (
     <Fragment>
-      {user && <Navbar />}
+      {location.pathname.toLowerCase()==='/about' && <Navbar />}
       <div className={"aboutMain"}>
         <div className={"aboutLeft"}>
           <div className={"aboutContainer"}>
