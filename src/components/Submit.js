@@ -32,7 +32,7 @@ export const Submit = () => {
                     difficulty: qD,
                     question: questionName,
                     correct_answer: correctA,
-                    incorrect_answers: [`"${wrongA1}"`],
+                    incorrect_answers: `["${wrongA1}"]`,
                     approved: 0,
                     Users_id: user.id
                 })
@@ -55,7 +55,7 @@ export const Submit = () => {
                     correct_answer: correctA,
                     incorrect_answers: `["${wrongA1}","${wrongA2}","${wrongA3}"]`,
                     approved: 0,
-                    Users_id: user.id
+                    users_id: user.id
                 })
                 submitFunction(question).then(res => {
                     if (res) {

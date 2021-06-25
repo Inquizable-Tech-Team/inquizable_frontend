@@ -78,7 +78,7 @@ export const fetchUser = async (id) => {
   return Axios
     .get(`${endpoint}/users/${id}`)
     .then((response) => {
-      return (response.data[0])
+      return (response.data)
     })
     .catch((error) => console.log(error.message));
 };
@@ -118,7 +118,7 @@ export const fetchCorrect = async () => {
 
 export const fetchCommunityQuestions = async () => {
   return Axios
-    .get(`${endpoint}/questions`)
+    .get(`${endpoint}/questions/community`)
     .then((response) => {
       return (response.data)
     })
