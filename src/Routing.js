@@ -1,7 +1,7 @@
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import { Home } from './components/Home'
 import { Login } from './components/Login'
-import { Admin } from './components/Admin'
+import Admin from './components/Admin/Admin'
 import { Account } from './components/Account'
 import { Categories } from './components/Categories'
 import { Quiz } from './components/Quiz'
@@ -80,9 +80,9 @@ function Routing() {
           {user.nickname ? <Leaderboard /> : <Login setJwt={setJwt} />}
         </Route>
         <Route exact path="/about">
-          <About user={user} />
+          <About />
         </Route>
-        <Route path="/:anything?">
+        <Route path="/*">
           <Redirect to="/home" />
         </Route>
       </Switch>
