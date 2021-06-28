@@ -69,11 +69,11 @@
 }
 @keyframes links {
   0% {
-    opacity: 100%;
-    transform: translateY(-20px);
+    opacity: 0%;
+    /* transform: translateY(-20px); */
   }
   100% {
     opacity: 100%;
-    transform: translateY(0px);
+    /* transform: translateY(0px); */
   }
 }
