@@ -133,3 +133,35 @@ export const fetchDataBaseQuestions = async (qId) => {
     })
     .catch((error) => console.log(error.message));
 };
+
+export const fetchSubmittedByUser = async (id) => {
+  return Axios
+    .get(`${endpoint}/questions/submitted/${id}`)
+    .then((response) => {
+      return (response.data[0].count)
+    })
+    .catch((error) => console.log(error.message));
+};
+
+
+export const updateUserName = (id, name) => {
+  return Axios
+    .put(`${endpoint}/users/${id}/name`, name)
+    .then(response => {
+      return response.data
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}
+
+export const updateUserEmail = (id, email) => {
+  return Axios
+    .put(`${endpoint}/users/${id}/email`, email)
+    .then(response => {
+      return response.data
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}
