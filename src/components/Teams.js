@@ -1,6 +1,10 @@
 import React from "react";
 import "./Teams.css";
-import OU from './img/omer_ugur'
+import OEPIC from '../images/oe.jpeg'
+import MATPIC from '../images/mat.jpg'
+import DIPPIC from '../images/dip.jpg'
+import JOEPIC from '../images/joe.png'
+
 
 export default function Teams() {
   return (
@@ -10,7 +14,7 @@ export default function Teams() {
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
-              src={OU}
+              src={OEPIC}
               alt="Ömer Ügür Profile"
               className="h-full w-full"
             />
@@ -42,23 +46,13 @@ export default function Teams() {
                 <i className="fab fa-linkedin" />
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-              >
-                <i className="fab fa-instagram" />
-              </a>
-            </li>
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&w=128&h=128&q=60&facepad=2"
-              alt=""
+              src={MATPIC}
+              alt="Matthias v. Schmettow Profile"
               className="h-full w-full"
             />
           </div>
@@ -88,23 +82,13 @@ export default function Teams() {
                 <i className="fab fa-linkedin" />
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-              >
-                <i className="fab fa-instagram" />
-              </a>
-            </li>
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&w=128&h=128&q=60&facepad=2"
-              alt=""
+              src={DIPPIC}
+              alt="Dipali Bedarkar Profile"
               className="h-full w-full"
             />
           </div>
@@ -134,23 +118,13 @@ export default function Teams() {
                 <i className="fab fa-linkedin" />
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-              >
-                <i className="fab fa-instagram" />
-              </a>
-            </li>
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&w=128&h=128&q=60&facepad=2"
-              alt=""
+              src={JOEPIC}
+              alt="Joey Ammar Profile"
               className="h-full w-full"
             />
           </div>
@@ -180,23 +154,13 @@ export default function Teams() {
                 <i className="fab fa-linkedin" />
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-              >
-                <i className="fab fa-instagram" />
-              </a>
-            </li>
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&w=128&h=128&q=60&facepad=2"
-              alt=""
+              alt="Brian Cordisco Profile"
               className="h-full w-full"
             />
           </div>
@@ -224,16 +188,6 @@ export default function Teams() {
                 className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-linkedin" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-              >
-                <i className="fab fa-instagram" />
               </a>
             </li>
           </ul>
