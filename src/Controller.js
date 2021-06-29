@@ -133,3 +133,12 @@ export const fetchDataBaseQuestions = async (qId) => {
     })
     .catch((error) => console.log(error.message));
 };
+
+export const fetchSubmittedByUser = async (id) => {
+  return Axios
+    .get(`${endpoint}/questions/submitted/${id}`)
+    .then((response) => {
+      return (response.data[0].count)
+    })
+    .catch((error) => console.log(error.message));
+};
