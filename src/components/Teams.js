@@ -31,7 +31,7 @@ export default function Teams() {
                 href="https://github.com/oemerueguer"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-github" />
               </a>
@@ -41,7 +41,7 @@ export default function Teams() {
                 href="https://de.linkedin.com/in/%C3%B6mer-%C3%BCg%C3%BCr-83546163"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-linkedin" />
               </a>
@@ -67,7 +67,7 @@ export default function Teams() {
                 href="https://github.com/MatthiasvsGitHub"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-github" />
               </a>
@@ -77,7 +77,7 @@ export default function Teams() {
                 href="https://de.linkedin.com/in/matthias-von-schmettow"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-linkedin" />
               </a>
@@ -103,7 +103,7 @@ export default function Teams() {
                 href="https://github.com/Dipalibedarkar"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-github" />
               </a>
@@ -113,7 +113,7 @@ export default function Teams() {
                 href="https://de.linkedin.com/in/dipali-bedarkar-944018138"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-linkedin" />
               </a>
@@ -139,7 +139,7 @@ export default function Teams() {
                 href="https://github.com/joey-ammar"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-github" />
               </a>
@@ -149,7 +149,7 @@ export default function Teams() {
                 href="https://de.linkedin.com/in/joey-ammar"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-linkedin" />
               </a>
@@ -175,7 +175,7 @@ export default function Teams() {
                 href="https://github.com/desiredstate2021"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-github" />
               </a>
@@ -185,7 +185,7 @@ export default function Teams() {
                 href="https://de.linkedin.com/in/brian-cordisco-500250205"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                className="IconEffect flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
               >
                 <i className="fab fa-linkedin" />
               </a>
