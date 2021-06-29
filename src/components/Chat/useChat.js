@@ -22,9 +22,9 @@ const useChat = (roomId) => {
 
   useEffect(() => {
       setUser({
-        name: contextUser.nickname,
-      })// eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+        name: contextUser.nickname,     
+              })// eslint-disable-next-line react-hooks/exhaustive-deps
+        }, []);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -56,8 +56,10 @@ const useChat = (roomId) => {
     }
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
       query: { roomId, name: user.name },
+      
     });
-
+    console.log(user)
+    console.log(roomId)
     socketRef.current.on("connect", () => {
       console.log(socketRef.current.id);
     });
@@ -89,7 +91,7 @@ const useChat = (roomId) => {
     socketRef.current.on(STOP_TYPING_MESSAGE_EVENT, (typingInfo) => {
       if (typingInfo.senderId !== socketRef.current.id) {
         const user = typingInfo.user;
-        setTypingUsers((users) => users.filter((u) => u.name !== user.name));
+        setTypingUsers((users) => users.filter((u) => u.nickname !== user.nickname));
       }
     });
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import "./ChatRoom.css";
 import useChat from "./useChat";
 import ChatMessage from "./ChatMessage";
@@ -8,11 +8,11 @@ import NewMessageForm from "./NewMessageForm";
 import TypingMessage from "./TypingMessage";
 import Users from "./Users";
 
-const ChatRoom = () => {
-    const { roomId } = useParams();
+const ChatRoom = (props) => {
+    const { roomId } = props.match.params();
   const {
     messages,
-    user,
+    //user,
     users,
     typingUsers,
     sendMessage,
