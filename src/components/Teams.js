@@ -9,7 +9,7 @@ import JOEPIC from '../images/joe.png'
 export default function Teams() {
   return (
     <div>
-      <h1 className="text-center mt-10">The Inquizable Tech Team</h1>
+      <h1 className="text-center mt-10">The Inquizable-Tech-Team</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-10 mb-12">
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
@@ -60,6 +60,7 @@ export default function Teams() {
           <h6 className="mt-2 text-sm font-medium TeamColor">Co-Founder</h6>
           <p className="text-xs text-gray-500 text-center mt-3">
           Full-Stack Web App Developer <br />
+          Inquizer by conviction. Loves to see the community grow!
           </p>
           <ul className="flex flex-row mt-4 space-x-2">
             <li>
@@ -168,6 +169,7 @@ export default function Teams() {
           <h6 className="mt-2 text-sm font-medium TeamColor">Co-Founder</h6>
           <p className="text-xs text-gray-500 text-center mt-3">
             Full-Stack Web App Developer <br />
+            Best platform to expand your knowledge and have fun while doing it.  Made for the inquizative mind!
           </p>
           <ul className="flex flex-row mt-4 space-x-2">
             <li>
