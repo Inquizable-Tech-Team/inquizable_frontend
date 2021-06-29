@@ -142,3 +142,26 @@ export const fetchSubmittedByUser = async (id) => {
     })
     .catch((error) => console.log(error.message));
 };
+
+
+export const updateUserName = (id, name) => {
+  return Axios
+    .put(`${endpoint}/users/${id}/name`, name)
+    .then(response => {
+      return response.data
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}
+
+export const updateUserEmail = (id, email) => {
+  return Axios
+    .put(`${endpoint}/users/${id}/email`, email)
+    .then(response => {
+      return response.data
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}
