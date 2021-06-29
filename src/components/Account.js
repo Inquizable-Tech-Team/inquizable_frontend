@@ -3,6 +3,7 @@ import gal1 from './img/gal1.jpg'
 import Profilepic from './img/Profilepic.jpg'
 
 export const Account = () => {
+ 
     return (
             <div>
             <main className="profile-page">
@@ -51,7 +52,7 @@ export const Account = () => {
                   <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
                     <div className="py-6 px-3 mt-32 sm:mt-0">
                       <button
-                        className="bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                        className=  "bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                         type="button"
                         style={{ transition: "all .15s ease" }}
                       >
@@ -102,16 +103,46 @@ export const Account = () => {
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
-                      <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                        Interested In All Things That Compute!
-                      </p>
-                      <a
-                        href="#pablo"
-                        className="font-normal text-blue-500"
-                        onClick={e => e.preventDefault()}
-                      >
-                        Show more
-                      </a>
+                      <form >
+                      <div className="mt-1">
+                  <input className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Change Name"/>
+                    </div>
+                    <button
+                    className=  "bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                    type="button"
+                    style={{ transition: "all .15s ease" }}
+                  >
+                    Change Name
+                  </button>
+                      <div className="mt-1">
+                          <input className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Change Email"/>
+                      </div>
+                      <div>
+                      <button
+                      className=  "bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                      type="button"
+                      style={{ transition: "all .15s ease" }}
+                    >
+                      Change Email
+                    </button>
+                      </div>
+                      <div className="mt-1">
+                  <input className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Old Password"/>
+                    </div>
+                      <div className="mt-1">
+                          <input className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="New Password"/>
+                      </div>
+                      <div>
+                      <button
+                      className=  "bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                      type="button"
+                      style={{ transition: "all .15s ease" }}
+                    >
+                      Password Change
+                    </button>
+                    </div>
+                      
+                      </form>
                     </div>
                   </div>
                 </div>
