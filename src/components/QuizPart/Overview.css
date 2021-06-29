@@ -9,17 +9,15 @@
     position: relative;
     display:flex;
     justify-content: space-around;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 .awarded {
     position: relative;
-    width: 20%;
     border: 2px solid #fff;
     border-radius: 25px;
 }
 .total {
     position: relative;
-    width: 20%;
     border: 2px solid #fff;
     border-radius: 25px;
 }

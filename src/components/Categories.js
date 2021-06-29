@@ -19,12 +19,12 @@ export const Categories = () => {
                         <p className="lg:w-1/2 w-full leading-relaxed text-base">Choose a Category</p>
                     </div>
                     <div className="posts">
-                        <div className="flex flex-wrap -m-5 text-center">
+                        <div className="lg:flex md:flex flex-wrap -m-5 text-center xs:block">
                             {Data.map((post, index) => {
                                 return (
                                     <Fragment key={index}>
                                         {post.category === 'Random' ?
-                                            <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>
+                                            <div className="xl:w-1/5 md:w-1/5 p-5 xs:w-100" key={index}>
                                                 <Link to='/quiz/0'>
                                                     <div className="categorySelectionButton">
                                                         <h2 className="text-lg font-medium title-font mb-2">{post.category}</h2>
@@ -40,7 +40,7 @@ export const Categories = () => {
                                                 </Link>
                                             </div>
                                             :
-                                            <div key={index} className="xl:w-1/5 md:w-1/5 p-5" onClick={(() => {
+                                            <div key={index} className="xl:w-1/5 md:w-1/5 p-5 sx:w-1" onClick={(() => {
                                                 setCategoryIndex(post.id)
                                             })}>
                                                 <div className="categorySelectionButton">

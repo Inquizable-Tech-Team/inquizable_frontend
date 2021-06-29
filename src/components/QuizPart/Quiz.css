@@ -4,6 +4,7 @@
     width: 20%;
     height: 15vh;
     border: 2px solid #fff;
+    border-radius: 25px;
 }
 .btnBack{
     width: 20vw;
@@ -24,10 +25,6 @@
     border-color: #e94949;
     width: 20vw;
     border-radius: 25px;
-}
-.green:hover,
-.red:hover {
-    border-color: #fff;
 }
 .startSelect {
     background-color: #10172f;

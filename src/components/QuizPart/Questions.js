@@ -68,18 +68,18 @@ export const Questions = ({ question, questionIndex, setQuestionIndex, points, s
             </p>
           </div>
           <div>
-            <div className="quest xs:text-center sm:text-center md:text-center mt-8 w-100 border-bottom text-lg">
+            <div className="quest xs:block xs:text-center sm:text-center md:text-center mt-8 w-100 border-bottom text-lg">
               <h2 dangerouslySetInnerHTML={{ __html: question.question }}></h2>
             </div>
-            <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 sm:block md:flex ">
-              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: answerArray[0] }}></button>
-              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: answerArray[1] }}></button>
+            <div className="select-answer md:mx-auto xs:text-center sm:text-center md:text-center mt-6 xs:block sm:block md:flex lg:flex">
+              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4 xs:w-full xs:ml-8 xs:mt-2 md:w-full " dangerouslySetInnerHTML={{ __html: answerArray[0] }}></button>
+              <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4 xs:w-full xs:ml-8 xs:mt-2 md:w-full " dangerouslySetInnerHTML={{ __html: answerArray[1] }}></button>
               {question.type === 'multiple' && <Fragment>
-                <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: answerArray[2] }}></button>
-                <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4" dangerouslySetInnerHTML={{ __html: answerArray[3] }}></button>
+                <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4 xs:w-full xs:ml-8 xs:mt-2 md:w-full " dangerouslySetInnerHTML={{ __html: answerArray[2] }}></button>
+                <button disabled={answerShowing} onClick={(e) => handleAnswer(e)} className="Questions-Box md:mr-4 xs:w-full xs:ml-8 xs:mt-2 md:w-full " dangerouslySetInnerHTML={{ __html: answerArray[3] }}></button>
               </Fragment>}
             </div>
-            {answerShowing && <button onClick={nextQuestion} className="Questions-Box nextQ">Next Question</button>}
+            {answerShowing && <button onClick={nextQuestion} className="Questions-Box nextQ xs:w-3/4 xs:h-1/2 xs:ml-1/4 sm:w-1/4 sm:h-1/4">Next Question</button>}
           </div>
         </div>
         : "Loading..."}
