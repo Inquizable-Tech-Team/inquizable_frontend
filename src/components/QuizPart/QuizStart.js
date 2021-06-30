@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { useHistory } from "react-router-dom";
+import './Quiz.css'
 
 export const QuizStart = ({ categoryName, setQuestionIndex }) => {
   let history = useHistory();

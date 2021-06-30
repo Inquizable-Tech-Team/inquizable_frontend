@@ -26,6 +26,10 @@
     width: 20vw;
     border-radius: 25px;
 }
+.green:hover,
+.red:hover {
+    border-color: #fff;
+}
 .startSelect {
     background-color: #10172f;
     border: 2px solid #fff;
