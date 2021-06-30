@@ -12,7 +12,7 @@ const Navbar = () => {
   };
   return (
     <Fragment>
-      <div className="Navbar xs:ml-6 sm:ml-4">
+      <div className="Navbar">
         <div
           onClick={onToggle}
           className={

@@ -56,7 +56,7 @@ export const Account = () => {
   }
 
   return (
-    <div>
+    <>
       <Navbar />
       <main className="profile-page">
         {/* Top Background Section Start */}
@@ -210,9 +210,6 @@ export const Account = () => {
           </div>
         </section>
       </main>
-
-    </div>
-
-
+    </>
   )
 }

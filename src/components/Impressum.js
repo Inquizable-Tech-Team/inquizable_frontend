@@ -1,10 +1,12 @@
 import React from "react";
 import "./Impressum.css";
+import Navbar from "./Navbar";
 
 export default function Impressum() {
   return (
     <div>
       <div className="w-80vw Info-Box mx-auto">
+        <Navbar />
         <h2 className=" mt-5 xs:text-center sm:text-center">
           <strong>Terms and Conditions</strong>
         </h2>
@@ -270,7 +272,7 @@ export default function Impressum() {
           <strong>Your Privacy</strong>
         </h3>
         <div className="md:w-3/5 lg:w-3/4 mt-4 InfoBox pl-4 pr-4 pt-4 pb-4 mx-auto xs:w-full">
-          <p>Please read Privacy Policy</p>
+          <p>We will not share your personal data with third-party providers.</p>
         </div>
       </div>
 

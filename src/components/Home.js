@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Workflow from './HomePart/Workflow';
@@ -7,6 +7,7 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import About from './About'
+import { UserContext } from "../context/UserContext";
 
 const navigation = [
   { name: "Home", href: "./home" },
@@ -16,6 +17,7 @@ const navigation = [
 ];
 
 export const Home = () => {
+  const [user] = useContext(UserContext)
 
   return (
     <div>
@@ -68,12 +70,20 @@ export const Home = () => {
                           {item.name}
                         </a>
                       ))}
+                      {user.nickname ?
+                      <Link
+                      to="./categories"
+                      className="signUp font-medium text-indigo-600 hover:text-indigo-500"
+                    >
+                     Continue
+                    </Link>
+                      : 
                       <Link
                         to="./login"
                         className="signUp font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Sign Up
-                      </Link>
+                      </Link>}
                     </div>
                   </nav>
                 </div>
@@ -120,12 +130,20 @@ export const Home = () => {
                           </a>
                         ))}
                       </div>
+                      {user.nickname ?
+                      <Link
+                      to="./categories"
+                      className="signUp block w-full px-5 py-3 text-center font-medium text-indigo-600  hover:bg-gray-100"
+                    >
+                      Continue
+                    </Link>
+                      :
                       <Link
                         to="./login"
                         className="signUp block w-full px-5 py-3 text-center font-medium text-indigo-600  hover:bg-gray-100"
                       >
                         Sign Up
-                      </Link>
+                      </Link>}
                     </div>
                   </Popover.Panel>
                 </Transition>
@@ -170,12 +188,12 @@ export const Home = () => {
                   </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link
+                  {!user.nickname && <Link
                     to="./login"
                     className="LogIn-Btn w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md  md:py-4 md:text-lg md:px-10"
                   >
                     Log In
-                  </Link>
+                  </Link>}
                 </div>
               </div>
             </div>
