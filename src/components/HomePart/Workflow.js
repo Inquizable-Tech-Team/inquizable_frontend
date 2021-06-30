@@ -6,13 +6,13 @@ const features = [
   {
     name: 'Register or Login',
     description:
-      'Please register or login to your Inquizable account. And become an Inquizer!',
+      'Please register or login to your Inquizable account. Become an Inquizer today!',
     icon: LoginIcon,
   },
   {
     name: 'Choose your desired category',
     description:
-      'Inquizable provides their users with many categories and sub-categories. The Inquizers can choose the desired category in order to test their knowledge.',
+      'Inquizable provides their users with many categories and sub-categories. The Inquizers can choose their desired category in order to test their knowledge.',
     icon: LightBulbIcon,
   },
   {
@@ -24,7 +24,7 @@ const features = [
   {
     name: 'Compare yourself with other Inquizers',
     description:
-      'All Inquizers are able to see the global leaderboard and you - as an Inquizer - feel free to invite one of the best to start a competition.',
+      'Compare yourself on a global leadearboard with other Inquizers. Invite your friends to a challenge and play against them in a fun competition. (Coming Soon...)',
     icon: TableIcon,
   },
 ]
@@ -39,7 +39,7 @@ export default function Workflow() {
             A learning platform to ignite your brain.
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Inquizable is a fun learning platform, where anyone can contribute to and compete with other users.
+            Inquizable is a fun learning platform, where anyone can contribute and compete with other users.
           </p>
         </div>
 

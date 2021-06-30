@@ -101,7 +101,7 @@ export default function Teams() {
           <h6 className="mt-2 text-sm font-medium TeamColor">Co-Founder</h6>
           <p className="text-xs text-gray-500 text-center mt-3">
           Full-Stack Web App Developer <br />
-          Enjoy the Game. Have fun. Just be an Inquizer.
+          Enjoy the game and have fun. Just be inquizable!
           </p>
           <ul className="flex flex-row mt-4 space-x-2">
             <li>

@@ -45,18 +45,15 @@ const About = () => {
           <div className={"aboutContainer"}>
             <div className={"aboutLeftInside"}>
               <div className={"aboutLeftInsideTitle"}>
-                <p>VALUABLE METRICS</p>
+                <p>COOL STATISTICS</p>
               </div>
               <div className={"aboutLeftInsideBigTitle"}>
-                <h1>We are proud of our Inquizers and platform</h1>
+                <h1>We are proud of our Inquizers and Community</h1>
               </div>
               <div className={"aboutLeftInsideParagraph"}>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using Content
-                  here, content here', making it look like readable English.
+                  Below are some real-time stats from our Website. Our community
+                  is growing from day to day. Join now, have fun doing quizzes and start collecting points.
                 </p>
               </div>
               <div className={"aboutLeftInsideSplit"}>
