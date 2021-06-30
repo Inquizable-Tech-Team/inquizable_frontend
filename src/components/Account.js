@@ -109,7 +109,7 @@ export const Account = () => {
         </section>
         {/* Account Content Section Start */}
         <section className="relative py-16 Bg-Color">
-          <div className="container xs:mx-auto sm:mx-auto md:mx-auto px-4 xs:w-min-3/4 sm:w-4/5 md:w-4/5">
+          <div className="container xs:mx-auto sm:mx-auto xs:w-full  md:mx-auto px-4 sm:w-4/5 md:w-4/5">
             <div className="relative flex flex-col min-w-0 break-words bg-white xs:w-full sm:w-full md:w-full lg:w-full mb-6 shadow-xl rounded-lg -mt-64">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
@@ -179,7 +179,7 @@ export const Account = () => {
                 </div>
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
                   <div className="flex flex-wrap justify-center xs:block sm:block md:flex lg:flex">
-                    <div className="w-full lg:w-9/12 px-4">
+                    <div className="w-full lg:w-10/12 px-4">
                       {/* Changing User Info */}
                       <form className="xs:block sm:block md:flex lg:flex md:flex-wrap lg:flex-wrap">
                         <div className="mt-1">
@@ -206,6 +206,7 @@ export const Account = () => {
                             Change Email
                           </button>
                         </div>
+                        <div className="xs:block sm:block md:flex lg:flex xs:mt-2 sm:mt-2 md:mt-6 lg:mt-6">
                         <div className="mt-1">
                           <input onChange={e => setOldPw(e.target.value)} type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Old Password" />
                         </div>
@@ -221,6 +222,7 @@ export const Account = () => {
                           >
                             Change Password
                           </button>
+                          </div>
                         </div>
                       </form>
                     </div>
