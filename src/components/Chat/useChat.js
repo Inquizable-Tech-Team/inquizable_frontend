@@ -2,8 +2,6 @@ import { useEffect, useRef, useState, useContext } from "react";
 import socketIOClient from "socket.io-client";
 import axios from "axios";
 import { UserContext } from "../../context/UserContext";
-require('dotenv').config()
-
 
 const USER_JOIN_CHAT_EVENT = "USER_JOIN_CHAT_EVENT";
 const USER_LEAVE_CHAT_EVENT = "USER_LEAVE_CHAT_EVENT";
@@ -16,15 +14,14 @@ const useChat = (roomId) => {
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
   const [typingUsers, setTypingUsers] = useState([]);
+  const [user, setUser] = useState()
   const [contextUser] = useContext(UserContext)
-  const [user, setUser] = useState();
   const socketRef = useRef();
 
   useEffect(() => {
-      setUser({
-        name: contextUser.nickname,     
-              })// eslint-disable-next-line react-hooks/exhaustive-deps
-        }, []);
+    setUser({name: contextUser.nickname})
+  }, [])
+  
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -32,6 +29,7 @@ const useChat = (roomId) => {
         `${SOCKET_SERVER_URL}/rooms/${roomId}/users`
       );
       const result = response.data.users;
+      console.log(users)
       setUsers(result);
     };
 
@@ -44,6 +42,7 @@ const useChat = (roomId) => {
         `${SOCKET_SERVER_URL}/rooms/${roomId}/messages`
       );
       const result = response.data.messages;
+      console.log(result)
       setMessages(result);
     };
 
@@ -55,11 +54,8 @@ const useChat = (roomId) => {
       return;
     }
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
-      query: { roomId, name: user.name },
-      
+      query: { roomId, name: user.name }
     });
-    console.log(user)
-    console.log(roomId)
     socketRef.current.on("connect", () => {
       console.log(socketRef.current.id);
     });

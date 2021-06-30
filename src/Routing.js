@@ -84,8 +84,8 @@ function Routing() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="/ChatHome" />
-        <ChatHome />
+{/*         <Route exact path="/ChatHome" />
+        <ChatHome /> */}
         {/* <Route exact path="/:roomId" > */}
          <Route exact path="/rooms/:roomId"> 
           <ChatRoom />
