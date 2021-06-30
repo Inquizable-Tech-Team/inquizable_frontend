@@ -9,6 +9,7 @@ body {
     background: #10172f;
     color: #fff;
     font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 .categorySelectionButton {
     @apply border;

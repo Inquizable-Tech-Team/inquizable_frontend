@@ -4,6 +4,7 @@
     width: 20%;
     height: 15vh;
     border: 2px solid #fff;
+    border-radius: 25px;
 }
 .btnBack{
     width: 20vw;

@@ -42,7 +42,7 @@
 }
 .NavShow {
   height: 100vh !important;
-  width: 100vw;
+  width: 100vw !important;
   background-color: #10172f;
   position: absolute;
   top: 0;

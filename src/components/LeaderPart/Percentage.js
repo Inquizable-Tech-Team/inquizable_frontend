@@ -14,7 +14,7 @@ export default function Percentage({ user }) {
   return (
     <div className="container mx-auto px-4 sm:px-8">
       <div className="py-8">
-        <div className="ScoreSum text-center">
+        <div className="ScoreSum text-center xs:mt-6 sm:mt-6 md:mt-12">
           <h1 className="p-4">You answered {Math.round((user.correct) * 1000 / (user.answered)) / 10}% correct</h1>
         </div>
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">

@@ -3,6 +3,8 @@ import "./About.css";
 import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "../Controller";
 import Navbar from "./Navbar";
 import { useLocation } from "react-router-dom";
+import Teams from './Teams'
+import Stack from './Stack/Stack'
 
 const About = () => {
   const [users, setUsers] = useState()
@@ -46,7 +48,7 @@ const About = () => {
                 <p>VALUABLE METRICS</p>
               </div>
               <div className={"aboutLeftInsideBigTitle"}>
-                <h1>Get actionable data that will help grow your business</h1>
+                <h1>We are proud of our Inquizers and platform</h1>
               </div>
               <div className={"aboutLeftInsideParagraph"}>
                 <p>
@@ -62,7 +64,7 @@ const About = () => {
                   <div className={"aboutSplitLeft"}>
                     <h1>{users && users}</h1>
                     <p>
-                      <span>Users</span> that already registered.
+                      <span>Inquizers</span> that already registered.
                     </p>
                   </div>
                   <div className={"aboutSplitRight"}>
@@ -84,7 +86,7 @@ const About = () => {
                   <div className={"aboutSplitRight"}>
                     <h1>{correct && answered && <>{Math.round((correct)*1000/(answered))/10}% </>}</h1>
                     <p>
-                      <span>Correctly</span> answered Questions by all Users.
+                      <span>Correctly</span> answered Questions by all Inquizers.
                     </p>
                   </div>
                 </div>
@@ -94,6 +96,8 @@ const About = () => {
         </div>
         <div className={"aboutRight"}></div>
       </div>
+      {location.pathname.toLowerCase()==='/about' && <Teams />}
+      {location.pathname.toLowerCase()==='/about' && <Stack />}
     </Fragment>
   );
 };
