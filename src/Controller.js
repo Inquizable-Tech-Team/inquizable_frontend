@@ -165,3 +165,14 @@ export const updateUserEmail = (id, email) => {
       console.log(err.message)
     })
 }
+
+export const updateUserPw = (id, pw) => {
+  return Axios
+    .put(`${endpoint}/users/${id}/pw`, pw)
+    .then(response => {
+      return response.data
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import gal1 from './img/gal1.jpg'
 import Navbar from './Navbar'
 import { Link } from "react-router-dom";
-import { fetchUser, fetchSubmittedByUser, updateUserName, updateUserEmail } from "../Controller";
+import { fetchUser, fetchSubmittedByUser, updateUserName, updateUserEmail, updateUserPw } from "../Controller";
 import { UserContext } from "../context/UserContext";
 
 export const Account = () => {
@@ -11,6 +11,8 @@ export const Account = () => {
   const [contributions, setContributions] = useState(false)
   const [name, setName] = useState('')
   const [newemail, setNewemail] = useState('')
+  const [oldPw, setOldPw] = useState('')
+  const [newPass, setNewPass] = useState('')
   const queryString = require('query-string');
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export const Account = () => {
           alert('Your Name has been changed')
           window.location.reload()
         }
-        else console.log('Oops, something went wrong...')
+        else alert('Oops, something went wrong...')
       })
     }
   }
@@ -50,7 +52,25 @@ export const Account = () => {
           alert('Your Email has been changed')
           window.location.reload()
         }
-        else console.log('Oops, something went wrong...')
+        else alert('Oops, something went wrong...')
+      })
+    }
+  }
+
+  const updatePassword = () => {
+    if(oldPw === '' || newPass === '') alert('Please fill out all Fields')
+    else {
+      const passInfo = queryString.stringify({
+        email: details.email,
+        newPw: newPass,
+        pw: oldPw
+      })
+      updateUserPw(user.id, passInfo).then(res => {
+        if (res) {
+          alert('Your Password has been changed')
+          window.location.reload()
+        }
+        else alert('Oops, something went wrong...')
       })
     }
   }
@@ -120,19 +140,19 @@ export const Account = () => {
                     <div className="flex justify-center py-4 lg:pt-4 pt-8">
                       <div className="mr-4 p-3 text-center">
                         <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                          {details.answered && details.answered}
+                          {details.answered ? details.answered : 0}
                         </span>
                         <span className="text-sm text-gray-500">Questions Answered</span>
                       </div>
                       <div className="mr-4 p-3 text-center">
                         <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                          {details.correct && details.correct}
+                          {details.correct ? details.correct : 0}
                         </span>
                         <span className="text-sm text-gray-500">Correctly Answered</span>
                       </div>
                       <div className="lg:mr-4 p-3 text-center">
                         <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                          {details.answered && Math.round((details.correct) * 1000 / (details.answered)) / 10}%
+                          {details.correct ? Math.round((details.correct) * 1000 / (details.answered)) / 10 : 0}%
                         </span>
                         <span className="text-sm text-gray-500">Percentage</span>
                       </div>
@@ -187,16 +207,17 @@ export const Account = () => {
                           </button>
                         </div>
                         <div className="mt-1">
-                          <input type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Old Password" />
+                          <input onChange={e => setOldPw(e.target.value)} type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Old Password" />
                         </div>
                         <div className="mt-1">
-                          <input type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="New Password" />
+                          <input onChange={e => setNewPass(e.target.value)} type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="New Password" />
                         </div>
                         <div>
                           <button
                             className="bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                             type="button"
                             style={{ transition: "all .15s ease" }}
+                            onClick={updatePassword}
                           >
                             Change Password
                           </button>
