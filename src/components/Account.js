@@ -186,7 +186,7 @@ export const Account = () => {
                           <input onChange={e => setName(e.target.value.trim())} className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Change Nickname" />
                         </div>
                         <button
-                          className="xs:mt-1 bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                          className="xs:mt-1 sm:mt-1 md:mt-2 md:ml-2 lg:ml-2 bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                           type="button"
                           style={{ transition: "all .15s ease" }}
                           onClick={updateName}
@@ -198,7 +198,7 @@ export const Account = () => {
                         </div>
                         <div>
                           <button
-                            className="xs:mt-1 bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                            className="xs:mt-1 sm:mt-1 md:mt-2 md:ml-2 lg:ml-2 bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                             type="button"
                             style={{ transition: "all .15s ease" }}
                             onClick={updateMail}
@@ -207,15 +207,15 @@ export const Account = () => {
                           </button>
                         </div>
                         <div className="xs:block sm:block md:flex lg:flex xs:mt-2 sm:mt-2 md:mt-6 lg:mt-6">
-                        <div className="mt-1">
+                        <div className="xs:mt-1 sm:mt-1 md:mt-1 lg:mt-1">
                           <input onChange={e => setOldPw(e.target.value)} type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Old Password" />
                         </div>
-                        <div className="mt-1">
+                        <div className="xs:mt-1 sm:mt-1 md:mt-1 lg:mt-1 md:ml-2">
                           <input onChange={e => setNewPass(e.target.value)} type='password' className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="New Password" />
                         </div>
                         <div>
                           <button
-                            className="xs:mt-1 bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                            className="xs:mt-1 sm:mt-1 md:mt-2 lg:mt-2 xs:ml-0 sm:ml-0 md:ml-2 bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                             type="button"
                             style={{ transition: "all .15s ease" }}
                             onClick={updatePassword}
