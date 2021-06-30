@@ -1,0 +1,6 @@
+.TeamColor {
+    color: #242424;
+}
+.IconEffect:hover {
+    transform: scale(1.3);
+}

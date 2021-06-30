@@ -9,6 +9,8 @@ import Contact from './components/Contact'
 import { Submit } from './components/Submit'
 import { Leaderboard } from './components/Leaderboard'
 import About from './components/About'
+import Impressum from './components/Impressum'
+import Teams from './components/Teams'
 import React, { useState, useEffect, useContext } from 'react'
 import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
@@ -80,8 +82,14 @@ function Routing() {
         <Route exact path="/leaderboard">
           {user.nickname ? <Leaderboard /> : <Login setJwt={setJwt} />}
         </Route>
-        <Route exact path="/about">
+       <Route exact path="/about">
           <About />
+        </Route>
+        <Route exact path="/impressum">
+        <Impressum />
+        </Route>
+        <Route exact path="/team">
+        <Teams />
         </Route>
         <Route exact path="/room/:roomId">
           <ChatRoom />
