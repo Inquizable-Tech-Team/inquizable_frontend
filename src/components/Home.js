@@ -11,7 +11,6 @@ import { UserContext } from "../context/UserContext";
 
 const navigation = [
   { name: "Home", href: "./home" },
-  { name: "Features", href: "./home" },
   { name: "Company", href: "./about" },
   { name: "Contact", href: "./contact" },
 ];
