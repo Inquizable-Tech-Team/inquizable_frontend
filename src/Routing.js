@@ -15,6 +15,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
 import { UserContext } from './context/UserContext'
+import ChatRoom from './components/Chat/ChatRoom'
 
 function Routing() {
   const [jwt, setJwt] = useState(false)
@@ -90,10 +91,12 @@ function Routing() {
         <Route exact path="/team">
         <Teams />
         </Route>
+        <Route exact path="/room/:roomId">
+          <ChatRoom />
+        </Route>
         <Route path="/*">
           <Redirect to="/home" />
         </Route>
-
       </Switch>
       <Footer />
     </div>
