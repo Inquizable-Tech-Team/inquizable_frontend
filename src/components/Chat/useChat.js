@@ -13,6 +13,7 @@ const STOP_TYPING_MESSAGE_EVENT = "STOP_TYPING_MESSAGE_EVENT";
 const SOCKET_SERVER_URL = process.env.REACT_APP_ENDPOINT;
 
 const useChat = (roomId) => {
+  console.log(roomId)
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
   const [typingUsers, setTypingUsers] = useState([]);
@@ -30,9 +31,11 @@ const useChat = (roomId) => {
     const fetchUsers = async () => {
       const response = await axios.get(
         `${SOCKET_SERVER_URL}/rooms/${roomId}/users`
+        
       );
       const result = response.data.users;
       setUsers(result);
+      console.log(response)
     };
 
     fetchUsers();
@@ -42,6 +45,7 @@ const useChat = (roomId) => {
     const fetchMessages = async () => {
       const response = await axios.get(
         `${SOCKET_SERVER_URL}/rooms/${roomId}/messages`
+        
       );
       const result = response.data.messages;
       setMessages(result);
@@ -91,7 +95,7 @@ const useChat = (roomId) => {
     socketRef.current.on(STOP_TYPING_MESSAGE_EVENT, (typingInfo) => {
       if (typingInfo.senderId !== socketRef.current.id) {
         const user = typingInfo.user;
-        setTypingUsers((users) => users.filter((u) => u.nickname !== user.nickname));
+        setTypingUsers((users) => users.filter((u) => u.name !== user.name));
       }
     });
 

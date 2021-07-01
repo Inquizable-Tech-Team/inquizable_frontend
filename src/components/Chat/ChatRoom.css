@@ -1,17 +1,23 @@
 .chat-room-container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+   
     display: flex;
     flex-direction: column;
     margin: 16px;
+    background-color:rgb(79, 149, 196);
+    max-height: 420px;
+    max-width: 300px;
+    padding: 5px;
+    border-radius: 1vh;
+    position: absolute;
+  right: 0px;
+  width: 300px;
+  bottom: 0px;
   }
   
   .chat-room-top-bar {
     display: flex;
     align-items: center;
+    
   }
   
   .chat-room-top-bar h1 {
@@ -24,9 +30,11 @@
     overflow: auto;
     border-radius: 7px 7px 0 0;
     margin-bottom: 8px;
+    background-color: whitesmoke;
   }
   
   .messages-list {
     list-style-type: none;
-    padding: 0;
+    padding: 1;
+    
   }

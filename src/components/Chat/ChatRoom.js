@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-//import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ChatRoom.css";
 import useChat from "./useChat";
 import ChatMessage from "./ChatMessage";
@@ -8,17 +8,21 @@ import NewMessageForm from "./NewMessageForm";
 import TypingMessage from "./TypingMessage";
 import Users from "./Users";
 
-const ChatRoom = (props) => {
-    const { roomId } = props.match.params();
+const ChatRoom = () => {
+ 
+  
+    const { roomId } = useParams();
   const {
     messages,
-    //user,
+    user,
     users,
     typingUsers,
     sendMessage,
-    startTypingMessage,
-    stopTypingMessage,
+     startTypingMessage,
+     stopTypingMessage,
+
   } = useChat(roomId);
+  
   const [newMessage, setNewMessage] = useState("");
 
   const { isTyping, startTyping, stopTyping, cancelTyping } = useTyping();
@@ -34,15 +38,16 @@ const ChatRoom = (props) => {
     setNewMessage("");
   };
 
-  useEffect(() => {
-    if (isTyping) startTypingMessage();
-    else stopTypingMessage();// eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isTyping]);
+   useEffect(() => {
+   
+     if (isTyping) startTypingMessage();
+     else stopTypingMessage();// eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [isTyping]);
 
   return (
     <div className="chat-room-container">
       <div className="chat-room-top-bar">
-        <h1 className="room-name">Room: {roomId}</h1>
+        <h1 className="room-name">Welcome to Room: {roomId}</h1>
       </div>
       <Users users={users}></Users>
       <div className="messages-container">
@@ -54,7 +59,7 @@ const ChatRoom = (props) => {
           ))}
           {typingUsers.map((user, i) => (
             <li key={messages.length + i}>
-              <TypingMessage user={user}></TypingMessage>
+               <TypingMessage user={user}></TypingMessage> 
             </li>
           ))}
         </ol>
@@ -62,7 +67,7 @@ const ChatRoom = (props) => {
       <NewMessageForm
         newMessage={newMessage}
         handleNewMessageChange={handleNewMessageChange}
-        handleStartTyping={startTyping}
+         handleStartTyping={startTyping}
         handleStopTyping={stopTyping}
         handleSendMessage={handleSendMessage}
       ></NewMessageForm>

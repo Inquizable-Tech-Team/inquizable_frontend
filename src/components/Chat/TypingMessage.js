@@ -6,13 +6,13 @@ import "./TypingMessage.css";
 const TypingMessage = ({ user }) => {
   return (
     <div className="message-item">
-      <div className="message-avatar-container">
-        <img
+       <div className="message-avatar-container">
+         <img
           src={user.picture}
           alt={user.name}
           className={"message-avatar"}
-        ></img>
-      </div>
+        ></img> 
+      </div> 
 
       <TypingAnimation></TypingAnimation>
     </div>

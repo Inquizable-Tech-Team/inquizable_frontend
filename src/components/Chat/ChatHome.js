@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-
 const ChatHome = () => {
   const [roomName, setRoomName] = useState("");
 
@@ -17,11 +16,8 @@ const ChatHome = () => {
         value={roomName}
         onChange={handleRoomNameChange}
         className="text-input-field"
-      />
-      
-      <Link to={`/${roomName}`} className="enter-room-button">
-        Join room
-      </Link>
+      />    
+     <Link to={`/${roomName}`} className="enter-room-button"> Join room </Link> 
     </div>
   );
 };

@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
 import { UserContext } from './context/UserContext'
 import ChatRoom from './components/Chat/ChatRoom'
-import ChatHome from './components/Chat/ChatHome'
+//import ChatHome from './components/Chat/ChatHome'
 
 function Routing() {
   const [jwt, setJwt] = useState(false)
@@ -84,10 +84,11 @@ function Routing() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="/ChatHome" />
-        <ChatHome />
-        {/* <Route exact path="/:roomId" > */}
-         <Route exact path="/rooms/:roomId"> 
+        {/* <Route exact path="/ChatHome" >
+        <ChatHome /> 
+        </Route> */}
+         <Route exact path="/:roomId" > 
+         {/* <Route exact path="/rooms/:roomId">  */}
           <ChatRoom />
         </Route>
         <Route path="/*">
