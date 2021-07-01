@@ -116,7 +116,7 @@ export const Account = () => {
         </section>
         {/* Account Content Section Start */}
         <section className="relative py-16 Bg-Color">
-          <div className="container xs:mx-auto sm:mx-auto  md:mx-auto px-4 xs:w-5/5 sm:w-4/5 md:w-4/5">
+          <div className="container xs:mx-auto sm:mx-auto  md:mx-auto px-4 xs:w-8/9 sm:w-4/5 md:w-4/5">
             <div className="relative flex flex-col min-w-0 break-words bg-white xs:w-full sm:w-full md:w-full lg:w-full mb-6 shadow-xl rounded-lg -mt-64">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
@@ -203,7 +203,7 @@ export const Account = () => {
                         <div className="mt-1">
                           <input
                             onChange={(e) => setName(e.target.value.trim())}
-                            className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            className="xs:w-44 text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             placeholder="Change Nickname"
                           />
                         </div>
@@ -219,7 +219,7 @@ export const Account = () => {
                           <input
                             onChange={(e) => setNewemail(e.target.value.trim())}
                             type="email"
-                            className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            className="xs:w-44 text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             placeholder="Change Email"
                           />
                         </div>
@@ -238,7 +238,7 @@ export const Account = () => {
                             <input
                               onChange={(e) => setOldPw(e.target.value)}
                               type="password"
-                              className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="xs:w-44 text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                               placeholder="Old Password"
                             />
                           </div>
@@ -246,7 +246,7 @@ export const Account = () => {
                             <input
                               onChange={(e) => setNewPass(e.target.value)}
                               type="password"
-                              className="text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="xs:w-44 text-black appearance-none px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                               placeholder="New Password"
                             />
                           </div>
