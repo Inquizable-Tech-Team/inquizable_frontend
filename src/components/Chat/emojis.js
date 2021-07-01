@@ -1,3 +1,6 @@
+
+//trying to bring emojis :( its hard for me i guess 
+
 import React, { useState } from 'react'
     import InputEmoji from 'react-input-emoji'
   

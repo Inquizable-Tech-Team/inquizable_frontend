@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./NewMessageForm.css";
-import InputEmoji from 'react-input-emoji'
-import Emojis from "./emojis";
+//import InputEmoji from 'react-input-emoji'
+//import Emojis from "./emojis";
 
 
 const NewMessageForm = ({
@@ -13,11 +13,7 @@ const NewMessageForm = ({
  
   
 }) => {
-  const [ text, setText ] = useState('')
   
-      function handleOnEnter (text) {
-        
-      }
   
 
   return (
