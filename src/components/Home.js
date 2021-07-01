@@ -8,6 +8,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import About from './About'
 import { UserContext } from "../context/UserContext";
+import Logo from './img/LogoSmall.png'
 
 const navigation = [
   { name: "Home", href: "./home" },
@@ -46,8 +47,8 @@ export const Home = () => {
                         <a href="/home">
                           <span className="sr-only">Inquizable</span>
                           <img
-                            className="h-8 w-auto sm:h-10"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            className="h-8 w-auto sm:h-14 md:visible"
+                            src={Logo}
                             alt='Inquizable Logo'
                           />
                         </a>
@@ -107,7 +108,7 @@ export const Home = () => {
                         <div>
                           <img
                             className="h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            src={Logo}
                             alt="Inquizable Logo"
                           />
                         </div>
