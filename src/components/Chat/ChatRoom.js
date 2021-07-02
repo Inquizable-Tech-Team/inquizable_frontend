@@ -9,8 +9,12 @@ import TypingMessage from "./TypingMessage";
 import Users from "./Users";
 
 const ChatRoom = () => {
+<<<<<<< HEAD
  
   
+=======
+
+>>>>>>> ca2f8043566c986dca3b6d0715d30e6987b54c35
     const { roomId } = useParams();
   const {
     messages,
