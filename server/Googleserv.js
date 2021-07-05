@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const passport = require("passport");
-const GoogleStrategy = require("passport-google-auth");
+const GoogleStrategy = require("passport-google-auth").Strategy;
+const GithubStrategy = require("passport-github").Strategy;
 const keys = require("../config");
 const chalk = require("chalk");
 let = {};
@@ -71,3 +72,6 @@ app.get(
     res.redirect("/profile");
   }
 );
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
