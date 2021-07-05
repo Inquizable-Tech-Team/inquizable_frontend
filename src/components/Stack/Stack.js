@@ -2,7 +2,7 @@ import React from "react";
 import "./Stack.css";
 import ReactLogo from "../img/reactjs.png";
 import TailwindLogo from "../img/tailwind.png";
-import MySQLLogo from "../img/MySQL.png";
+import MySQLLogo from "../img/MySQL.jpg";
 import SocketLogo from "../img/socket.jpg";
 
 export default function Stack() {
