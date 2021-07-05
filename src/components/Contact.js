@@ -3,10 +3,29 @@ import "./Contact.css";
 import { useForm, ValidationError } from "@formspree/react";
 import Navbar
  from "./Navbar";
+import {Redirect} from 'react-router-dom'
+
 const Contact = () => {
   const [state, handleSubmit] = useForm("mqkwbyve");
+ const getCount = () => {
+    const timer = setTimeout(() => {
+      window.location.href = "/contact";
+    }, 1000)
+
+    return () => clearTimeout(timer);
+
+ }
+
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return (
+      <>
+      <Navbar />
+      <div className="submitMessage">
+        <p>Thanks for contacting us!</p>
+          {getCount()}
+      </div>
+    </>
+    )
   }
   return (
     <Fragment >
