@@ -3,7 +3,6 @@ import "./Contact.css";
 import { useForm, ValidationError } from "@formspree/react";
 import Navbar
  from "./Navbar";
-import {Redirect} from 'react-router-dom'
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mqkwbyve");

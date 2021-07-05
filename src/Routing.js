@@ -17,7 +17,10 @@ import jwt_decode from 'jwt-decode'
 import { UserContext } from './context/UserContext'
 import ChatRoom from './components/Chat/ChatRoom'
 
+
 function Routing() {
+
+
   const [jwt, setJwt] = useState(false)
   const [user, setUser] = useContext(UserContext)
 
@@ -48,6 +51,20 @@ function Routing() {
     }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jwt])
 
+
+// check if browser supports feature
+if ('serviceWorker' in navigator) {
+  // Add event listener to register our worker
+  window.addEventListener('load', async () => {
+    // Some basic error handling. Even if it fails, it'll try on the next load
+    try {
+      const reg = await navigator.serviceWorker.register('/sw.js');
+      console.log('Registered: ', reg);
+    } catch (error) {
+      console.log('Registration failed: ', error);
+    }
+  });
+}
 
   return (
     <div>
@@ -102,5 +119,7 @@ function Routing() {
     </div>
   );
 }
+
+
 
 export default Routing;

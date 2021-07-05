@@ -1,10 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./Teams.css";
-import OEPIC from '../images/oe.jpeg'
+import OEPIC from '../images/oe.jpg'
 import MATPIC from '../images/mat.jpg'
 import DIPPIC from '../images/dip.jpg'
-import JOEPIC from '../images/joe.png'
+import JOEPIC from '../images/joe.jpg'
 import BRIANPIC from '../images/brian.jpg'
 import Navbar from "./Navbar";
 
