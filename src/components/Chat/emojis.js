@@ -1,23 +1,23 @@
+import React, { useState } from 'react';
+import Picker from 'emoji-picker-react';
 
-//trying to bring emojis :( its hard for me i guess 
+const Emojis = () => {
+  const [chosenEmoji, setChosenEmoji] = useState(null);
 
-import React, { useState } from 'react'
-    import InputEmoji from 'react-input-emoji'
-  
-    export default function Example () {
-      const [ text, setText ] = useState('')
-  
-      function handleOnEnter (text) {
-        console.log('enter', text)
-      }
-  
-      return (
-        <InputEmoji
-          value={text}
-          onChange={setText}
-          cleanOnEnter
-          onEnter={handleOnEnter}
-          placeholder="Type a message"
-        />
-      )
-    }
+  const onEmojiClick = (event, emojiObject) => {
+    setChosenEmoji(emojiObject);
+  };
+
+  return (
+    <div>
+      {chosenEmoji ? (
+        <span>You chose: {chosenEmoji.emoji}</span>
+      ) : (
+        <span>No emoji Chosen</span>
+      )}
+      <Picker onEmojiClick={onEmojiClick} />
+    </div>
+  );
+};
+
+export default Emojis;

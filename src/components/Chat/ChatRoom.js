@@ -9,12 +9,8 @@ import TypingMessage from "./TypingMessage";
 import Users from "./Users";
 
 const ChatRoom = () => {
-<<<<<<< HEAD
  
   
-=======
-
->>>>>>> ca2f8043566c986dca3b6d0715d30e6987b54c35
     const { roomId } = useParams();
   const {
     messages,
@@ -42,13 +38,17 @@ const ChatRoom = () => {
     setNewMessage("");
   };
 
+
    useEffect(() => {
    
      if (isTyping) startTypingMessage();
      else stopTypingMessage();// eslint-disable-next-line react-hooks/exhaustive-deps
    }, [isTyping]);
 
+   
+
   return (
+    <>
     <div className="chat-room-container">
       <div className="chat-room-top-bar">
         <h1 className="room-name">Welcome to Room: {roomId}</h1>
@@ -76,6 +76,7 @@ const ChatRoom = () => {
         handleSendMessage={handleSendMessage}
       ></NewMessageForm>
     </div>
+    </>
   );
 };
 

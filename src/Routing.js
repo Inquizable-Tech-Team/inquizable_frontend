@@ -14,7 +14,8 @@ import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
 import { UserContext } from './context/UserContext'
 import ChatRoom from './components/Chat/ChatRoom'
-//import ChatHome from './components/Chat/ChatHome'
+import PopupBtn from './components/Chat/popupBtn'
+import Emojis from './components/Chat/emojis'
 
 function Routing() {
   const [jwt, setJwt] = useState(false)
@@ -84,20 +85,18 @@ function Routing() {
         <Route exact path="/about">
           <About />
         </Route>
-<<<<<<< HEAD
-        {/* <Route exact path="/ChatHome" >
-        <ChatHome /> 
-        </Route> */}
-         <Route exact path="/:roomId" > 
-         {/* <Route exact path="/rooms/:roomId">  */}
-=======
-{/*         <Route exact path="/ChatHome" />
-        <ChatHome /> */}
-        {/* <Route exact path="/:roomId" > */}
-         <Route exact path="/rooms/:roomId"> 
->>>>>>> ca2f8043566c986dca3b6d0715d30e6987b54c35
+
+       <Route exact path="/popupBtn" >
+        <PopupBtn /> 
+        </Route> 
+        <Route exact path="/emojis" >
+        <Emojis /> 
+        </Route> 
+         {/*<Route exact path="/:roomId" > 
+          <Route exact path="/rooms/:roomId">  
+
           <ChatRoom />
-        </Route>
+        </Route>*/}
         <Route path="/*">
           <Redirect to="/home" />
         </Route>

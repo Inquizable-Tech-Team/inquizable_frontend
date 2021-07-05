@@ -10,6 +10,7 @@ const ChatHome = () => {
 
   return (
     <div className="home-container">
+    
       <input
         type="text"
         placeholder="Room"
