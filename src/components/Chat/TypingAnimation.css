@@ -1,7 +1,7 @@
 .dotsContainer {
     width: 60px;
     height: 25px;
-    background: #f2f2f2;
+    background: #9bc2f5;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
   #dot3 {
     width: 7px;
     height: 7px;
-    background: #cacaca;
+    background: #122357;
     border-radius: 50%;
     margin: 3px;
     transition: all 0.5s ease-in-out;

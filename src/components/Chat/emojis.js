@@ -10,11 +10,11 @@ const Emojis = () => {
 
   return (
     <div>
-      {chosenEmoji ? (
+      {/* {chosenEmoji ? (
         <span>You chose: {chosenEmoji.emoji}</span>
       ) : (
         <span>No emoji Chosen</span>
-      )}
+      )} */}
       <Picker onEmojiClick={onEmojiClick} />
     </div>
   );

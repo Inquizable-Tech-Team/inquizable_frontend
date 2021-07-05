@@ -30,7 +30,7 @@
     overflow: auto;
     border-radius: 7px 7px 0 0;
     margin-bottom: 8px;
-    background-color: whitesmoke;
+    background-color: rgb(244, 248, 250);
   }
   
   .messages-list {

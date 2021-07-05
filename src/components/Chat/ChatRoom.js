@@ -7,7 +7,7 @@ import useTyping from "./useTyping";
 import NewMessageForm from "./NewMessageForm";
 import TypingMessage from "./TypingMessage";
 import Users from "./Users";
-
+import Emojis from './emojis'
 const ChatRoom = () => {
  
   
@@ -20,6 +20,7 @@ const ChatRoom = () => {
     sendMessage,
      startTypingMessage,
      stopTypingMessage,
+     
 
   } = useChat(roomId);
   
@@ -51,7 +52,7 @@ const ChatRoom = () => {
     <>
     <div className="chat-room-container">
       <div className="chat-room-top-bar">
-        <h1 className="room-name">Welcome to Room: {roomId}</h1>
+        <h1 className="room-name">Welcome to Chat: {roomId}</h1>
       </div>
       <Users users={users}></Users>
       <div className="messages-container">
