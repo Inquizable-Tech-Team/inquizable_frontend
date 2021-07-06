@@ -1,5 +1,11 @@
+.chatWindowDiv {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+}
+
 .closeBtn{
-    position: absolute;
+  position: absolute;
   right: 0px;
   width: 300px;
   bottom: 0px;
@@ -13,10 +19,9 @@
   }
 
 .openBtn{
-    position: absolute;
-    right: 15px;
+    position: fixed;
+    right: 5%;
     width: 60px;
-    bottom: 0px;
     margin: 25px;
-    bottom: 60px;
+    bottom: 15%;
 }

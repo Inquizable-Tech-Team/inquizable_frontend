@@ -6,7 +6,6 @@ import { QuizStart } from './QuizPart/QuizStart';
 import { Questions } from "./QuizPart/Questions";
 import { Overview } from "./QuizPart/Overview";
 import Navbar from "./Navbar";
-import PopupBtn from './Chat/popupBtn'
 import { fetchCommunityQuestions, fetchDataBaseQuestions } from "../Controller";
 
 export const Quiz = () => {
@@ -49,7 +48,6 @@ export const Quiz = () => {
       {questions && questionIndex===10 ? <Overview points={points} correct={correct}/>
       : questions && (questionIndex || questionIndex===0) ? <Questions setCorrect={setCorrect} points={points} setPoints={setPoints} question={questions[questionIndex]} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}/> :
       <QuizStart categoryName={categoryName} setQuestionIndex={setQuestionIndex} />}
-      <PopupBtn />
     </Fragment>
   );
 };

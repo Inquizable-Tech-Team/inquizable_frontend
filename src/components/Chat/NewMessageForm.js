@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import "./NewMessageForm.css";
-import Picker from 'emoji-picker-react';
-import Emojis from "./emojis";
-
 
 
 const NewMessageForm = ({

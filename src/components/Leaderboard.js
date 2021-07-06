@@ -8,7 +8,6 @@ import Percentage from "./LeaderPart/Percentage";
 import { fetchUser } from "../Controller";
 import Navbar from "./Navbar";
 import { UserContext } from "../context/UserContext";
-import PopupBtn from './Chat/popupBtn'
 
 export const Leaderboard = () => {
   const [user] = useContext(UserContext)

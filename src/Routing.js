@@ -15,9 +15,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
 import { UserContext } from './context/UserContext'
-import ChatRoom from './components/Chat/ChatRoom'
 import PopupBtn from './components/Chat/popupBtn'
-import Emojis from './components/Chat/emojis'
 
 
 function Routing() {
@@ -103,13 +101,7 @@ if ('serviceWorker' in navigator) {
           {user.nickname ? <Leaderboard /> : <Login setJwt={setJwt} />}
         </Route>
        <Route exact path="/about">
-          <About />
-        </Route>
-       <Route exact path="/popupBtn" >
-        <PopupBtn /> 
-        </Route> 
-        <Route exact path="/emojis" >
-        <Emojis /> 
+         <About />
         </Route>
         <Route exact path="/impressum">
         <Impressum />
@@ -117,19 +109,11 @@ if ('serviceWorker' in navigator) {
         <Route exact path="/team">
         <Teams />
         </Route>
-         {/*<Route exact path="/:roomId" > 
-          <Route exact path="/rooms/:roomId">  
-
-
-        
-        <Route exact path="/room/:roomId">
-
-          <ChatRoom />
-        </Route>*/}
         <Route path="/*">
           <Redirect to="/home" />
         </Route>
       </Switch>
+      {user.nickname && <PopupBtn />}
       <Footer />
     </div>
   );

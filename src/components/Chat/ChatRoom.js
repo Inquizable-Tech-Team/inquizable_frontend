@@ -7,7 +7,6 @@ import useTyping from "./useTyping";
 import NewMessageForm from "./NewMessageForm";
 import TypingMessage from "./TypingMessage";
 import Users from "./Users";
-import Emojis from './emojis'
 const ChatRoom = () => {
  
   

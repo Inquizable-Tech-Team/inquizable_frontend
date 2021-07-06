@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ReactCircleModal from 'react-circle-modal'
 import  ChatRoom from './ChatRoom'
@@ -6,6 +5,7 @@ import './popupBtn.css'
 
 const PopUpBtn = () => {
   return (
+    <div className='chatWindowDiv'>
     <ReactCircleModal
       backgroundColor="transparent"
       toogleComponent={onClick => (
@@ -20,15 +20,15 @@ const PopUpBtn = () => {
       //offsetY={30}
     >
       {(onClick) => (
-        <div >
+        <div className='chatWindowDiv'>
        <ChatRoom />
           <button className='closeBtn' onClick={onClick} style={{ padding: '1em' }}>
             Close
           </button>
-          
         </div>
       )}
     </ReactCircleModal>
+    </div>
   )
 }
 
