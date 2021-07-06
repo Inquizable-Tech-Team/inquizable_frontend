@@ -49,10 +49,10 @@ const ChatRoom = () => {
   return (
     <>
       <div className="chat-room-container">
-        <div className="chat-room-top-bar">
+        {/* <div className="chat-room-top-bar">
           <h1 className="room-name">Welcome to Chat: {roomId}</h1>
-        </div>
-        <Users users={users}></Users>
+        </div> */}
+        {/* <Users users={users}></Users> */}
         <div className="messages-container">
           <ol className="messages-list">
             {messages.map((message, i) => (
