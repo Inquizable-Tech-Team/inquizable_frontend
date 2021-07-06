@@ -32,7 +32,7 @@ function Routing() {
         alert('Session expired, please login again')
         localStorage.clear()
         setUser({})
-        history.push('./login')
+        history.push('./home')
       }
       else {
         setUser({
