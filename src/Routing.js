@@ -36,6 +36,7 @@ function Routing() {
         localStorage.clear()
         setUser({})
         history.push('./home')
+        window.location.reload()
       }
       else {
         setUser({
