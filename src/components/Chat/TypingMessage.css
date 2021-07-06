@@ -6,8 +6,12 @@ message-item {
   .message-avatar-container {
     align-self: flex-end;
     margin: 0px 8px;
+    color: rgb(8, 49, 138);
+    
   }
-  
+  .h6{
+    
+  }
   .message-avatar {
     vertical-align: middle;
     border-radius: 50%;

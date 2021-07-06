@@ -7,8 +7,10 @@ import useTyping from "./useTyping";
 import NewMessageForm from "./NewMessageForm";
 import TypingMessage from "./TypingMessage";
 import Users from "./Users";
-
+import Emojis from './emojis'
 const ChatRoom = () => {
+ 
+  
     const { roomId } = useParams();
   const {
     messages,
@@ -16,9 +18,12 @@ const ChatRoom = () => {
     users,
     typingUsers,
     sendMessage,
-    startTypingMessage,
-    stopTypingMessage,
+     startTypingMessage,
+     stopTypingMessage,
+     
+
   } = useChat(roomId);
+  
   const [newMessage, setNewMessage] = useState("");
 
   const { isTyping, startTyping, stopTyping, cancelTyping } = useTyping();
@@ -34,15 +39,20 @@ const ChatRoom = () => {
     setNewMessage("");
   };
 
-  useEffect(() => {
-    if (isTyping) startTypingMessage();
-    else stopTypingMessage();// eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isTyping]);
+
+   useEffect(() => {
+   
+     if (isTyping) startTypingMessage();
+     else stopTypingMessage();// eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [isTyping]);
+
+   
 
   return (
+    <>
     <div className="chat-room-container">
       <div className="chat-room-top-bar">
-        <h1 className="room-name">Room: {roomId}</h1>
+        <h1 className="room-name">Welcome to Chat: {roomId}</h1>
       </div>
       <Users users={users}></Users>
       <div className="messages-container">
@@ -54,7 +64,7 @@ const ChatRoom = () => {
           ))}
           {typingUsers.map((user, i) => (
             <li key={messages.length + i}>
-              <TypingMessage user={user}></TypingMessage>
+               <TypingMessage user={user}></TypingMessage> 
             </li>
           ))}
         </ol>
@@ -62,11 +72,12 @@ const ChatRoom = () => {
       <NewMessageForm
         newMessage={newMessage}
         handleNewMessageChange={handleNewMessageChange}
-        handleStartTyping={startTyping}
+         handleStartTyping={startTyping}
         handleStopTyping={stopTyping}
         handleSendMessage={handleSendMessage}
       ></NewMessageForm>
     </div>
+    </>
   );
 };
 

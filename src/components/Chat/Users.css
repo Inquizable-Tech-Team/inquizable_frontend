@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     margin: 8px;
     padding: 0;
+    
   }
   
   .user-box {
@@ -11,4 +12,9 @@
     flex-direction: column;
     align-items: center;
     margin: 8px;
+   
+  }
+
+  .msg{
+    color: black;
   }

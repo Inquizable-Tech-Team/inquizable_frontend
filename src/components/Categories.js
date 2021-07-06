@@ -4,6 +4,7 @@ import SubCategories from './subcategory'
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import { UserContext } from '../context/UserContext'
+import PopupBtn from './Chat/popupBtn'
 
 export const Categories = () => {
     const [user] = useContext(UserContext)
@@ -53,6 +54,7 @@ export const Categories = () => {
             </section>
             <hr></hr>
             {categoryIndex && <SubCategories categoryIndex={categoryIndex}/>}
+            <PopupBtn />
         </Fragment >
     )
 }

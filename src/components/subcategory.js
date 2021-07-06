@@ -1,6 +1,7 @@
 import React from 'react'
 import Data from './data.json'
 import {Link} from 'react-router-dom'
+import PopupBtn from './Chat/popupBtn'   
 
  const SubCategories = ({categoryIndex}) => {
 
@@ -22,7 +23,8 @@ import {Link} from 'react-router-dom'
                         </div>
                ) })} </div></div>
                 </div>
-            </section>          
+            </section>     
+            <PopupBtn />
         </div>
        
     )

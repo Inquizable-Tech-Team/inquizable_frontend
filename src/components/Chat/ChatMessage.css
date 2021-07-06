@@ -12,7 +12,7 @@
   }
   
   .message-body-container {
-    max-width: 60%;
+    max-width: 100%;
   }
   
   .message-body {
@@ -23,18 +23,18 @@
   }
   
   .message-user-name {
-    font-size: 0.75rem;
+    font-size: 1rem;
     padding-left: 12px;
-    color: rgb(138, 141, 145);
+    color: rgb(231, 83, 15);
   }
   
   .my-message .message-body {
-    background-color: rgb(0, 132, 255);
-    color: white;
+    background-color: rgb(243, 204, 204);
+    color: rgb(31, 28, 28);
   }
   
   .received-message .message-body {
-    background-color: rgb(228, 230, 235);
+    background-color: rgb(177, 190, 223);
     color: rgb(5, 5, 5);
   }
   
@@ -46,7 +46,7 @@
   .message-avatar {
     vertical-align: middle;
     border-radius: 50%;
-  
+  background-color: tomato;
     height: 28px;
     width: 28px;
   }
