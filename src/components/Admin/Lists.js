@@ -5,7 +5,7 @@ export const UserList = props => (
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="nickname" />
-            <EmailField source="email" />
+            {/* <EmailField source="email" /> */}
             <NumberField source="points" />
             <NumberField source="answered" />
             <NumberField source="correct" />
