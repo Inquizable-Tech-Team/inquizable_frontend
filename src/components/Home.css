@@ -26,3 +26,7 @@
 .LogIn-Btn:hover {
     border: 2px solid #fff;
 }
+.headerPic {
+    height: 14rem;
+    width: 100%;
+}

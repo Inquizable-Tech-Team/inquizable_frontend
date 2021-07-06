@@ -3,6 +3,8 @@ import "./About.css";
 import { fetchAllUsers, fetchQuestionAmount, fetchAnswered, fetchCorrect } from "../Controller";
 import Navbar from "./Navbar";
 import { useLocation } from "react-router-dom";
+import Teams from './Teams'
+import Stack from './Stack/Stack'
 
 const About = () => {
   const [users, setUsers] = useState()
@@ -43,18 +45,15 @@ const About = () => {
           <div className={"aboutContainer"}>
             <div className={"aboutLeftInside"}>
               <div className={"aboutLeftInsideTitle"}>
-                <p>VALUABLE METRICS</p>
+                <p>COOL STATISTICS</p>
               </div>
               <div className={"aboutLeftInsideBigTitle"}>
-                <h1>Get actionable data that will help grow your business</h1>
+                <h1>We are proud of our Inquizers and Community</h1>
               </div>
               <div className={"aboutLeftInsideParagraph"}>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using Content
-                  here, content here', making it look like readable English.
+                  Below are some real-time stats from our Website. Our community
+                  is growing from day to day. Join now, have fun doing quizzes and start collecting points.
                 </p>
               </div>
               <div className={"aboutLeftInsideSplit"}>
@@ -62,7 +61,7 @@ const About = () => {
                   <div className={"aboutSplitLeft"}>
                     <h1>{users && users}</h1>
                     <p>
-                      <span>Users</span> that already registered.
+                      <span>Inquizers</span> that already registered.
                     </p>
                   </div>
                   <div className={"aboutSplitRight"}>
@@ -84,7 +83,7 @@ const About = () => {
                   <div className={"aboutSplitRight"}>
                     <h1>{correct && answered && <>{Math.round((correct)*1000/(answered))/10}% </>}</h1>
                     <p>
-                      <span>Correctly</span> answered Questions by all Users.
+                      <span>Correctly</span> answered Questions by all Inquizers.
                     </p>
                   </div>
                 </div>
@@ -94,6 +93,8 @@ const About = () => {
         </div>
         <div className={"aboutRight"}></div>
       </div>
+      {location.pathname.toLowerCase()==='/about' && <Teams />}
+      {location.pathname.toLowerCase()==='/about' && <Stack />}
     </Fragment>
   );
 };

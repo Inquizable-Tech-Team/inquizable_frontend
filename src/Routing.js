@@ -9,6 +9,8 @@ import Contact from './components/Contact'
 import { Submit } from './components/Submit'
 import { Leaderboard } from './components/Leaderboard'
 import About from './components/About'
+import Impressum from './components/Impressum'
+import Teams from './components/Teams'
 import React, { useState, useEffect, useContext } from 'react'
 import Footer from "./components/Footer";
 import jwt_decode from 'jwt-decode'
@@ -17,7 +19,10 @@ import ChatRoom from './components/Chat/ChatRoom'
 import PopupBtn from './components/Chat/popupBtn'
 import Emojis from './components/Chat/emojis'
 
+
 function Routing() {
+
+
   const [jwt, setJwt] = useState(false)
   const [user, setUser] = useContext(UserContext)
 
@@ -32,7 +37,8 @@ function Routing() {
         alert('Session expired, please login again')
         localStorage.clear()
         setUser({})
-        history.push('./login')
+        history.push('./home')
+        window.location.reload()
       }
       else {
         setUser({
@@ -48,6 +54,20 @@ function Routing() {
     }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jwt])
 
+
+// check if browser supports feature
+if ('serviceWorker' in navigator) {
+  // Add event listener to register our worker
+  window.addEventListener('load', async () => {
+    // Some basic error handling. Even if it fails, it'll try on the next load
+    try {
+      const reg = await navigator.serviceWorker.register('/sw.js');
+      console.log('Registered: ', reg);
+    } catch (error) {
+      console.log('Registration failed: ', error);
+    }
+  });
+}
 
   return (
     <div>
@@ -82,18 +102,27 @@ function Routing() {
         <Route exact path="/leaderboard">
           {user.nickname ? <Leaderboard /> : <Login setJwt={setJwt} />}
         </Route>
-        <Route exact path="/about">
+       <Route exact path="/about">
           <About />
         </Route>
-
        <Route exact path="/popupBtn" >
         <PopupBtn /> 
         </Route> 
         <Route exact path="/emojis" >
         <Emojis /> 
-        </Route> 
+        </Route>
+        <Route exact path="/impressum">
+        <Impressum />
+        </Route>
+        <Route exact path="/team">
+        <Teams />
+        </Route>
          {/*<Route exact path="/:roomId" > 
           <Route exact path="/rooms/:roomId">  
+
+
+        
+        <Route exact path="/room/:roomId">
 
           <ChatRoom />
         </Route>*/}
@@ -105,5 +134,7 @@ function Routing() {
     </div>
   );
 }
+
+
 
 export default Routing;

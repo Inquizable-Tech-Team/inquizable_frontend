@@ -3,10 +3,28 @@ import "./Contact.css";
 import { useForm, ValidationError } from "@formspree/react";
 import Navbar
  from "./Navbar";
+
 const Contact = () => {
   const [state, handleSubmit] = useForm("mqkwbyve");
+ const getCount = () => {
+    const timer = setTimeout(() => {
+      window.location.href = "/contact";
+    }, 1000)
+
+    return () => clearTimeout(timer);
+
+ }
+
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return (
+      <>
+      <Navbar />
+      <div className="submitMessage">
+        <p>Thanks for contacting us!</p>
+          {getCount()}
+      </div>
+    </>
+    )
   }
   return (
     <Fragment >
@@ -20,21 +38,19 @@ const Contact = () => {
               </div>
               <div className={"contactParagraph"}>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  Feel free to reach out to us if you have any questions
+                  or suggestions! <br/>
+                  We appreciate any kind of feedback.
                 </p>
               </div>
               <div className={"contactAddress"}>
-                <address>742 Evergreen Terrace</address>
-                <address>springfield, OR 12345</address>
+                <address>Weiskopffstraße 16</address>
+                <address>12459 Berlin</address>
               </div>
               <div className={"contactIcons"}>
                 <div>
                   <i className="fas fa-phone-alt"></i>
-                  <p>010 23667 37497</p>
+                  <p>123 4567 890</p>
                 </div>
                 <div>
                   <i className="far fa-envelope"></i>

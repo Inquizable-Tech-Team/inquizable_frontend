@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Workflow from './HomePart/Workflow';
@@ -7,15 +7,17 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import About from './About'
+import { UserContext } from "../context/UserContext";
+import Logo from './img/LogoSmall.png'
 
 const navigation = [
   { name: "Home", href: "./home" },
-  { name: "Features", href: "./home" },
   { name: "Company", href: "./about" },
   { name: "Contact", href: "./contact" },
 ];
 
 export const Home = () => {
+  const [user] = useContext(UserContext)
 
   return (
     <div>
@@ -45,8 +47,8 @@ export const Home = () => {
                         <a href="/home">
                           <span className="sr-only">Inquizable</span>
                           <img
-                            className="h-8 w-auto sm:h-10"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            className="h-8 w-auto sm:h-14 md:visible"
+                            src={Logo}
                             alt='Inquizable Logo'
                           />
                         </a>
@@ -68,12 +70,20 @@ export const Home = () => {
                           {item.name}
                         </a>
                       ))}
+                      {user.nickname ?
+                      <Link
+                      to="./categories"
+                      className="signUp font-medium text-indigo-600 hover:text-indigo-500"
+                    >
+                     Continue
+                    </Link>
+                      : 
                       <Link
                         to="./login"
                         className="signUp font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Sign Up
-                      </Link>
+                      </Link>}
                     </div>
                   </nav>
                 </div>
@@ -98,7 +108,7 @@ export const Home = () => {
                         <div>
                           <img
                             className="h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            src={Logo}
                             alt="Inquizable Logo"
                           />
                         </div>
@@ -120,12 +130,20 @@ export const Home = () => {
                           </a>
                         ))}
                       </div>
+                      {user.nickname ?
+                      <Link
+                      to="./categories"
+                      className="signUp block w-full px-5 py-3 text-center font-medium text-indigo-600  hover:bg-gray-100"
+                    >
+                      Continue
+                    </Link>
+                      :
                       <Link
                         to="./login"
                         className="signUp block w-full px-5 py-3 text-center font-medium text-indigo-600  hover:bg-gray-100"
                       >
                         Sign Up
-                      </Link>
+                      </Link>}
                     </div>
                   </Popover.Panel>
                 </Transition>
@@ -170,12 +188,12 @@ export const Home = () => {
                   </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link
+                  {!user.nickname && <Link
                     to="./login"
                     className="LogIn-Btn w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md  md:py-4 md:text-lg md:px-10"
                   >
                     Log In
-                  </Link>
+                  </Link>}
                 </div>
               </div>
             </div>
@@ -184,7 +202,8 @@ export const Home = () => {
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          rel="preload"
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full headerPic"
           src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
           alt="Man with Laptop"
         />

@@ -80,6 +80,15 @@ textarea {
   color: white;
   border-radius: 5px;
 }
+.submitMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  height: 100vh;
+  width: 100vw;
+}
 
 @media (min-width: 320px) and (max-width: 480px),
   (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
