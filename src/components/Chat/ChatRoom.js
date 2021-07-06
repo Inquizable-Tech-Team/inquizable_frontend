@@ -5,7 +5,7 @@ import ChatMessage from "./ChatMessage";
 import useTyping from "./useTyping";
 import NewMessageForm from "./NewMessageForm";
 import TypingMessage from "./TypingMessage";
-import Users from "./Users";
+/* import Users from "./Users"; */
 const ChatRoom = () => {
 
 
@@ -13,7 +13,7 @@ const ChatRoom = () => {
   const {
     messages,
     /* user, */
-    users,
+    /* users, */
     typingUsers,
     sendMessage,
     startTypingMessage,
