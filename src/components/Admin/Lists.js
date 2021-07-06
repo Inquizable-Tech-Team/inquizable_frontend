@@ -1,11 +1,10 @@
-import { List, Datagrid, TextField, EmailField, NumberField, ReferenceField, EditButton, NumberInput, TextInput, Edit, SimpleForm, ReferenceInput, SelectInput } from 'react-admin';
+import { List, Datagrid, TextField, NumberField, ReferenceField, EditButton, NumberInput, TextInput, Edit, SimpleForm, ReferenceInput, SelectInput } from 'react-admin';
 
 export const UserList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="nickname" />
-            {/* <EmailField source="email" /> */}
             <NumberField source="points" />
             <NumberField source="answered" />
             <NumberField source="correct" />

@@ -38,6 +38,8 @@ export const Leaderboard = () => {
         <Contribution user={userData} />
       </TabPanel>
     </Tabs>
+    
     </Fragment>
+    
   );
 };

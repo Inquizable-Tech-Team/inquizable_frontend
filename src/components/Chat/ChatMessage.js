@@ -1,8 +1,5 @@
 import React from "react";
-// import UserAvatar from "../UserAvatar/UserAvatar";
-
 import "./ChatMessage.css";
-
 const ChatMessage = ({ message }) => {
   return (
     <div
@@ -12,7 +9,7 @@ const ChatMessage = ({ message }) => {
     >
       {!message.ownedByCurrentUser && (
         <div className="message-avatar-container">
-          {/* <UserAvatar user={message.user}></UserAvatar> */}
+         
         </div>
       )}
 

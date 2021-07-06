@@ -1,0 +1,27 @@
+.chatWindowDiv {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+}
+
+.closeBtn{
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  bottom: 0px;
+  background-color:rgb(79, 149, 196);
+  border-radius: 1vh;
+  margin: 16px;
+}
+
+.closeBtn:hover {
+    background-color: tomato;
+  }
+
+.openBtn{
+    position: fixed;
+    right: 5%;
+    width: 60px;
+    margin: 25px;
+    bottom: 15%;
+}

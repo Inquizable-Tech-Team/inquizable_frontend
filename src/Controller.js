@@ -1,5 +1,4 @@
 import Axios from 'axios'
-require('dotenv').config()
 const endpoint = process.env.REACT_APP_ENDPOINT
 
 export const loginFunction = (user) => {
