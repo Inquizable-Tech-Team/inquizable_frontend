@@ -63,7 +63,7 @@ export default function Teams() {
               className="h-full w-full"
             />
           </div>
-          <h2 className="mt-4 font-bold text-xl TeamColor">Matthias van Schmettow</h2>
+          <h2 className="mt-4 font-bold text-xl TeamColor">Matthias v. Schmettow</h2>
           <h6 className="mt-2 text-sm font-medium TeamColor">Co-Founder</h6>
           <p className="text-xs text-gray-500 text-center mt-3">
           Full-Stack Web App Developer <br />

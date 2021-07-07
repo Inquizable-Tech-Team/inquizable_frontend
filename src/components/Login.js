@@ -61,6 +61,7 @@ const register = (e) => {
         <div className="mt-8">
           <div className="mt-6">
             <form className="space-y-6" autoComplete="off" onSubmit={register} id='registerForm'>
+              <h3 className="xs:text-left sm:text-left md:text-left">You can register here:</h3>
             <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
               Name
@@ -91,6 +92,7 @@ const register = (e) => {
               </div>
               </form>
               <form className="space-y-6" autoComplete="off" onSubmit={signIn}>
+              <h3 className="xs:text-left sm:text-left md:text-left">You can log in here:</h3>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mt-4">
                   Email address
