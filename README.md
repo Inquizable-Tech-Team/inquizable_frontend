@@ -12,11 +12,11 @@ But, that's not all. Our Inquizers are even able to contribute with their own qu
 
 ## Inquizable Tech Team
 This project was made by:
-* Matthias    --> https://github.com/MatthiasvsGitHub
-* Dipali      --> https://github.com/Dipalibedarkar
-* Brian       --> https://github.com/desiredstate2021
-* Joey        --> https://github.com/joey-ammar
-* Ömer        --> https://github.com/oemerueguer
+* [Matthias](https://github.com/MatthiasvsGitHub)
+* [Dipali](https://github.com/Dipalibedarkar)
+* [Brian](https://github.com/desiredstate2021)
+* [Joey](https://github.com/joey-ammar)
+* [Ömer](https://github.com/oemerueguer)
 
 ## Cool Links
 
