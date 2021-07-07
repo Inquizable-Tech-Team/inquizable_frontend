@@ -56,7 +56,7 @@ export const Login = ({ setJwt }) => {
         <img
           className="absolute inset-0 h-full w-full object-cover"
           src={BrainIMG}
-          alt="Picture of a brain"
+          alt="A Brain"
         />
       </div>
       <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">

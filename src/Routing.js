@@ -52,20 +52,6 @@ function Routing() {
   }, [jwt])
 
 
-// check if browser supports feature
-if ('serviceWorker' in navigator) {
-  // Add event listener to register our worker
-  window.addEventListener('load', async () => {
-    // Some basic error handling. Even if it fails, it'll try on the next load
-    try {
-      const reg = await navigator.serviceWorker.register('/sw.js');
-      console.log('Registered: ', reg);
-    } catch (error) {
-      console.log('Registration failed: ', error);
-    }
-  });
-}
-
   return (
     <div> {/* Routing System Starts here */}
       <Switch>
