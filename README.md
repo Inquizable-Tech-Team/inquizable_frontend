@@ -20,7 +20,8 @@ This project was made by:
 
 ## Cool Links
 
-Are you curious? Then, go to [inquizable.com](#https://www.inquizable.com/home) and try it out!
+Are you curious about our App? 
+Then, follow this link [inquizable.com](https://www.inquizable.com/home) to our App and try it out!
 
 ## Technologies
 Project is created with:
