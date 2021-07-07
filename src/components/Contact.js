@@ -6,16 +6,16 @@ import Navbar
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mqkwbyve");
- const getCount = () => {
+ const getCount = () => {/* Timeout for 2 seconds */
     const timer = setTimeout(() => {
       window.location.href = "/contact";
-    }, 1000)
+    }, 2000)
 
     return () => clearTimeout(timer);
 
  }
 
-  if (state.succeeded) {
+  if (state.succeeded) {/* Displays Message for 2 seconds */
     return (
       <>
       <Navbar />
@@ -26,6 +26,7 @@ const Contact = () => {
     </>
     )
   }
+  /* Submit is done with Formspree */
   return (
     <Fragment >
       <Navbar />

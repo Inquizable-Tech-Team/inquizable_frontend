@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 
 const Footer = () => {
+  /* Footer with Links to other Pages */
   return (
     <Fragment>
       <section className="bg-white w-100vw">

@@ -20,7 +20,7 @@ const useChat = (roomId) => {
   const socketRef = useRef();
 
   useEffect(() => {
-    setUser({name: contextUser.nickname})
+    setUser({name: contextUser.nickname})// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 
@@ -36,7 +36,7 @@ const useChat = (roomId) => {
       console.log(response)
     };
 
-    fetchUsers();
+    fetchUsers();// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomId]);
 
   useEffect(() => {

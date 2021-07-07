@@ -8,10 +8,10 @@ import { UserContext } from '../context/UserContext'
 export const Categories = () => {
     const [user] = useContext(UserContext)
     const [categoryIndex, setCategoryIndex] = useState(false)
-
+/* Categories are mapped with the help of DATA from data.json */
     return (
         <Fragment>
-            <Navbar user={user}/>
+            <Navbar />
             <section className="text-gray-200 darkblueBackground">
                 <div className="max-w-6xl mx-auto px-5 py-12 ">
                     <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">

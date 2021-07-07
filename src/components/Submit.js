@@ -1,5 +1,4 @@
-import React, { useEffect, useState, Fragment, useContext } from 'react'
-import { useHistory } from 'react-router-dom';
+import React, { useState, Fragment, useContext } from 'react'
 import './submit.css'
 import { submitFunction } from '../Controller'
 import Navbar from './Navbar';
@@ -16,13 +15,9 @@ export const Submit = () => {
     const [qD, setQD] = useState('')
 
     const queryString = require('query-string');
-    let history = useHistory();
-
-    useEffect(() => {
-        if (!user) history.push('./login')// eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [user])
-
+/* Function happens when Submit button is pressed */
     const submitQuestion = () => {
+        /* If it is a boolean question */
         if (qType !== 'multiple') {
             if (!qType || !qD || !wrongA1 || !correctA || !questionName) alert('Please fill out all the fields')
             else {
@@ -44,6 +39,7 @@ export const Submit = () => {
                 })
             }
         }
+        /* If it is a "multiple" question */
         else {
             if (!qType || !qD || !wrongA1 || !wrongA2 || !wrongA3 || !correctA || !questionName) alert('Please fill out all the fields')
             else {
