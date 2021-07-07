@@ -21,7 +21,7 @@ This project was made by:
 ## Cool Links
 
 Are you curious about our App? <br/>
-Then, follow this link [inquizable.com](https://www.inquizable.com/home){:target="_blank" rel="noopener"} to our App and try it out! <b/> <br/>
+Then, follow this link [inquizable.com](https://www.inquizable.com/home) to our App and try it out! <b/> <br/>
 
 This link will redirect you to our [Figma](https://www.figma.com/proto/I5NdL5ou6My2V6eNsFVC7U/Inquizable-Mobile-Wireframe?scaling=scale-down&page-id=0%3A1&node-id=2%3A2) prototype. <br/> 
 Check it out!
