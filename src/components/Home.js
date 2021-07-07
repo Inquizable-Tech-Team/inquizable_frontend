@@ -9,6 +9,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import About from './About'
 import { UserContext } from "../context/UserContext";
 import Logo from './img/LogoSmall.png'
+import LaptopImg from '../images/laptop.webp'
 
 const navigation = [
   { name: "Home", href: "./home" },
@@ -170,7 +171,7 @@ export const Home = () => {
                     to="../categories"
                     className=" Start-Btn w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                   >
-                    Get started{" "}
+                    Get started
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -204,7 +205,7 @@ export const Home = () => {
         <img
           rel="preload"
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full headerPic"
-          src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+          src={LaptopImg}
           alt="Man with Laptop"
         />
       </div>
