@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom'
                 <p className="lg:w-1/2 w-full font-bold text-lg leading-relaxed text-base m-auto mb-8">{Data[categoryIndex].category}</p>
                   <div className="posts">
                     <div className="flex flex-wrap -m-5 xs:block md:flex">
+                        {/* Maps out the Subcategories */}
                     {Data[categoryIndex].subcategory.map((sub, index) =>{
                         return( 
                         <div className="xl:w-1/5 md:w-1/5 p-5" key={index}>

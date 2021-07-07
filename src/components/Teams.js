@@ -12,9 +12,11 @@ export default function Teams() {
   let location = useLocation();
   return (
     <>
-      {location.pathname.toLowerCase()==='/team' && <Navbar />}
+      {location.pathname.toLowerCase()==='/team' && <Navbar />} {/* Only display Navbar if path is /team */}
       <h1 className="text-center mt-10">The Inquizable-Tech-Team</h1>
+      {/* Start of Team Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-10 mb-12">
+        {/* Ömer */}
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
@@ -52,6 +54,7 @@ export default function Teams() {
             </li>
           </ul>
         </div>
+        {/* Matthias */}
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
@@ -89,6 +92,7 @@ export default function Teams() {
             </li>
           </ul>
         </div>
+        {/* Dipali */}
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
@@ -126,6 +130,7 @@ export default function Teams() {
             </li>
           </ul>
         </div>
+        {/* Joey */}
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img
@@ -163,6 +168,7 @@ export default function Teams() {
             </li>
           </ul>
         </div>
+        {/* Brian */}
         <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
           <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
             <img

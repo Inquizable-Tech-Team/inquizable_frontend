@@ -19,26 +19,25 @@ import PopupBtn from './components/Chat/popupBtn'
 
 
 function Routing() {
-
-
   const [jwt, setJwt] = useState(false)
   const [user, setUser] = useContext(UserContext)
 
   let history = useHistory();
 
+  /* Triggers at the Start and when the user logges in. Will decode the jwt Token and save it to Context */
   useEffect(() => {
     const token = localStorage.jwt
     if (token) {
       const decoded = jwt_decode(token)
-
+/* If Token is expired Logout */
       if (Date.now() >= decoded.exp * 1000) {
         alert('Session expired, please login again')
         localStorage.clear()
         setUser({})
         history.push('./home')
         window.location.reload()
-      }
-      else {
+      } 
+      else {/* Sets the Context with all this Information */
         setUser({
           id: decoded.user.rows[0].id,
           nickname: decoded.user.rows[0].nickname,
@@ -68,7 +67,7 @@ if ('serviceWorker' in navigator) {
 }
 
   return (
-    <div>
+    <div> {/* Routing System Starts here */}
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
@@ -79,7 +78,7 @@ if ('serviceWorker' in navigator) {
         <Route exact path="/login">
           <Login setJwt={setJwt} />
         </Route>
-        <Route exact path="/admin">
+        <Route exact path="/admin"> {/* Admin Route */}
           {user.nickname && user.admin === 1 ? <Admin /> : <Login setJwt={setJwt} />}
         </Route>
         <Route exact path="/account">
@@ -109,11 +108,11 @@ if ('serviceWorker' in navigator) {
         <Route exact path="/team">
         <Teams />
         </Route>
-        <Route path="/*">
+        <Route path="/*"> {/* Redirect to bring you to the homepage if page does not exist */}
           <Redirect to="/home" />
         </Route>
       </Switch>
-      {user.nickname && <PopupBtn />}
+      {user.nickname && <PopupBtn />} {/* Chat Window Button */}
       <Footer />
     </div>
   );

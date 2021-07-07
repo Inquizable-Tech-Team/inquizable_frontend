@@ -1,5 +1,7 @@
 import { List, Datagrid, TextField, NumberField, ReferenceField, EditButton, NumberInput, TextInput, Edit, SimpleForm, ReferenceInput, SelectInput } from 'react-admin';
 
+/* List to list all Users */
+
 export const UserList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
@@ -12,7 +14,7 @@ export const UserList = props => (
         </Datagrid>
     </List>
 );
-
+/* List to list all Questions */
 export const QuestionList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
@@ -28,7 +30,7 @@ export const QuestionList = props => (
         </Datagrid>
     </List>
 );
-
+/* List to edit a single Question */
 export const QuestionEdit = props => (
     <Edit {...props}>
         <SimpleForm>
@@ -45,7 +47,7 @@ export const QuestionEdit = props => (
     </Edit>
 );
 
-
+/* List to edit a single user */
 export const UserEdit = props => (
     <Edit {...props}>
         <SimpleForm>

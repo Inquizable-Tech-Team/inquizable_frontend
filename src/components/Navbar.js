@@ -38,7 +38,7 @@ const Navbar = () => {
                     <Link to='/submit'>Submit a Question</Link>
                     <Link to='/account'>Account</Link>
                   </Fragment>}
-                {user.admin===1 && <Link to='/admin'>Admin Panel</Link>}
+                {user.admin===1 && <Link to='/admin'>Admin Panel</Link>}{/* Shows Admin Link if user is Admin */}
                 <Link to='/about'>About</Link>
                 <Link to='/contact'>Contact</Link>
                 {user.nickname && <Link to='/home' onClick={(() => {localStorage.clear();window.location.reload()})}>Logout</Link>}

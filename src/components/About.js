@@ -14,7 +14,7 @@ const About = () => {
 
   let location = useLocation();
 
-  useEffect(() => {
+  useEffect(() => {/* Fetches all the information that is displayed only once, had problems with unnecessary additional calls to API */
     if (!users) {
       fetchAllUsers().then(res => {
       setUsers(res.count)
@@ -93,7 +93,7 @@ const About = () => {
         </div>
         <div className={"aboutRight"}></div>
       </div>
-      {location.pathname.toLowerCase()==='/about' && <Teams />}
+      {location.pathname.toLowerCase()==='/about' && <Teams />}{/* Displays Team Section and Stacks if user is at /about */}
       {location.pathname.toLowerCase()==='/about' && <Stack />}
     </Fragment>
   );

@@ -16,7 +16,7 @@ export const Quiz = () => {
   const [correct, setCorrect] = useState(0);
   const [categoryName, setCategoryName] = useState(false)
 
-  const filterId = (qId) => {
+  const filterId = (qId) => { /* Function to find the corresponding ID from our DATA.JSON */
     let result
     Data.forEach(element => {
       if (element.subcategory) {
@@ -25,11 +25,12 @@ export const Quiz = () => {
       }
     });
   }
+/* Could probably should have been put in a useEffect, categoryName then in the Dependency Array of useEffect below, but works like it is right now :) */
   if (qId === 'community' && categoryName!=='Community') setCategoryName('Community')
   else if (qId === '0' && categoryName!=='Random') setCategoryName('Random')
   else filterId(qId)
   
-  useEffect(() => {
+  useEffect(() => {/* Use Effect for fetching the right set of Questions */
     if (categoryName==='Community') {
       fetchCommunityQuestions().then(res => {
         setQuestions(res)
@@ -51,29 +52,3 @@ export const Quiz = () => {
     </Fragment>
   );
 };
-  /*const [timer, setTimer] = useState(5);
-
-  const id =useRef(null);
-  const clear=()=>{
-  window.clearInterval(id.current)
-}
-useEffect(()=>{
-  handleStart();
-},[])
-
-const handleStart = () => {
-  const handleStart = () =>{
-    id.current=window.setInterval(()=>{
-     setTimer((time)=>time-1)
-   },1000)
-   return ()=>clear();
-}
-
-useEffect(()=>{
-  if(timer===0){
-    clear()
-  }
-
-},[timer])
-
-*/

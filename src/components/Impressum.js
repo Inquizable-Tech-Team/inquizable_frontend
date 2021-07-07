@@ -3,6 +3,7 @@ import "./Impressum.css";
 import Navbar from "./Navbar";
 
 export default function Impressum() {
+  /* Auto generated Terms and Conditions */
   return (
     <div>
       <div className="w-80vw Info-Box mx-auto">
@@ -51,7 +52,7 @@ export default function Impressum() {
           <p>
             We employ the use of cookies. By accessing Inquizable.com, you
             agreed to use cookies in agreement with the Inquizable's Privacy
-            Policy.{" "}
+            Policy.
           </p>
 
           <p>
@@ -86,7 +87,7 @@ export default function Impressum() {
 
           <p>
             This Agreement shall begin on the date hereof. Our Terms and
-            Conditions were created with the help of the{" "}
+            Conditions were created with the help of the
             <a href="https://www.termsandconditionsgenerator.com">
               Terms And Conditions Generator
             </a>

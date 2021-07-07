@@ -1,5 +1,6 @@
 import Axios from 'axios'
 const endpoint = process.env.REACT_APP_ENDPOINT
+/* All the API Calls are here */
 
 export const loginFunction = (user) => {
   return Axios

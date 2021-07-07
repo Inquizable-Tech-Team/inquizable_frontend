@@ -20,7 +20,7 @@ export const Leaderboard = () => {
   }, []);
 
   return (
-  <Fragment>
+  <Fragment>{/* Using React Tabs */}
     <Tabs>
       <TabList className="flex border-b-2">
         <Tab>Overall Points</Tab>

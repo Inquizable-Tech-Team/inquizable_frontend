@@ -12,7 +12,7 @@ const [name, setName] = useState('')
 const [password, setPassword] = useState('')
 
 let history = useHistory();
-
+/* Function happens on click "signin" */
 const signIn = (e) => {
   e.preventDefault();
   const user = queryString.stringify({
@@ -23,13 +23,13 @@ const signIn = (e) => {
     if (res === 'Email does not exists') alert('Email does not exist');
     else if (res) {
       localStorage.setItem("jwt", res);
-      setJwt(res);
-      history.push('./categories');
+      setJwt(res); /* Will trigger useEffect in App.js to decode the token from LocalStorage */
+      history.push('./categories');/* Redirect to start a game if successfully logged in */
     }
     else alert('Oops, something went wrong...');
   })
 }
-
+/* Function happens on click "register" */
 const register = (e) => {
   e.preventDefault()
   const newUser = queryString.stringify({

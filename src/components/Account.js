@@ -21,7 +21,7 @@ export const Account = () => {
   const [newPass, setNewPass] = useState("");
   const queryString = require("query-string");
 
-  useEffect(() => {
+  useEffect(() => {/* Gets current user Info */
     fetchUser(user.id).then((res) => {
       setDetails(res);
       setUser(res);
@@ -31,7 +31,7 @@ export const Account = () => {
     }); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const updateName = () => {
+  const updateName = () => {/* Updates the Name */
     if (name === "") alert("Please fill out the Field");
     else {
       const newName = queryString.stringify({
@@ -46,7 +46,7 @@ export const Account = () => {
     }
   };
 
-  const updateMail = () => {
+  const updateMail = () => {/* Updates the Email */
     if (newemail === "") alert("Please fill out the Field");
     else {
       const newValue = queryString.stringify({
@@ -61,7 +61,7 @@ export const Account = () => {
     }
   };
 
-  const updatePassword = () => {
+  const updatePassword = () => {/* Updates the Password */
     if (oldPw === "" || newPass === "") alert("Please fill out all Fields");
     else {
       const passInfo = queryString.stringify({
