@@ -3,11 +3,12 @@
 ## Table of contents
 * [General info](#general-info)
 * [Inquizable Tech Team](#inquizable-tech-team)
+* [Cool Links](#cool-links)
 * [Technologies](#technologies)
 
 ## General info
-This project journey started during our bootcamp. We as a Team decided to create a community which loves to challenge itself. 
-That's not all. Our Inquizers are able to contribute with their own-created questions to the community, too.
+This project's journey started during our bootcamp. We, as a Team, decided to create a community which loves to challenge themselves. 
+But, that's not all. Our Inquizers are even able to contribute with their own questions to the community.
 
 ## Inquizable Tech Team
 This project was made by:
@@ -16,6 +17,10 @@ This project was made by:
 * Brian       --> https://github.com/desiredstate2021
 * Joey        --> https://github.com/joey-ammar
 * Ömer        --> https://github.com/oemerueguer
+
+## Cool Links
+
+Are you curious? Then, go to [inquizable.com](#https://www.inquizable.com/home) and try it out!
 
 ## Technologies
 Project is created with:
