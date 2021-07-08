@@ -11,7 +11,6 @@ const STOP_TYPING_MESSAGE_EVENT = "STOP_TYPING_MESSAGE_EVENT";
 const SOCKET_SERVER_URL = process.env.REACT_APP_ENDPOINT;
 
 const useChat = (roomId) => {
-  console.log(roomId)
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
   const [typingUsers, setTypingUsers] = useState([]);
@@ -31,9 +30,7 @@ const useChat = (roomId) => {
         
       );
       const result = response.data.users;
-      console.log(users)
       setUsers(result);
-      console.log(response)
     };
 
     fetchUsers();// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -46,7 +43,6 @@ const useChat = (roomId) => {
         
       );
       const result = response.data.messages;
-      console.log(result)
       setMessages(result);
     };
 
@@ -61,7 +57,7 @@ const useChat = (roomId) => {
       query: { roomId, name: user.name }
     });
     socketRef.current.on("connect", () => {
-      console.log(socketRef.current.id);
+      
     });
 
     socketRef.current.on(USER_JOIN_CHAT_EVENT, (user) => {
