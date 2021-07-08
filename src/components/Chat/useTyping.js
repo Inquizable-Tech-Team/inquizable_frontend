@@ -21,20 +21,18 @@ const useTyping = () => {
 
   useEffect(() => {
     let interval;
-    console.log('before If Statement', interval)
     if (!isKeyPressed) {
       
       interval = setInterval(() => {
         setCountdown((c) => c - 1);
       }, 1000);
-      console.log('inside if statement', interval)
+      
     } else if (isKeyPressed || countdown === 0) {
-      console.log('inside else if statement', interval)
+      
       clearInterval(interval);
     }
 
     if (countdown === 0) {
-      console.log('countdown')
       setIsTyping(false);
     }
 

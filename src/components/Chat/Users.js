@@ -1,7 +1,6 @@
 import React from "react";
 import "./Users.css";
 const Users = ({ users }) => {
-  console.log(users)
   return users.length > 0 ? (
     
     <div className="msg">    
