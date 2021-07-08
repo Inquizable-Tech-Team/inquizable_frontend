@@ -2,3 +2,13 @@ body{
     background-color: #f1f2f7;
     align-content: center;
 }
+
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 767px) and (orientation: landscape),
+  (min-width: 768px) and (max-width: 1024px),
+  (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .QuestInput {
+    width: 100vw;
+  }
+
+}
