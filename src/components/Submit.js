@@ -56,10 +56,10 @@ export const Submit = () => {
           category: "community",
           difficulty: qD,
           question: questionName,
-          correct_answer: correctA,
+          correct_answer: correctA, /* ["a1","a2","a3"] */
           incorrect_answers: `["${wrongA1}","${wrongA2}","${wrongA3}"]`,
           approved: 0,
-          users_id: user.id,
+          Users_id: user.id,
         });
         submitFunction(question).then((res) => {
           if (res) {
