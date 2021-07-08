@@ -39,7 +39,7 @@ export const Submit = () => {
         });
       }
     } else {
-    /* If it is a "multiple" question */
+      /* If it is a "multiple" question */
       if (
         !qType ||
         !qD ||
@@ -85,92 +85,64 @@ export const Submit = () => {
                              h-10 px-4 QuestInput"
           required="required"
           type="text"
-          placeholder="What is your Questions"
+          placeholder="What is your Question?"
           onChange={(e) => setQuestionName(e.target.value)}
         ></input>
         <br></br>
         <br></br>
-        <div className="xs:block sm:block md:flex lg:flex md:mx-14 lg:mx-32"> 
-        <div className="block">
-        <div className="text-lg ">Choose your type of question</div>
-        <br></br>
-        <div className="mt-2">
-          <label className="inline-flex items-center">
-            <input
-              type="radio"
-              onChange={(e) => setQType(e.target.value)}
-              lass="form-radio text-black"
-              name="accountType"
-              value="boolean"
-            />
-            <span className="ml-2">True/False</span>
-          </label>
-          <label className="inline-flex items-center xs:ml-2 sm:ml-2 md:ml-6 lg:ml-6">
-            <input
-              type="radio"
-              className="form-radio"
-              name="accountType"
-              onChange={(e) => setQType(e.target.value)}
-              value="multiple"
-            />
-            <span className="xs:ml-2 sm:ml-2 md:ml-2 lg:ml-2">Multiple</span>
-          </label>
-          <br />
-          <br />
-        </div>
-        <label className="font-semibold py-2">
-          How difficult is your question?
-        </label>
-        <br></br>
-        <select
-          className="block mt-4 bg-grey text-black border border-grey-lighter rounded-lg h-10 px-4 "
-          onChange={(e) => setQD(e.target.selectedOptions[0].label)}
-          required="required"
-          name="integration"
-          id="integration_city_id"
-        >
-          <option value="">Select Difficulty</option>
-          <option value="">easy</option>
-          <option value="">medium</option>
-          <option value="">hard</option>
-        </select>
-        <br />
-        <br />
-        </div>
-        <div className="block  md:ml-52 lg:ml-52">
-        <div className="md:float-right lg:float-right xs:float-left xs:w-full">
-          <label className="text-xs font-semibold text-white-600 py-2 xs:w-100vw">
-            Correct Answer:
-            <abbr className="hidden" title="required">
-              *
-            </abbr>
-          </label>
-          <br></br>
-          <input
-            type="text"
-            className="text-xs rounded-lg h-10 px-4 text-black"
-            placeholder="Type Correct Answer"
-            onChange={(e) => setCorrectA(e.target.value)}
-          ></input>
-          <br></br>
-          <label className="text-xs font-semibold text-white-600 py-2">
-            Wrong Answer:
-            <abbr className="hidden" title="required">
-              *
-            </abbr>
-          </label>
-          <br></br>
-          <input
-            type="text"
-            className="text-xs rounded-lg h-10 px-4 text-black "
-            placeholder="Type Wrong Answer"
-            onChange={(e) => setWrongA1(e.target.value)}
-          ></input>
-          <br></br>
-          {qType === "multiple" && (
-            <Fragment>
-              <label className="text-xs font-semibold text-white-600 py-2 ">
-                Wrong Answer:
+        <div className="xs:block sm:block md:flex lg:flex md:mx-14 lg:mx-32">
+          <div className="block">
+            <div className="text-lg ">Choose your type of question</div>
+            <br></br>
+            <div className="mt-2">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  onChange={(e) => setQType(e.target.value)}
+                  lass="form-radio text-black"
+                  name="accountType"
+                  value="boolean"
+                />
+                <span className="ml-2">True/False</span>
+              </label>
+              <label className="inline-flex items-center xs:ml-2 sm:ml-2 md:ml-6 lg:ml-6">
+                <input
+                  type="radio"
+                  className="form-radio"
+                  name="accountType"
+                  onChange={(e) => setQType(e.target.value)}
+                  value="multiple"
+                />
+                <span className="xs:ml-2 sm:ml-2 md:ml-2 lg:ml-2">
+                  Multiple
+                </span>
+              </label>
+              <br />
+              <br />
+            </div>
+            <label className="font-semibold py-2">
+              How difficult is your question?
+            </label>
+            <br></br>
+            <select
+              className="block mt-4 bg-grey text-black border border-grey-lighter rounded-lg h-10 px-4 "
+              onChange={(e) => setQD(e.target.selectedOptions[0].label)}
+              required="required"
+              name="integration"
+              id="integration_city_id"
+            >
+              <option value="">Select Difficulty</option>
+              <option value="">Easy</option>
+              <option value="">Medium</option>
+              <option value="">Hard</option>
+            </select>
+            <br />
+            <br />
+          </div>
+          <div className="block  md:ml-52 lg:ml-52">
+            <div className="md:float-right lg:float-right xs:float-left xs:w-full">
+              <label className="text-xs font-semibold text-white-600 py-2 xs:w-100vw">
+                Correct Answer:
                 <abbr className="hidden" title="required">
                   *
                 </abbr>
@@ -178,9 +150,9 @@ export const Submit = () => {
               <br></br>
               <input
                 type="text"
-                className="text-xs rounded-lg h-10 px-4 text-black"
-                placeholder="Type Wrong Answer"
-                onChange={(e) => setWrongA2(e.target.value)}
+                className="text-xs rounded-lg h-10 px-4 text-black mt-2 mb-2"
+                placeholder="Type Correct Answer"
+                onChange={(e) => setCorrectA(e.target.value)}
               ></input>
               <br></br>
               <label className="text-xs font-semibold text-white-600 py-2">
@@ -192,28 +164,58 @@ export const Submit = () => {
               <br></br>
               <input
                 type="text"
-                className="text-xs text-black rounded-lg h-10 px-4 "
+                className="text-xs rounded-lg h-10 px-4 text-black mt-2 mb-2"
                 placeholder="Type Wrong Answer"
-                onChange={(e) => setWrongA3(e.target.value)}
+                onChange={(e) => setWrongA1(e.target.value)}
               ></input>
-            </Fragment>
-          )}
-          <br></br>
-        </div>
+              <br></br>
+              {qType === "multiple" && (
+                <Fragment>
+                  <label className="text-xs font-semibold text-white-600 py-2 ">
+                    Wrong Answer:
+                    <abbr className="hidden" title="required">
+                      *
+                    </abbr>
+                  </label>
+                  <br></br>
+                  <input
+                    type="text"
+                    className="text-xs rounded-lg h-10 px-4 text-black mt-2 mb-2"
+                    placeholder="Type Wrong Answer"
+                    onChange={(e) => setWrongA2(e.target.value)}
+                  ></input>
+                  <br></br>
+                  <label className="text-xs font-semibold text-white-600 py-2">
+                    Wrong Answer:
+                    <abbr className="hidden" title="required">
+                      *
+                    </abbr>
+                  </label>
+                  <br></br>
+                  <input
+                    type="text"
+                    className="text-xs text-black rounded-lg h-10 px-4 mt-2 mb-2"
+                    placeholder="Type Wrong Answer"
+                    onChange={(e) => setWrongA3(e.target.value)}
+                  ></input>
+                </Fragment>
+              )}
+              <br></br>
+            </div>
 
-        <br></br>
+            <br></br>
 
-        <div className="md:flex xs:block sm:block justify-center mb-28">
-          <button
-            onClick={submitQuestion}
-            className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm 
+            <div className="md:flex xs:block sm:block mb-28 md:mt-48 md:ml-0">
+              <button
+                onClick={submitQuestion}
+                className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm 
                 shadow-sm font-medium tracking-wider text-black rounded-full 
-                hover:shadow-lg hover:bg-red-400 md:mt-40 md:ml-24 sm:ml- xs:ml-0 sm:mt-6"
-          >
-            Submit
-          </button>
-        </div>
-        </div>
+                hover:shadow-lg hover:bg-red-400 md:mt-32   xs:ml-0 xs:mt-12"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </Fragment>
