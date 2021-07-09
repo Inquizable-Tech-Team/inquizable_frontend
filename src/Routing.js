@@ -55,9 +55,10 @@ function Routing() {
   return (
     <div> {/* Routing System Starts here */}
       <Switch>
-        {/* <Route exact path="/">
-          <Redirect to="/home" />
-        </Route> */}
+        <Route exact path="/">
+          {/* <Redirect to="/home" /> */}
+          <Home />
+        </Route>
         <Route exact path="/home">
           <Home />
         </Route>
