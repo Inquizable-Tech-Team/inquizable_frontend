@@ -94,7 +94,7 @@ function Routing() {
         <Route exact path="/team">
         <Teams />
         </Route>
-        <Route path="/*"> {/* Redirect to bring you to the homepage if page does not exist */}
+        <Route path="*"> {/* Redirect to bring you to the homepage if page does not exist */}
           <Redirect to="/home" />
         </Route>
       </Switch>
